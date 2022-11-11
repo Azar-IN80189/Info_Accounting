@@ -19,13 +19,26 @@ public class Org_Currencies extends Reusableclass {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		c=new Currencies_POJO();
-		toClick(t.Organizationslide);
+try {
+	Explicitwaitvisibility(c.Currenciesslide);
+	highLightElement(c.Currenciesslide);
+	toClick(c.Currenciesslide);
+} catch (Exception e) {
+	
+	System.out.println("Failed due to slide uninformed exceptions");
+}
+		Explicitwaitvisibility(c.Currenciesslide);
+		highLightElement(c.Currenciesslide);
 		toClick(c.Currenciesslide);
+
+
 		Thread.sleep(4000);
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
 		}
+
 		Explicitwait(c.AddCurrencies);
+		highLightElement(c.AddCurrencies);
 		clickjavascript(c.AddCurrencies);
 
 	}
@@ -41,12 +54,15 @@ public class Org_Currencies extends Reusableclass {
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
 			Thread.sleep(1000);
+			highLightElement(c.CurrenciesDD);
 			clickjavascript(c.CurrenciesDD);
 			Thread.sleep(1000);
-			tofill(c.CurrenciesDD, "PLN - Polish Zloty");
+			tofill(c.CurrenciesDD, "BZD - Belize Dollar");
+
 			Explicitwaitvisibility(c.MouseclickDDCurrencies);
 			mouseclick(c.MouseclickDDCurrencies);
 			Thread.sleep(1000);
+			highLightElement(c.Addcurrenciesbtn);
 			toClick(c.Addcurrenciesbtn);
 		}
 
@@ -59,37 +75,47 @@ public class Org_Currencies extends Reusableclass {
 		c=new Currencies_POJO();
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
-			
-			tofill(c.Searchboxbtn, "PLN - Polish Zloty");
-			
+
+			highLightElement(c.Searchboxbtn);
+			tofill(c.Searchboxbtn, "BZD - Belize Dollar");
+
+
 			Explicitwait(c.Editicon);
-			
+
+			highLightElement(c.Editicon);
 			toClick(c.Editicon);
-			
+
 			Explicitwait(c.Startdate);
-			
+
 			actionssendkeysdelete(c.Startdate);
-			
-			tofill(c.Startdate, "21/09/2022");
-			
-			actionssendkeysdelete(c.Enddate);
-			actionssendkeysdelete(c.Enddate);
-			
-			tofill(c.Enddate, "29/09/2022");
-			
+
+			highLightElement(c.Startdate);
+			tofill(c.Startdate, "10/11/2022");
+
+
+			c.Enddate.clear();
+
+			highLightElement(c.Enddate);
+			tofill(c.Enddate, "15/11/2022");
+
+
 			clickjavascript(c.CurrencyRadiobtn);
-			
+
+			highLightElement(c.Customratetxt);
 			tofill(c.Customratetxt, "2");
 
+
 			Thread.sleep(3000);
-			
+
+			highLightElement(c.Savebtn);
 			clickjavascript(c.Savebtn);
-			
+
 			Explicitwaitvisibility(c.logoutbtn);
+			highLightElement(c.logoutbtn);
 			clickjavascript(c.logoutbtn);
-			
+
 		}
-		
+
 
 
 

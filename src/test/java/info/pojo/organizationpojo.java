@@ -98,6 +98,23 @@ public class organizationpojo extends Reusableclass {
 	@FindBy(xpath = "//button[contains(.,'Save')]")
 	public WebElement save;
 	
+	@FindBy(xpath = "//input[@formcontrolname='telephoneNo']")
+	public WebElement Telph1;
+	
+	@FindBy(xpath = "//input[@formcontrolname='telephone2']")
+	public WebElement Telph2;
+	
+	@FindBy(xpath = "//input[@formcontrolname='mobileNo']")
+	public WebElement Mobileno;
+	
+	@FindBy(xpath = "//input[@formcontrolname='whatsAppNo']")
+	public WebElement whatsAppNo;
+	
+	@FindBy(xpath = "(//div[@class='col-md-8'])[3]")
+	public WebElement Logoclick;
+	
+	@FindBy(xpath = "//span[@class='img-close']")
+	public WebElement logoxmarkbtn;
 	
 	
 	

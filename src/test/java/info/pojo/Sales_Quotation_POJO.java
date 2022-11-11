@@ -20,6 +20,25 @@ public class Sales_Quotation_POJO extends Reusableclass
 	@FindBy(xpath = "//a[contains(.,'arrow_rightQuotation')]")
 	public WebElement Quotationslide;
 	
+	@FindBy(xpath = "(//a[@data-toggle='tab'])[2]")
+	public WebElement drafttab;
+	
+	
+	
+	@FindBy(xpath = "//input[contains(@placeholder,'Type to filter the Quote Number,Reference,Supplier or Amount')]")
+	public WebElement SearchboxQuotation;
+	
+	@FindBy(xpath = "//button[contains(.,'Search')]")
+	public WebElement Searchbutton;
+	
+	@FindBy(xpath = "(//div[@col-id='Number'])[2]")
+	public WebElement Selectaquotation;
+	
+	@FindBy(xpath = "//input[@formcontrolname='expiryDate']")
+	public WebElement ExpiryDatetxtbox;
+	
+	
+	
 	@FindBy(xpath = "(//button[contains(@type,'button')])[4]")
 	public WebElement NewQuotationbtn;
 	
@@ -47,10 +66,10 @@ public class Sales_Quotation_POJO extends Reusableclass
 	@FindBy(xpath = "(//input[@type='text'])[10]")
 	public WebElement ThemeDD;
 	
-	@FindBy(xpath = "(//div[@col-id='InvItemID'])[2]")
+	@FindBy(xpath = "(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[1]")
 	public WebElement Items1;
 	
-	@FindBy(xpath = "(//div[@aria-haspopup='listbox'])[6]")
+	@FindBy(xpath = "(//input[@type='text'])[11]")
 	public WebElement Items1q;
 	
 	@FindBy(xpath = "/html/body/div/div/div[6]/button[1]")
@@ -60,6 +79,12 @@ public class Sales_Quotation_POJO extends Reusableclass
 	
 	@FindBy(xpath = "(//input[@type='text'])[11]")
 	public WebElement Items1text;
+	
+	@FindBy(xpath = "(//td[@class='ng-star-inserted'])[8]")
+	public WebElement accountselectoutframe;
+	
+	@FindBy(xpath = "(//input[@type='text'])[11]")
+	public WebElement accountselecttxt;
 	
 	@FindBy(xpath = "(//div[contains(@col-id,'ItemDescription')])[2]")
 	public WebElement ItemDescription1;
@@ -75,6 +100,9 @@ public class Sales_Quotation_POJO extends Reusableclass
 	
 	@FindBy(xpath = "//button[contains(.,'Approve')]")
 	public WebElement ApproveBtn;
+	
+	
+	
 	
 	@FindBy(xpath = "(//button[contains(.,'Save')])[2]")
 	public WebElement SaveBtn;

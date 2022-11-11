@@ -13,14 +13,20 @@ public class Tax_Rate_POJO extends Reusableclass
 		PageFactory.initElements(driver, this);
 
 	}
+	@FindBy(xpath = "(//li[@class='nav-item nav-dropdown open'])[1]")
+	public WebElement Dropdownexpanded;
+	
+	@FindBy(xpath = "(//li[@class='nav-item nav-dropdown'])[1]")
+	public WebElement Dropdownclosed;
 	
 	@FindBy(xpath = "//a[contains(.,'more_horiz Organization')]")
 	public WebElement Organizationslide;
 	
+	
 	@FindBy(xpath = "//a[@href='/organization/taxrate']")
 	public WebElement Taxrateslide;	
 	
-	@FindBy(xpath = "(//span[contains(.,'add')])[3]")
+	@FindBy(xpath = "//button[contains(.,'add  New Tax Rate')]")
 	public WebElement Newtaxratebtn;	
 	
 	@FindBy(xpath = "//input[contains(@formcontrolname,'taxName')]")

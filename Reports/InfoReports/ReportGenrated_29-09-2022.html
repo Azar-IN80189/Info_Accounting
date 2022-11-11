@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sep 29, 2022 05:05:09 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sep 29, 2022 05:05:09 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sep 29, 2022 05:10:01 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>8</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>8</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>8</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>27</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Login Feature":10.902,"Profile Update scenario":27.148,"Organization_Details":33.903,"Info-Accouting Tax Rate scenario":25.763,"Info-Accouting Currencies scenario":16.485,"Info-Accouting forgot password":90.435,"Info-Accouting Inventory-Items":51.238,"Info-Accouting Inventory-PriceList scenario":35.039
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Forgotpassword</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@PriceList</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@profile</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@InventoryItems</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Currencies</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@TaxRate</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>build</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Azarudeen</td>
+</tr>
+<tr>
+<td>AppName</td>
+<td>Automation-Info_Accounting</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows 11</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 8,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 8,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 27,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Forgotpassword</a><a class="dropdown-item" href="#">@PriceList</a><a class="dropdown-item" href="#">@profile</a><a class="dropdown-item" href="#">@InventoryItems</a><a class="dropdown-item" href="#">@Currencies</a><a class="dropdown-item" href="#">@TaxRate</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login Feature</p>
+            <p class="text-sm">
+              <span>17:05:10 PM</span> / <span>00:00:10:902</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login Feature</h5>
+<span class='badge badge-success'>09.29.2022 17:05:10</span>
+<span class='badge badge-danger'>09.29.2022 17:05:21</span>
+<span class='badge badge-default'>00:00:10:902</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Get login infoaccounting App</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Login.user_gives_info_accounting_app_url()">
+                <span>Given user gives InfoAccounting App URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Login.user_gives_credentials_for_info_accounting_login()">
+                <span>When User gives Credentials for InfoAccounting login</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Login.user_submit_the_button()">
+                <span>And User submit the button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="@profile"
+          device="">
+          <div class="test-detail">
+            <p class="name">Profile Update scenario</p>
+            <p class="text-sm">
+              <span>17:05:21 PM</span> / <span>00:00:27:148</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Profile Update scenario</h5>
+<span class='badge badge-success'>09.29.2022 17:05:21</span>
+<span class='badge badge-danger'>09.29.2022 17:05:48</span>
+<span class='badge badge-default'>00:00:27:148</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@profile</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Update user information details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Profile.give_all_information()">
+                <span>Given Give all information</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Profile.save_the_information()">
+                <span>When save the information</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Organization_Details</p>
+            <p class="text-sm">
+              <span>17:05:48 PM</span> / <span>00:00:33:903</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Organization_Details</h5>
+<span class='badge badge-success'>09.29.2022 17:05:48</span>
+<span class='badge badge-danger'>09.29.2022 17:06:22</span>
+<span class='badge badge-default'>00:00:33:903</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Details organaization</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Details.give_all_details_in_organization_details_screen()">
+                <span>Given Give all details in organization details screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Details.save_all_information_or_cancel_it()">
+                <span>When Save all information or cancel it</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag="@TaxRate"
+          device="">
+          <div class="test-detail">
+            <p class="name">Info-Accouting Tax Rate scenario</p>
+            <p class="text-sm">
+              <span>17:06:22 PM</span> / <span>00:00:25:763</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Info-Accouting Tax Rate scenario</h5>
+<span class='badge badge-success'>09.29.2022 17:06:22</span>
+<span class='badge badge-danger'>09.29.2022 17:06:48</span>
+<span class='badge badge-default'>00:00:25:763</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@TaxRate</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Tax Rate scenario</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_login_navigate_to_tax_rates_section()">
+                <span>Given User need to Login & navigate to tax rates section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_create_a_tax_rate()">
+                <span>And User need to create a tax rate</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_edit_the_tax_rate()">
+                <span>Then User need to edit the tax rate</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_delete_the_tax_rate()">
+                <span>Then User need to Delete the tax rate</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag="@Currencies"
+          device="">
+          <div class="test-detail">
+            <p class="name">Info-Accouting Currencies scenario</p>
+            <p class="text-sm">
+              <span>17:06:48 PM</span> / <span>00:00:16:485</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Info-Accouting Currencies scenario</h5>
+<span class='badge badge-success'>09.29.2022 17:06:48</span>
+<span class='badge badge-danger'>09.29.2022 17:07:04</span>
+<span class='badge badge-default'>00:00:16:485</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@Currencies</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Currencies scenario</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_navigate_to_currencie_section()">
+                <span>Given User need to navigate to Currencie section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_add_a_currency()">
+                <span>And User need to Add a currency</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_edit_the_currencies()">
+                <span>Then User need to edit the currencies</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag="@Forgotpassword"
+          device="">
+          <div class="test-detail">
+            <p class="name">Info-Accouting forgot password</p>
+            <p class="text-sm">
+              <span>17:07:04 PM</span> / <span>00:01:30:435</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Info-Accouting forgot password</h5>
+<span class='badge badge-success'>09.29.2022 17:07:04</span>
+<span class='badge badge-danger'>09.29.2022 17:08:35</span>
+<span class='badge badge-default'>00:01:30:435</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@Forgotpassword</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>Forgot password scenario</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_trigger_the_forgot_password_link()">
+                <span>Given User need to trigger the forgot password link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_reset_the_password()">
+                <span>Given User need to Reset the password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_login_using_resetted_password()">
+                <span>Then User need to login using resetted password</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag="@InventoryItems"
+          device="">
+          <div class="test-detail">
+            <p class="name">Info-Accouting Inventory-Items</p>
+            <p class="text-sm">
+              <span>17:08:35 PM</span> / <span>00:00:51:238</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Info-Accouting Inventory-Items</h5>
+<span class='badge badge-success'>09.29.2022 17:08:35</span>
+<span class='badge badge-danger'>09.29.2022 17:09:26</span>
+<span class='badge badge-default'>00:00:51:238</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@InventoryItems</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Inventory-Items scenario</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_navigate_to_item_slide()">
+                <span>Given User need to navigate to Item slide</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_item()">
+                <span>And User need to Add an item</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_service_item()">
+                <span>Then User need to add an service item</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_product_group()">
+                <span>And User need to add an product group</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_manage_an_item()">
+                <span>And User need to Manage an item</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_manage_a_unit_type()">
+                <span>Then User need to Manage a unit type</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_verify_the_headers()">
+                <span>Then User need to verify the headers</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author=""
+          tag="@PriceList"
+          device="">
+          <div class="test-detail">
+            <p class="name">Info-Accouting Inventory-PriceList scenario</p>
+            <p class="text-sm">
+              <span>17:09:26 PM</span> / <span>00:00:35:039</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Info-Accouting Inventory-PriceList scenario</h5>
+<span class='badge badge-success'>09.29.2022 17:09:26</span>
+<span class='badge badge-danger'>09.29.2022 17:10:01</span>
+<span class='badge badge-default'>00:00:35:039</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@PriceList</span></div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>Inventory-PriceList scenario</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_navigate_to_pricelist_slide()">
+                <span>Given User need to navigate to Pricelist slide</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_add_an_price_list()">
+                <span>Then User need to Add an Price List</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_delete_the_price_list()">
+                <span>And User need to Delete the price List</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@Forgotpassword</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Forgotpassword</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:07:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>Info-Accouting forgot password</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:07:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='25' id='26'>Forgot password scenario</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting forgot password.Forgot password scenario</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@PriceList</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@PriceList</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:09:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>Info-Accouting Inventory-PriceList scenario</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:09:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='39' id='40'>Inventory-PriceList scenario</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Inventory-PriceList scenario.Inventory-PriceList scenario</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@profile</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@profile</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:05:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>Profile Update scenario</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:05:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='7'>Update user information details</a>
+<div class="">
+<span class="badge badge-default">Profile Update scenario.Update user information details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@InventoryItems</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@InventoryItems</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:08:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>Info-Accouting Inventory-Items</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:08:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='31'>Inventory-Items scenario</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Inventory-Items.Inventory-Items scenario</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@Currencies</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Currencies</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:06:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>Info-Accouting Currencies scenario</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:06:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='21'>Currencies scenario</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Currencies scenario.Currencies scenario</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@TaxRate</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@TaxRate</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:06:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>Info-Accouting Tax Rate scenario</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:06:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='15'>Tax Rate scenario</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Tax Rate scenario.Tax Rate scenario</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

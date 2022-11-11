@@ -7,14 +7,11 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.DriverManager;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -26,11 +23,9 @@ import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -56,7 +51,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
 
-import io.cucumber.messages.Messages.Attachment;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -74,7 +68,10 @@ public class Reusableclass
 	public static Alert a;
 	public static JavascriptExecutor js;
 	public static Select s;
-	private static Sheet sheet;
+	public static Sheet sheet;
+
+	private WebDriverWait wait;
+
 
 	//1.Browser launch 
 
@@ -731,6 +728,7 @@ public class Reusableclass
 
 	}
 
+
 	// 67. tomultiplewindow
 
 	private void tomultiplewindows(int value) {
@@ -1104,6 +1102,19 @@ public class Reusableclass
 		}
 		return null;
 	}
+	
+	public static  void Addition() {
+		Float arrCost = Parse(driver.findElement(By.xpath("...")));
+		Float numOfPass = Parse(driver.findElement(By.xpath("...")));
+		Float taxes = Parse(driver.findElement(By.xpath("...")));
+		Float total = Parse(driver.findElement(By.xpath("...")));
+		Float depCost=Parse(driver.findElement(By.xpath("...")));
+		Float sumTotal= ((depCost + arrCost) * numOfPass) + taxes;
+	}
+	public static Float Parse(WebElement element) {
+		 return Float.parseFloat(element.getText().trim());
+	}
+
 	public static void setFocus(WebElement element) 
 	{
 
@@ -1120,12 +1131,16 @@ public class Reusableclass
 	public static void highlightElemts(WebElement element) 
 	{
 
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		//jse.executeScript("arguments[0].style.border='3px solid red'", element);
 		//js.executeScript("arguments[0].setAttribute('style','background: yellow; border: 2px solid red;');", element);
 		js.executeScript("arguments[0].style.border='2px solid red'", element);
 	}
 
+	 public static void highlight1(WebDriver high, WebElement ele1) {    
+	        JavascriptExecutor js1 = (JavascriptExecutor) high;
+	        js1.executeScript("arguments[0].setAttribute('style', 'background: blue; border: 2px solid yellow;');", ele1);
+	    }
 
 	public static void ScrolldownElement(WebElement element) 
 	{
@@ -1309,24 +1324,52 @@ public class Reusableclass
 	}
 	
 	// Element highlighter code
-	public static void highLightElement(WebElement element)
-	{
-		js = (JavascriptExecutor) driver;
-	 
-	js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-	 
-	try 
-	{
-	Thread.sleep(1000);
-	} 
-	catch (InterruptedException e) {
-	 
-	System.out.println(e.getMessage());
-	} 
-	 
-	js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element); 
-	 
-	}
+	public static void highLightElement(WebElement element) {
+
+		 try {
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+		  js.executeScript("arguments[0].setAttribute('style','background: skyblue; border: 4px solid red;');", element);
+		  Thread.sleep(1000);
+		  js.executeScript("arguments[0].style.border=''", element);
+		// unhighlight
+		  js.executeScript("arguments[0].removeAttribute('style','')", element);
+		  Thread.sleep(1000);
+		  
+		 } catch (InterruptedException e) {
+		  e.printStackTrace();
+		 }
+		}
+	
+	public static void highLightElements (WebElement element) {
+
+		JavascriptExecutor js=(JavascriptExecutor)driver; 
+
+		js.executeScript("arguments[0].style.border='4px solid red'", element);
+		try 
+		{
+		Thread.sleep(1000);
+		} 
+		catch (InterruptedException e) {
+
+		System.out.println(e.getMessage());
+		js.executeScript("arguments[0].style.border='4px solid red'", element); 
+		} 
+
+		}
+	
+	public static void highlightElement1 (WebElement element) {
+
+		   try {
+		      JavascriptExecutor js = (JavascriptExecutor) driver;
+		      js.executeScript("arguments[0].setAttribute('style','background: yellow; border: 2px solid red;');", element);
+		      Thread.sleep(1000);
+		      js.executeScript("arguments[0].style.border=''", element, "");
+		      Thread.sleep(1000);
+		   } catch (InterruptedException e) {
+		      // TODO Auto-generated catch block
+		      e.printStackTrace();
+		   }
+		}
 	
 	public void selectDate(String month_year, String select_day) throws InterruptedException
 	{ 
@@ -1363,6 +1406,16 @@ public class Reusableclass
 
 	}
 	
+	 public static boolean isElementPresent(WebElement element) {
+	        try {
+	            if (element.isDisplayed() || element.isEnabled())
+	                return true;
+	        } catch (Exception e) {
+	            return false;
+	        } 
+	        return false;
+	    }
+	
 	// waits for the angular request
 	public void waitforangularrequest() {
 		JsDriver = (JavascriptExecutor) driver;
@@ -1370,7 +1423,206 @@ public class Reusableclass
 	}
 	
 	
+	
+public static void Toclear(WebElement element) {
+
+	element.clear();
+
+}
+public static WebDriver getDriver() {
+	return driver;
+}
+
+
+public static void populateTextField(WebElement element , String data) {
+	if ( data != null) {
+		Toclear(element);		
+		tofill(element, data);
 	}
 	
 	
+}
+
+protected void populateSelectFieldByText(WebElement element , String data) {
+	if ( data != null) {		
+		selectByText(element,data);		
+	}
 	
+}
+
+protected void populateSelectFieldByValue(WebElement element , String data) {
+	if ( data != null) {
+		selectByValue(element,data);
+	}
+	
+}
+
+protected String getText(WebElement element) {
+	waitForClickable(element);
+	log("Getting text for", element);
+	return element.getText();
+}
+
+protected void click(WebElement element) {
+	waitForClickable(element);
+	log("Clicking on", element);
+	element.click();
+	
+}
+
+protected void selectBox(WebElement element) {
+	waitForClickable(element);
+	if(!element.isSelected()) {
+		log("Selecting", element);
+		element.click();
+	}
+	
+}
+
+protected void unSelectBox(WebElement element) {
+	waitForClickable(element);
+	if(element.isSelected()) {
+		log("Deselecting", element);
+		element.click();
+	}
+	
+}
+
+protected void clear(WebElement element ) {
+	waitForClickable(element);
+	log("Clearing", element);
+	element.clear();
+}
+
+private void enterText(WebElement element , String data) {
+	waitForClickable(element);
+	log("Entering " + data + " into", element);
+	element.sendKeys(data.trim());
+}
+
+private void selectByText(WebElement element , String data) {
+	waitForClickable(element);
+	log("Selecting " + data + " by visible text for", element);
+	Select item = new Select(element);
+	item.selectByVisibleText(data);
+}
+
+private void selectByValue(WebElement element , String data) {
+	waitForClickable(element);
+	log("Selecting " + data + " by value for", element);
+	Select item = new Select(element);
+	item.selectByValue(data);
+}
+
+protected void executeJavaScript(String scriptToExecute) {
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript(scriptToExecute);
+}
+
+protected void specialClick(WebElement element) {
+	waitForClickable(element);
+	log("Clicking on", element);
+	Actions actions = new Actions(driver);
+	actions.moveToElement(element);
+	actions.click().build().perform();
+}
+
+protected void hover(WebElement element) {
+	waitForClickable(element);
+	log("Hovering over", element);
+	Actions actions = new Actions(driver);
+	actions.moveToElement(element);
+	actions.build().perform();
+}
+
+protected void changeWait(int waitTime) {
+	driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
+}
+
+
+
+protected void waitForVisible(WebElement element) {
+	wait.until(ExpectedConditions.visibilityOf(element));
+}
+
+protected void waitForText(WebElement element, String text) {
+	wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+}
+
+protected void waitForClickable(WebElement element) {
+	wait.until(ExpectedConditions.elementToBeClickable(element));
+}
+
+protected void waitForNotVisible(WebElement element) {
+	wait.until(ExpectedConditions.invisibilityOf(element));
+}
+
+protected void acceptAlert() {
+
+	try {
+		Alert alert = driver.switchTo().alert();
+		log("Accepting alert");
+		alert.accept();
+
+	} catch (Exception e) {
+		try {
+			Alert alert = driver.switchTo().alert();
+			log("Accepting alert");
+			alert.accept();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}
+
+
+private void log(String message, WebElement element) {
+	String name = getLogicalName(element);
+	//StepBase.getScenarioContext().getScenario().write(message + " " + name);
+}
+
+private void log(String message) {
+	//StepBase.getScenarioContext().getScenario().write(message);
+}
+
+private String getLogicalName(WebElement element) {
+	String name = "";
+	if ((element.getTagName().equals("input") && 
+			(element.getAttribute("type").contains("text") || element.getAttribute("type").contains("password"))) || 
+			element.getTagName().equals("select")) {
+		name = element.getAttribute("name");
+		if (name == null || name.isEmpty()) {
+			name = element.getAttribute("id");
+		}
+	} else if (element.getTagName().equals("input") && 
+			(element.getAttribute("type").contains("radio") || element.getAttribute("type").contains("checkbox"))) {
+		name = element.getAttribute("name") + " : " + element.getAttribute("id");
+	} else if (element.getText() != null) {
+		name = element.getText();
+		if (name == null || name.isEmpty()) {
+			name = element.getAttribute("id");
+		}
+		if (name == null || name.isEmpty()) {
+			name = element.getAttribute("name");
+		}
+	}
+	
+	if (name == null) {
+		name = "Unknown Element";
+	}
+	
+	return name;
+}
+
+protected void sleep(int seconds) {
+
+	try {
+		Thread.sleep(seconds * 1000);
+	} catch (Exception e) {
+
+	}
+}
+}
+	
+	
+

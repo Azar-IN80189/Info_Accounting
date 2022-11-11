@@ -85,9 +85,14 @@ public class UserCreation_POJO extends Reusableclass {
 	@FindBy(xpath = "//a[normalize-space()='click here']")
 	public WebElement mailinatorresetpass;
 
+	@FindBy(xpath = "//a[@rel='nofollow']")
+	public WebElement mailinatorresetpassquotation;
+	
 	@FindBy(xpath = "(//td[contains(.,'Reset your Info-Tech account password')])[1]")
 	public WebElement mailinatorvisiblemail;
 
+	@FindBy(xpath = "//td[normalize-space()='Info-Tech Accounting'][1]")
+	public WebElement mailinatorvisiblemailquotation;
 	
 	@FindBy(xpath = "//td[normalize-space()='just now']")
 	public WebElement Displayemail;

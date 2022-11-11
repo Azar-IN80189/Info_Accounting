@@ -1,4 +1,5 @@
-Feature: Login Feature
+@Logon
+Feature: Info-Accouting Login Feature
 
   Scenario: Get login infoaccounting App
     Given user gives InfoAccounting App URL

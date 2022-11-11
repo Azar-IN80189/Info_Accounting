@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 29, 2022 09:15:03 AM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 11, 2022 02:07:45 PM</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 29, 2022 09:15:03 AM</h3>
+<h3>Nov 11, 2022 02:07:45 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 29, 2022 09:20:10 AM</h3>
+<h3>Nov 11, 2022 02:07:45 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>8</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>8</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>8</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>11</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,9 +148,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>27</b> steps passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='100%'><b>11</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login Feature":13.011,"Profile Update scenario":28.768,"Organization_Details":35.361,"Info-Accouting Tax Rate scenario":26.314,"Info-Accouting Currencies scenario":18.767,"Info-Accouting forgot password":94.754,"Info-Accouting Inventory-Items":53.574,"Info-Accouting Inventory-PriceList scenario":36.186
+"Info-Accouting Chart of Account order scenario":0.2
 };
 </script>
 <div class="row">
@@ -172,52 +177,20 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@TaxRate</td>
-<td>2</td>
+<td>@LoginCredentials</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
-<td>@Currencies</td>
-<td>2</td>
+<td>@Chartofaccount</td>
+<td>0</td>
+<td>12</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@profile</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@PriceList</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@InventoryItems</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Forgotpassword</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -254,19 +227,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 8,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 8,
-failChild: 0,
+passChild: 0,
+failChild: 11,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 27,
-failGrandChild: 0,
+passGrandChild: 0,
+failGrandChild: 11,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
@@ -282,7 +255,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -290,33 +263,34 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@TaxRate</a><a class="dropdown-item" href="#">@Currencies</a><a class="dropdown-item" href="#">@profile</a><a class="dropdown-item" href="#">@PriceList</a><a class="dropdown-item" href="#">@InventoryItems</a><a class="dropdown-item" href="#">@Forgotpassword</a>
+<a class="dropdown-item" href="#">@LoginCredentials</a><a class="dropdown-item" href="#">@Chartofaccount</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
-          tag=""
+          tag="@Chartofaccount"
           device="">
           <div class="test-detail">
-            <p class="name">Login Feature</p>
+            <p class="name">Info-Accouting Chart of Account order scenario</p>
             <p class="text-sm">
-              <span>09:15:03 AM</span> / <span>00:00:13:011</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>14:07:45 PM</span> / <span>00:00:00:200</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Login Feature</h5>
-<span class='badge badge-success'>09.29.2022 09:15:03</span>
-<span class='badge badge-danger'>09.29.2022 09:15:16</span>
-<span class='badge badge-default'>00:00:13:011</span>
+<h5 class="test-status text-fail">Info-Accouting Chart of Account order scenario</h5>
+<span class='badge badge-success'>11.11.2022 14:07:45</span>
+<span class='badge badge-danger'>11.11.2022 14:07:45</span>
+<span class='badge badge-default'>00:00:00:200</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@Chartofaccount</span></div>
 <div class="m-t-10 m-l-5"></div>
 </div>
 </div>
@@ -324,423 +298,264 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Get login infoaccounting App</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Chart of account add account  with is payment scenario/Revenue</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Login.user_gives_info_accounting_app_url()">
-                <span>Given user gives InfoAccounting App URL</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario()">
+                <span>Given User need to navigate to add account scenario</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Login.user_gives_credentials_for_info_accounting_login()">
-                <span>When User gives Credentials for InfoAccounting login</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Login.user_submit_the_button()">
-                <span>And User submit the button</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario(Accounting_ChartOfAccount.java:23)
+	at ✽.User need to navigate to add account scenario(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:6)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="6"
-          author=""
-          tag="@profile"
-          device="">
-          <div class="test-detail">
-            <p class="name">Profile Update scenario</p>
-            <p class="text-sm">
-              <span>09:15:16 AM</span> / <span>00:00:28:768</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Profile Update scenario</h5>
-<span class='badge badge-success'>09.29.2022 09:15:16</span>
-<span class='badge badge-danger'>09.29.2022 09:15:45</span>
-<span class='badge badge-default'>00:00:28:768</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@profile</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Update user information details</div>
+        <div class="node" id="4"><span class="badge log fail-bg mr-2">Fail</span>Verify whether the added account shows in Revenue page</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Profile.give_all_information()">
-                <span>Given Give all information</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_revenue_page_account()">
+                <span>Given User need to verify Revenue page account</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Profile.save_the_information()">
-                <span>When save the information</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_revenue_page_account(Accounting_ChartOfAccount.java:82)
+	at ✽.User need to verify Revenue page account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:9)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="10"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Organization_Details</p>
-            <p class="text-sm">
-              <span>09:15:45 AM</span> / <span>00:00:35:361</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Organization_Details</h5>
-<span class='badge badge-success'>09.29.2022 09:15:45</span>
-<span class='badge badge-danger'>09.29.2022 09:16:20</span>
-<span class='badge badge-default'>00:00:35:361</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Details organaization</div>
+        <div class="node" id="6"><span class="badge log fail-bg mr-2">Fail</span>Chart of account add account  with is payment scenario/Expenses</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Details.give_all_details_in_organization_details_screen()">
-                <span>Given Give all details in organization details screen</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_expenses()">
+                <span>Given User need to navigate to add account scenario/Expenses</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Details.save_all_information_or_cancel_it()">
-                <span>When Save all information or cancel it</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_expenses(Accounting_ChartOfAccount.java:110)
+	at ✽.User need to navigate to add account scenario/Expenses(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:12)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="14"
-          author=""
-          tag="@TaxRate"
-          device="">
-          <div class="test-detail">
-            <p class="name">Info-Accouting Tax Rate scenario</p>
-            <p class="text-sm">
-              <span>09:16:20 AM</span> / <span>00:00:26:314</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Info-Accouting Tax Rate scenario</h5>
-<span class='badge badge-success'>09.29.2022 09:16:20</span>
-<span class='badge badge-danger'>09.29.2022 09:16:47</span>
-<span class='badge badge-default'>00:00:26:314</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@TaxRate</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Tax Rate scenario</div>
+        <div class="node" id="8"><span class="badge log fail-bg mr-2">Fail</span>Verify whether the added account shows in Expenses page</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_login_navigate_to_tax_rates_section()">
-                <span>Given User need to Login & navigate to tax rates section</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_expenses_page_account()">
+                <span>Given User need to verify Expenses page account</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_create_a_tax_rate()">
-                <span>And User need to create a tax rate</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_edit_the_tax_rate()">
-                <span>Then User need to edit the tax rate</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Tax_Rate.user_need_to_delete_the_tax_rate()">
-                <span>Then User need to Delete the tax rate</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_expenses_page_account(Accounting_ChartOfAccount.java:223)
+	at ✽.User need to verify Expenses page account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:15)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="20"
-          author=""
-          tag="@Currencies"
-          device="">
-          <div class="test-detail">
-            <p class="name">Info-Accouting Currencies scenario</p>
-            <p class="text-sm">
-              <span>09:16:47 AM</span> / <span>00:00:18:767</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Info-Accouting Currencies scenario</h5>
-<span class='badge badge-success'>09.29.2022 09:16:47</span>
-<span class='badge badge-danger'>09.29.2022 09:17:05</span>
-<span class='badge badge-default'>00:00:18:767</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@Currencies</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Currencies scenario</div>
+        <div class="node" id="10"><span class="badge log fail-bg mr-2">Fail</span>Chart of account add account  with is payment scenario/Assets</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_navigate_to_currencie_section()">
-                <span>Given User need to navigate to Currencie section</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_assets()">
+                <span>Given User need to navigate to add account scenario/Assets</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_add_a_currency()">
-                <span>And User need to Add a currency</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Org_Currencies.user_need_to_edit_the_currencies()">
-                <span>Then User need to edit the currencies</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_assets(Accounting_ChartOfAccount.java:246)
+	at ✽.User need to navigate to add account scenario/Assets(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:18)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="25"
-          author=""
-          tag="@Forgotpassword"
-          device="">
-          <div class="test-detail">
-            <p class="name">Info-Accouting forgot password</p>
-            <p class="text-sm">
-              <span>09:17:05 AM</span> / <span>00:01:34:754</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Info-Accouting forgot password</h5>
-<span class='badge badge-success'>09.29.2022 09:17:05</span>
-<span class='badge badge-danger'>09.29.2022 09:18:40</span>
-<span class='badge badge-default'>00:01:34:754</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@Forgotpassword</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>Forgot password scenario</div>
+        <div class="node" id="12"><span class="badge log fail-bg mr-2">Fail</span>Verify whether the added account shows in Assets page</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_trigger_the_forgot_password_link()">
-                <span>Given User need to trigger the forgot password link</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_assets_page_account()">
+                <span>Given User need to verify Assets page account</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_reset_the_password()">
-                <span>Given User need to Reset the password</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Forgot_Password.user_need_to_login_using_resetted_password()">
-                <span>Then User need to login using resetted password</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_assets_page_account(Accounting_ChartOfAccount.java:355)
+	at ✽.User need to verify Assets page account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:21)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="30"
-          author=""
-          tag="@InventoryItems"
-          device="">
-          <div class="test-detail">
-            <p class="name">Info-Accouting Inventory-Items</p>
-            <p class="text-sm">
-              <span>09:18:40 AM</span> / <span>00:00:53:574</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Info-Accouting Inventory-Items</h5>
-<span class='badge badge-success'>09.29.2022 09:18:40</span>
-<span class='badge badge-danger'>09.29.2022 09:19:34</span>
-<span class='badge badge-default'>00:00:53:574</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@InventoryItems</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Inventory-Items scenario</div>
+        <div class="node" id="14"><span class="badge log fail-bg mr-2">Fail</span>Chart of account add account  with is payment scenario/Liability</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_navigate_to_item_slide()">
-                <span>Given User need to navigate to Item slide</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_liability()">
+                <span>Given User need to navigate to add account scenario/Liability</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_item()">
-                <span>And User need to Add an item</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_service_item()">
-                <span>Then User need to add an service item</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_add_an_product_group()">
-                <span>And User need to add an product group</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_manage_an_item()">
-                <span>And User need to Manage an item</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_manage_a_unit_type()">
-                <span>Then User need to Manage a unit type</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Items.user_need_to_verify_the_headers()">
-                <span>Then User need to verify the headers</span>
-      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_liability(Accounting_ChartOfAccount.java:378)
+	at ✽.User need to navigate to add account scenario/Liability(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:24)
+</textarea>
+      
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="39"
-          author=""
-          tag="@PriceList"
-          device="">
-          <div class="test-detail">
-            <p class="name">Info-Accouting Inventory-PriceList scenario</p>
-            <p class="text-sm">
-              <span>09:19:34 AM</span> / <span>00:00:36:186</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Info-Accouting Inventory-PriceList scenario</h5>
-<span class='badge badge-success'>09.29.2022 09:19:34</span>
-<span class='badge badge-danger'>09.29.2022 09:20:10</span>
-<span class='badge badge-default'>00:00:36:186</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@PriceList</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>Inventory-PriceList scenario</div>
+        <div class="node" id="16"><span class="badge log fail-bg mr-2">Fail</span>Verify whether the added account shows in Liability page</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_navigate_to_pricelist_slide()">
-                <span>Given User need to navigate to Pricelist slide</span>
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_liability_page_account()">
+                <span>Given User need to verify Liability page account</span>
       <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_liability_page_account(Accounting_ChartOfAccount.java:488)
+	at ✽.User need to verify Liability page account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:27)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_add_an_price_list()">
-                <span>Then User need to Add an Price List</span>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="18"><span class="badge log fail-bg mr-2">Fail</span>Chart of account add account  with is payment scenario/Equity</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_equity()">
+                <span>Given User need to navigate to add account scenario/Equity</span>
       <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_navigate_to_add_account_scenario_equity(Accounting_ChartOfAccount.java:510)
+	at ✽.User need to navigate to add account scenario/Equity(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:30)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="info.stepdefinition.Inventory_Pricelist.user_need_to_delete_the_price_list()">
-                <span>And User need to Delete the price List</span>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="20"><span class="badge log fail-bg mr-2">Fail</span>Verify whether the added account shows in Equity page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_equity_page_account()">
+                <span>Given User need to verify Equity page account</span>
       <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_equity_page_account(Accounting_ChartOfAccount.java:620)
+	at ✽.User need to verify Equity page account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:33)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="22"><span class="badge log fail-bg mr-2">Fail</span>Verify added account by making a payment for an invoice</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_added_account()">
+                <span>Then User need to Verify added account</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at info.base.Reusableclass.Explicitwaitvisibility(Reusableclass.java:1153)
+	at info.stepdefinition.Accounting_ChartOfAccount.user_need_to_verify_added_account(Accounting_ChartOfAccount.java:646)
+	at ✽.User need to Verify added account(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/P_Info_Accounting_ChartOfAccounts.feature:36)
+</textarea>
+      
       </div>
               </div>
           </div>
@@ -762,22 +577,22 @@ eventsCount: 5,
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@TaxRate</p>
-<p class="duration text-sm">2 tests</p>
+<p class="name">@LoginCredentials</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@TaxRate</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<h4>@LoginCredentials</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -788,20 +603,13 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:16:20 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='14' id='14'>Info-Accouting Tax Rate scenario</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:16:20 AM</td>
-<td>
-<a href="#" class="linked" test-id='14' id='15'>Tax Rate scenario</a>
+<a href="#" class="linked" test-id='1' id='2'>Chart of account add account with is payment scenario/Revenue</a>
 <div class="">
-<span class="badge badge-default">Info-Accouting Tax Rate scenario.Tax Rate scenario</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Revenue</span>
 </div>
 </td>
 </tr>
@@ -812,15 +620,15 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>12</span>
 </span>
-<p class="name">@Currencies</p>
-<p class="duration text-sm">2 tests</p>
+<p class="name">@Chartofaccount</p>
+<p class="duration text-sm">12 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Currencies</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<h4>@Chartofaccount</h4>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -831,20 +639,120 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:16:47 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='20' id='20'>Info-Accouting Currencies scenario</a>
+<a href="#" class="linked" test-id='1' id='1'>Info-Accouting Chart of Account order scenario</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:16:47 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='20' id='21'>Currencies scenario</a>
+<a href="#" class="linked" test-id='1' id='2'>Chart of account add account with is payment scenario/Revenue</a>
 <div class="">
-<span class="badge badge-default">Info-Accouting Currencies scenario.Currencies scenario</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Revenue</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='4'>Verify whether the added account shows in Revenue page</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Revenue page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>Chart of account add account with is payment scenario/Expenses</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Expenses</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Verify whether the added account shows in Expenses page</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Expenses page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>Chart of account add account with is payment scenario/Assets</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Assets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Verify whether the added account shows in Assets page</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Assets page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='14'>Chart of account add account with is payment scenario/Liability</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Liability</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Verify whether the added account shows in Liability page</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Liability page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='18'>Chart of account add account with is payment scenario/Equity</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Equity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='20'>Verify whether the added account shows in Equity page</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Equity page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='22'>Verify added account by making a payment for an invoice</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify added account by making a payment for an invoice</span>
 </div>
 </td>
 </tr>
@@ -852,18 +760,34 @@ eventsCount: 5,
 </table>
 </div>
 </li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@profile</p>
-<p class="duration text-sm">2 tests</p>
+<p class="name">java.lang.NullPointerException</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@profile</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<h4>java.lang.NullPointerException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -874,149 +798,113 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:15:16 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>Profile Update scenario</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:15:16 AM</td>
-<td>
-<a href="#" class="linked" test-id='6' id='7'>Update user information details</a>
+<a href="#" class="linked" test-id='1' id='3'>Given User need to navigate to add account scenario</a>
 <div class="">
-<span class="badge badge-default">Profile Update scenario.Update user information details</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Revenue.Given User need to navigate to add account scenario</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>2</span>
-</span>
-<p class="name">@PriceList</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@PriceList</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:19:34 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='39' id='39'>Info-Accouting Inventory-PriceList scenario</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:19:34 AM</td>
-<td>
-<a href="#" class="linked" test-id='39' id='40'>Inventory-PriceList scenario</a>
+<a href="#" class="linked" test-id='1' id='5'>Given User need to verify Revenue page account</a>
 <div class="">
-<span class="badge badge-default">Info-Accouting Inventory-PriceList scenario.Inventory-PriceList scenario</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Revenue page.Given User need to verify Revenue page account</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>2</span>
-</span>
-<p class="name">@InventoryItems</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@InventoryItems</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:18:40 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='30' id='30'>Info-Accouting Inventory-Items</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:18:40 AM</td>
-<td>
-<a href="#" class="linked" test-id='30' id='31'>Inventory-Items scenario</a>
+<a href="#" class="linked" test-id='1' id='7'>Given User need to navigate to add account scenario/Expenses</a>
 <div class="">
-<span class="badge badge-default">Info-Accouting Inventory-Items.Inventory-Items scenario</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Expenses.Given User need to navigate to add account scenario/Expenses</span>
 </div>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>2</span>
-</span>
-<p class="name">@Forgotpassword</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Forgotpassword</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:17:05 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='25' id='25'>Info-Accouting forgot password</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:17:05 AM</td>
-<td>
-<a href="#" class="linked" test-id='25' id='26'>Forgot password scenario</a>
+<a href="#" class="linked" test-id='1' id='9'>Given User need to verify Expenses page account</a>
 <div class="">
-<span class="badge badge-default">Info-Accouting forgot password.Forgot password scenario</span>
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Expenses page.Given User need to verify Expenses page account</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Given User need to navigate to add account scenario/Assets</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Assets.Given User need to navigate to add account scenario/Assets</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='13'>Given User need to verify Assets page account</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Assets page.Given User need to verify Assets page account</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>Given User need to navigate to add account scenario/Liability</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Liability.Given User need to navigate to add account scenario/Liability</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Given User need to verify Liability page account</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Liability page.Given User need to verify Liability page account</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='19'>Given User need to navigate to add account scenario/Equity</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Chart of account add account with is payment scenario/Equity.Given User need to navigate to add account scenario/Equity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Given User need to verify Equity page account</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify whether the added account shows in Equity page.Given User need to verify Equity page account</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:07:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Then User need to Verify added account</a>
+<div class="">
+<span class="badge badge-default">Info-Accouting Chart of Account order scenario.Verify added account by making a payment for an invoice.Then User need to Verify added account</span>
 </div>
 </td>
 </tr>
