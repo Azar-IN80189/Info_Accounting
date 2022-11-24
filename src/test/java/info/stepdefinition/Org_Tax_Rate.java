@@ -15,8 +15,8 @@ public class Org_Tax_Rate extends Reusableclass {
 
 	
 
-	@Given("User need to Login & navigate to tax rates section")
-	public void user_need_to_login_navigate_to_tax_rates_section() throws InterruptedException, AWTException {
+	@Given("User need to navigate tax rates section")
+	public void user_need_to_navigate_tax_rates_section() throws InterruptedException, AWTException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 	
@@ -36,8 +36,8 @@ public class Org_Tax_Rate extends Reusableclass {
 
 	}
 
-	@And	("User need to create a tax rate")
-	public void user_need_to_create_a_tax_rate() throws InterruptedException, AWTException {
+	@And("User need to create a new tax rate")
+	public void user_need_to_create_a_new_tax_rate() throws InterruptedException, AWTException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 
@@ -78,8 +78,8 @@ public class Org_Tax_Rate extends Reusableclass {
 	}
 
 
-	@Then("User need to edit the tax rate")
-	public void user_need_to_edit_the_tax_rate() throws InterruptedException {
+	@Given("User need to edit the tax rate and save the edited tax rate")
+	public void user_need_to_edit_the_tax_rate_and_save_the_edited_tax_rate() throws InterruptedException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		Explicitwaitvisibility(t.Searchboxtax);
@@ -99,8 +99,8 @@ public class Org_Tax_Rate extends Reusableclass {
 	}
 
 
-	@Then("User need to Delete the tax rate")
-	public void user_need_to_delete_the_tax_rate() throws InterruptedException, AWTException {
+	@Given("User need to Delete the tax rate which is newly created")
+	public void user_need_to_delete_the_tax_rate_which_is_newly_created() throws InterruptedException, AWTException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		

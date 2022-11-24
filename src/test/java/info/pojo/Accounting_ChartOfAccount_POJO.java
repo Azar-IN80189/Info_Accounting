@@ -13,7 +13,54 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 			PageFactory.initElements(driver, this);
 
 		}
+		@FindBy(xpath = "//a[contains(.,'calculate Accounting')]")
+		public WebElement Accounting;
 		
+		@FindBy(xpath="//a[text()='Chart of Accounts ']")
+		public WebElement chartofaccounts;
+		
+		@FindBy(xpath="//a[text()=' Add Cash Account ']")
+		public WebElement addcashaccountaccount;
+
+		@FindBy(xpath="//a[text()=' Banking']")
+		public WebElement Banking;
+		
+		@FindBy(xpath="//a[contains(text(),'Banking Accounts ')]")
+		public WebElement Bankingaccounts;
+		
+		@FindBy(xpath="//a[contains(text(),' Add Cash Account ')]")
+		public WebElement Addcashaccountbank;
+		
+		@FindBy(xpath="//input[@formcontrolname='accountName']")
+		public WebElement accountnamechart;
+		
+		@FindBy(xpath="(//input[contains(@type,'text')])[3]")
+		public WebElement accountnamebanking;
+		
+		@FindBy(xpath="//a[contains(.,'add Add Bank Account')]")
+		public WebElement Addbankaccount;
+		
+		@FindBy(xpath="//input[contains(@aria-autocomplete,'list')]")
+		public WebElement selectbankone;
+		
+		@FindBy(xpath="//span[contains(text(),'Indian Bank (Foreign Bank) [Singapore] ')]")
+		public WebElement bankname;
+		
+		@FindBy(xpath="(//input[contains(@type,'text')])[3]")
+		public WebElement acnameaccounting;
+		
+		@FindBy(xpath="//a[contains(.,'add Add Bank Account')]")
+		public WebElement addbankaccountbanking;
+		
+		@FindBy(xpath="//input[contains(@placeholder,'Search your bank...')]")
+		public WebElement selectbanktwo;
+		
+		@FindBy(xpath="//span[contains(text(),'Indian Bank (Foreign Bank) [Singapore] ')]")
+		public WebElement banknameinbanking;
+		
+		@FindBy(xpath="(//input[contains(@type,'text')])[3]")
+		public WebElement acnamebankingtwo;
+
 		@FindBy(xpath = "//a[contains(.,'calculate Accounting')]")
 		public WebElement Accountingslide;
 		
@@ -61,6 +108,21 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 		@FindBy(xpath = "//input[@id='search-box']")
 		public WebElement Searchbox_COA;
 		
+		@FindBy(xpath = "//div[@tabindex='-1'][contains(.,'AutoAccount11')]")
+		public WebElement Selecteditrevenge_COA;
+		
+		@FindBy(xpath = "//div[@tabindex='-1'][contains(.,'AutoAccount22')]")
+		public WebElement Selecteditexpenses_COA;
+		
+		@FindBy(xpath = "//div[@tabindex='-1'][contains(.,'AutoAccount33')]")
+		public WebElement Selecteditassert_COA;
+		
+		@FindBy(xpath = "//div[@tabindex='-1'][contains(.,'AutoAccount44')]")
+		public WebElement Selecteditliability_COA;
+		
+		@FindBy(xpath = "//div[@tabindex='-1'][contains(.,'AutoAccount55')]")
+		public WebElement SelecteditEquity_COA;
+		
 		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		public WebElement RevenueChkbox_COA;
 		
@@ -75,6 +137,24 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 		
 		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		public WebElement EquityChkbox_COA;
+		
+		@FindBy(xpath = "(//button[@type='button'])[8]")
+		public WebElement EquityExpandoption_COA;
+		
+		@FindBy(xpath = "//a[contains(.,'Change Tax Rate')]")
+		public WebElement Changetax_COA;
+		
+		@FindBy(xpath = "(//input[@type='text'])[5]")
+		public WebElement Changetaxtype_COA;
+		
+		@FindBy(xpath = "(//button[contains(.,'Save')])[1]")
+		public WebElement Savebtnchangetax_COA;
+		
+		@FindBy(xpath = "(//a[contains(.,'Archive')])[2]")
+		public WebElement Archieveoption_COA;
+		
+		@FindBy(xpath = "//button[contains(.,'Archive')]")
+		public WebElement Archieveoptionselect_COA;
 		
 		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 		public WebElement ArchieveChkbox_COA;
@@ -103,10 +183,11 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 		@FindBy(xpath = "(//a[@role='tab'])[6]")
 		public WebElement EquityTab_COA;
 		
-		@FindBy(xpath = "(//a[@role='tab'])[6]")
+		@FindBy(xpath = "//a[contains(.,'Archive')]")
 		public WebElement ArchieveTab_COA;
 		
-		
+		@FindBy(xpath = "//a[contains(.,'Restore')]")
+		public WebElement Restoreselect_COA;
 		
 		
 		//Add to payment

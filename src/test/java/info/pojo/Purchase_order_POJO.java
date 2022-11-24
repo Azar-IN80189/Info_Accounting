@@ -9,11 +9,13 @@ import com.paulhammant.ngwebdriver.ByAngularButtonText;
 import info.base.Reusableclass;
 
 public class Purchase_order_POJO extends Reusableclass{
+	
 	public Purchase_order_POJO() {
 
 		PageFactory.initElements(driver, this);
 
 	}
+	
 	@FindBy(xpath = "//a[contains(.,'shopping_bag Purchase')]")
 	public WebElement PurchaseMenu;
 	

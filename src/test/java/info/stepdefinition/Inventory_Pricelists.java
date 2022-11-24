@@ -40,7 +40,7 @@ public class Inventory_Pricelists extends Reusableclass{
 			toenter();
 			Thread.sleep(2000);
 			highLightElement(n.EffectiveFrom);
-			tofill(n.EffectiveFrom, "10/11/2022");
+			tofill(n.EffectiveFrom, "17/11/2022");
 			highLightElement(n.EffectiveTo);
 			tofill(n.EffectiveTo, "27/11/2022");
 			Thread.sleep(3000);
@@ -143,7 +143,7 @@ public void user_need_to_add_an_sales_price_list() throws InterruptedException, 
 	toenter();
 	Thread.sleep(2000);
 	highLightElement(n.EffectiveFrom);
-	tofill(n.EffectiveFrom, "10/11/2022");
+	tofill(n.EffectiveFrom, "17/11/2022");
 	highLightElement(n.EffectiveTo);
 	tofill(n.EffectiveTo, "27/11/2022");
 	Thread.sleep(3000);

@@ -1,6 +1,6 @@
 @InventoryItems
 Feature: Info-Accouting Inventory-Items
-
+@Login
   Scenario: Adding an Item in inventory
     Given User need to navigate to Item slide
     And User need to Add an item

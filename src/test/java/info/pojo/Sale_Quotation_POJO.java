@@ -51,8 +51,14 @@ public class Sale_Quotation_POJO extends Reusableclass
 
 	@FindBy(xpath = "(//input[@type='text'])[10]")
 	public WebElement ThemeDD;
+	
+	@FindBy(xpath = "//button[contains(text(),' Accept ')]")
+	public WebElement Accept;
+	
+	@FindBy(xpath = "//button[contains(text(),' Decline ')]")
+	public WebElement Decline;
 
-	@FindBy(xpath = "//*[@id=\"cdk-drop-list-0\"]/tr[1]/td[2]")
+	@FindBy(xpath = "//tbody/tr[1]/td[2]")
 	public WebElement Items1;
 
 	@FindBy(xpath = "(//div[@aria-haspopup='listbox'])[6]")
@@ -157,7 +163,7 @@ public class Sale_Quotation_POJO extends Reusableclass
 	@FindBy(xpath = "(//a[@role='tab'])[3]")
 	public WebElement Awaitingapprovaltab;
 
-	@FindBy(xpath = "(//input[contains(@type,'checkbox')])[1]")
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 	public WebElement Awaitingapprovalchkbox;
 
 	@FindBy(xpath = "//span[contains(.,'done')]")
@@ -168,9 +174,33 @@ public class Sale_Quotation_POJO extends Reusableclass
 
 	@FindBy(xpath = "(//a[@role='tab'])[4]")
 	public WebElement approvedtab;
+	
+	@FindBy(xpath = "//button[contains(.,'Mark as invoiced')]")
+	public WebElement Markasinvoicedbtn;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	public WebElement Accepttabchkbox;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	public WebElement Accepttabchkbox2;
 
+	@FindBy(xpath = "//button[contains(.,'Ok')]")
+	public WebElement Acceptedtab_Okbtn;
+	
+	@FindBy(xpath = "(//a[@role='tab'])[8]")
+	public WebElement Invoicedtab;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[8]")
+	public WebElement chkbox_Invoicetab;
+	
+	@FindBy(xpath = "//button[contains(.,'clearDelete')]")
+	public WebElement Deletebtn_Invoicetab;
+	
 	@FindBy(xpath = "//button[contains(.,'Decline')]")
 	public WebElement declineapprovedtab;
+	
+	@FindBy(xpath = "//button[contains(.,'Accept')]")
+	public WebElement approveapprovedtab;
 
 	@FindBy(xpath = "(//a[@role='tab'])[6]")
 	public WebElement declinetab;
@@ -180,6 +210,12 @@ public class Sale_Quotation_POJO extends Reusableclass
 
 	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 	public WebElement approvedchkbox;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[8]")
+	public WebElement approvedtaballchkbox;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[9]")
+	public WebElement acceptedchkbox;
 
 	@FindBy(xpath = "//button[contains(.,'clearDelete')]")
 	public WebElement deletebtnapprovedtab;
@@ -198,6 +234,15 @@ public class Sale_Quotation_POJO extends Reusableclass
 
 	@FindBy(xpath = "(//form[@novalidate='novalidate'])[3]")
 	public WebElement Emailenterapprovertab;
+	
+	@FindBy(xpath = "(//a[@role='tab'])[7]")
+	public WebElement Acceptedtab_Q;
+	
+	@FindBy(xpath = "(//a[@role='tab'])[6]")
+	public WebElement Declinedtab_Q;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	public WebElement Checkallapproved_tab_Q;
 
 	@FindBy(xpath = "//input[@name='mail']")
 	public WebElement mailapprovertab;

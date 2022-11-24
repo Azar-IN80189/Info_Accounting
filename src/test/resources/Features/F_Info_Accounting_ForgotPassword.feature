@@ -8,7 +8,7 @@ Feature: Info-Accouting forgot password
     Given User need to Reset the password by navigating to mailinator page
 
   Scenario: Navigating inside using reset credentials
-    Then User need to login using resetted password
+    Given User need to login using resetted password
 
   Scenario: Log back in as a existing user
-    And User need to login as existing user
+    Given User need to login as existing user

@@ -24,7 +24,7 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath = "//input[contains(@formcontrolname,'BillDate')]")
 	public WebElement billdate;
 	
-	@FindBy(xpath = "//input[contains(@formcontrolname,'BillDueDate')]")
+	@FindBy(xpath = "(//input[@placeholder='dd/mm/yyyy'])[2]")
 	public WebElement duedate;
 	
 	@FindBy(xpath = "//input[contains(@id,'PermitNo')]")
@@ -69,7 +69,7 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath="(//li[@role='menuitem'])[1]")
 	public WebElement saveasdraft;
 
-	@FindBy(xpath = "(//a[@class='dropdown-item ng-star-inserted'])[2]")
+	@FindBy(xpath = "//a[contains(text(),'Save & submit for approval')]")
 	public WebElement saveforapproval;
 		
 	@FindBy(xpath = "//a[@href='#bill_draft']")
@@ -90,7 +90,7 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath="//button[text()='OK']")
 	public WebElement ok;
 	
-	@FindBy(xpath = "(//div[contains(@tabindex,'-1')])[11]")
+	@FindBy(xpath = "(//div[contains(@unselectable,'on')])[37]")
 	public WebElement draftsitem;
 	
 	@FindBy(xpath = "//a[contains(text(),'Approval ')]")
@@ -108,7 +108,7 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath="(//button[@type='button'][contains(.,'Split button!')])[3]")
 	public WebElement approvearrow;
 	
-	@FindBy(xpath="//a[text()='Approve']")
+	@FindBy(xpath="//button[contains(text(),'Approve')]")
 	public WebElement approve;
 	
 	@FindBy(xpath="//input[@id='PayAmount']")
@@ -129,10 +129,22 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath="//a[contains(text(),'Paid ')]")
 	public WebElement paid;
 	
+	@FindBy(xpath = "(//button[contains(@type,'button')])[5]")
+	public WebElement options;
 	
+	@FindBy(xpath="//a[contains(text(),'Edit')]")
+	public WebElement edit;
 	
+	@FindBy(xpath="//a[contains(text(),'Void')]")
+	public WebElement voiddelete;
+
+	@FindBy(xpath="//button[contains(text(),'Yes')]")
+	public WebElement yes;
 	
+	@FindBy(xpath="//a[contains(text(),'Copy')]")
+	public WebElement copy;
 	
-	
+	@FindBy(xpath="//a[contains(text(),'Add Credit Note')]")
+	public WebElement Addcreditnote;
 
 }

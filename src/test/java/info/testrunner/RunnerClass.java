@@ -10,14 +10,21 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions
 (plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 			"timeline:test-output-thread/","rerun:target/failedrun.txt"},tags=("@Chartofaccount"),
-			features={"src/test/resources/Features"},glue= {"info.stepdefinition"},monochrome=true,dryRun=false	)
+			features={"src/test/resources/Features"},glue= {"info.stepdefinition"},monochrome=false,dryRun=false
+			)
 			
 public class RunnerClass {	  
 		
 		
 	
-	}			
+	}				
+
+
+
+
+
 		
+
 
 		
 		

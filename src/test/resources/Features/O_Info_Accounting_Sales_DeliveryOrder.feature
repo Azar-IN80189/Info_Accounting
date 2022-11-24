@@ -3,23 +3,23 @@
 Feature: Info-Accouting Sales-Delivery order scenario
 
   Scenario: Sales Approved-Delivery order scenario
-    Given User need to navigate to Delivery order scenario
+    Given User need to navigate to Delivery order page
     Then User need to Approve a Delivery order
 
   Scenario: Sending an approved delivery order
     Then User need to send approved delivery order
 
   Scenario: copying an delivery order
-    Then User need to copy as quote-In Delivery order page
+    Then User need to copy as quote in delivery order page
 
   Scenario: mark as packed in delivery order
-    Then User need to mark as packed
+    Then User need to mark as packed in delivery order page
 
   Scenario: mark as delivered in delivery order
-    Then User need to mark as delivered
+    Then User need to mark as delivered in delivery order page
 
   Scenario: mark as Invoiced in delivery order
-    Then User need to mark as Invoiced
+    Then User need to mark as Invoiced 
 
   Scenario: marking the order as void in delivery order
     Then User need to void the delivery order

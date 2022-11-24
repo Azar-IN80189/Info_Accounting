@@ -3,19 +3,18 @@ package info.stepdefinition;
 import java.awt.AWTException;
 
 import info.base.Reusableclass;
-import info.pojo.AccountLoginpojo;
+import info.pojo.Account_Login_POJO;
 import info.pojo.Profileupdatepojo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 
 public class Profile extends Reusableclass {
 
 	public static Profileupdatepojo p;
-	public static AccountLoginpojo a;
+	public static Account_Login_POJO a;
 
-	@Given("Give all information")
-	public void give_all_information() throws InterruptedException, AWTException {
+	@Given("User needs to give all the information like - Basic Information, Contact Details , Preferences..Etc")
+	public void user_needs_to_give_all_the_information_like_basic_information_contact_details_preferences_etc()  throws InterruptedException, AWTException {
 
 		p = new Profileupdatepojo();
 
@@ -48,7 +47,7 @@ public class Profile extends Reusableclass {
 		Thread.sleep(1000);
 		highLightElement(p.dob);
 		Toclear(p.dob);
-		tofill(p.dob, "03/11/2022");
+		tofill(p.dob, "17/11/2000");
 
 		implicitwait();
 		actionssendkeysdelete(p.bio);
@@ -86,8 +85,8 @@ public class Profile extends Reusableclass {
 		Thread.sleep(1000);
 	}
 
-	@And("save the information")
-	public void save_the_information() throws InterruptedException {
+	@And("User needs to update\\/save basic information")
+	public void user_needs_to_update_save_basic_information() throws InterruptedException {
 
 		p = new Profileupdatepojo();
 
@@ -99,8 +98,9 @@ public class Profile extends Reusableclass {
 
 	}
 
-	@Given("Give current new and confirm password")
-	public void give_current_new_and_confirm_password() throws InterruptedException {
+
+	@Given("User need to give credentials to change the password - current password, new password and confirm password..Etc")
+	public void user_need_to_give_credentials_to_change_the_password_current_password_new_password_and_confirm_password_etc() throws InterruptedException {
 
 		p = new Profileupdatepojo();
 
@@ -109,29 +109,29 @@ public class Profile extends Reusableclass {
 		toClick(p.chngpwd);
 
 		highLightElement(p.crntpwd);
-		tofill(p.crntpwd, "Info@903");
+		tofill(p.crntpwd, "Info@906");
 
 		Thread.sleep(1000);
 
 		highLightElement(p.Newpwd);
-		tofill(p.Newpwd, "Info@904");
+		tofill(p.Newpwd, "Info@907");
 
 		Thread.sleep(1000);
 
 		highLightElement(p.cnfrmpwd);
-		tofill(p.cnfrmpwd, "Info@904");
+		tofill(p.cnfrmpwd, "Info@907");
 
 	}
 
-	@When("save new password and login using new password")
-	public void save_new_password_and_login_using_new_password() throws InterruptedException {
-		
+	@And("User need to save the newly changed password and login with new password with the same user")
+	public void user_need_to_save_the_newly_changed_password_and_login_with_new_password_with_the_same_user()throws InterruptedException {
+
 		p = new Profileupdatepojo();
 
 		highLightElement(p.savenewpwd);
 		toClick(p.savenewpwd);
 
-		a = new AccountLoginpojo();
+		a = new Account_Login_POJO();
 		Thread.sleep(3000);
 		tomovethecursor(a.username);
 		Thread.sleep(1000);
@@ -144,12 +144,12 @@ public class Profile extends Reusableclass {
 		toClick(a.password);
 		Thread.sleep(1000);
 		highLightElement(a.password);
-		tofill(a.password, "Info@904");
+		tofill(a.password, "Info@907");
 		Thread.sleep(1000);
 		highLightElement(a.submit);
 		toClick(a.submit);
 
-		System.out.println("Logged in with new password");
+		System.out.println("Login with new password");
 
 	}
 

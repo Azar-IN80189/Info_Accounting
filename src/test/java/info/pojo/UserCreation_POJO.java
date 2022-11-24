@@ -81,6 +81,9 @@ public class UserCreation_POJO extends Reusableclass {
 
 	@FindBy(xpath = "(//iframe[@title='HTML Email Message Body'])[1]")
 	public WebElement frames;
+	
+	@FindBy(xpath = "//iframe[@id='html_msg_body']")
+	public WebElement framestxtbody;
 
 	@FindBy(xpath = "//a[normalize-space()='click here']")
 	public WebElement mailinatorresetpass;

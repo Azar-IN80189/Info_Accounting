@@ -14,8 +14,8 @@ import io.cucumber.java.en.Then;
 public class Sales_DeliveryOrder extends Reusableclass{
 	public static Sales_DeliveryOrder_POJO s;
 	public static SoftAssert softAssert = new SoftAssert();
-	@Given("User need to navigate to Delivery order scenario")
-	public void user_need_to_navigate_to_delivery_order_scenario() {
+	@Given("User need to navigate to Delivery order page")
+	public void user_need_to_navigate_to_delivery_order_page() {
 		s=new Sales_DeliveryOrder_POJO();
 		Explicitwaitvisibility(s.Salesslide);
 		clickjavascript(s.Salesslide);
@@ -40,7 +40,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		//Thread.sleep(1000);
 		//totabkey();
 		//Delete();
-		tofill(s.Date, "10/11/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -86,7 +86,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(5000);
 	}
 
-	@Then("User need to copy as quote-In Delivery order page")
+	@Then("User need to copy as quote in delivery order page")
 	public void user_need_to_copy_as_quote_in_delivery_order_page() {
 
 		s=new Sales_DeliveryOrder_POJO();
@@ -108,8 +108,8 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Selectcheckbox(s.createdraftbtnapprovedtab);
 
 	}
-	@Then("User need to mark as packed")
-	public void user_need_to_mark_as_packed() throws InterruptedException {
+	@Then("User need to mark as packed in delivery order page")
+	public void user_need_to_mark_as_packed_in_delivery_order_page() throws InterruptedException {
 		s=new Sales_DeliveryOrder_POJO();
 		Thread.sleep(2000);
 
@@ -119,8 +119,8 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Explicitwaitvisibility(s.OkbtnMarkaspackedbtnapprovedtab);
 		clickjavascript(s.OkbtnMarkaspackedbtnapprovedtab);
 	}
-	@Then("User need to mark as delivered")
-	public void user_need_to_mark_as_delivered() throws InterruptedException {
+	@Then("User need to mark as delivered in delivery order page")
+	public void user_need_to_mark_as_delivered_in_delivery_order_page() throws InterruptedException {
 		s=new Sales_DeliveryOrder_POJO();
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.packedtab);
@@ -174,7 +174,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "10/11/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -326,7 +326,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "10/11/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -359,7 +359,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "28/10/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -554,7 +554,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "10/11/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -588,7 +588,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "10/11/2022");
+		tofill(s.Date, "17/11/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");

@@ -4,7 +4,7 @@ import java.awt.AWTException;
 
 import org.openqa.selenium.By;
 import info.base.Reusableclass;
-import info.pojo.AccountLoginpojo;
+import info.pojo.Account_Login_POJO;
 import info.pojo.Sales_Invoice_POJO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,22 +13,12 @@ import io.cucumber.java.en.Then;
 public class Sales_Invoice extends Reusableclass {
 
 	public static Sales_Invoice_POJO i;
-	public static AccountLoginpojo a;
+	public static Account_Login_POJO a;
 
-	@Given("User need to navigate to Invoice slide")
-	public void user_need_to_navigate_to_invoice_slide() throws InterruptedException {
+	@Given("User needs to navigate to Invoice slide")
+	public void user_needs_to_navigate_to_invoice_slide() throws InterruptedException {
 
-		/*browserLaunch();
-		launchUrl("https://staging.infotech-accounting.com/login");
-		toMaximize();
-		a = new AccountLoginpojo();
-
-		toClick(a.username);
-		tofill(a.username, "azarudeenn@info-tech.co.in");
-		toClick(a.password);
-		tofill(a.password, "Info@900");
-		toClick(a.submit);*/
-
+		
 		i = new Sales_Invoice_POJO();
 
 		Thread.sleep(1000);
@@ -41,8 +31,8 @@ public class Sales_Invoice extends Reusableclass {
 
 	}
 
-	@Then("User need to Approve a Invoice")
-	public void user_need_to_approve_a_invoice() throws AWTException, InterruptedException {
+	@Then("User needs to Approve a Invoice")
+	public void user_needs_to_approve_a_invoice() throws AWTException, InterruptedException {
 
 		i = new Sales_Invoice_POJO();
 
@@ -51,9 +41,7 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(1000);
 		clickjavascript(i.Newinvoicebtn);
 
-		Explicitwaitvisibility(i.ChoosecustomerDD);
-		tofill(i.ChoosecustomerDD, "Automation");
-		Thread.sleep(1000);
+		tofill(i.ChoosecustomerDD, "ft101");
 		// tomovethecursor(i.savecontact);
 		// Thread.sleep(1000);
 		// toClick(i.savecontact);
@@ -61,7 +49,7 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(2000);
 
 		Explicitwaitvisibility(i.InvoiceDate);
-		tofill(i.InvoiceDate, "19/09/2022");
+		tofill(i.InvoiceDate, "19/12/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
@@ -71,7 +59,7 @@ public class Sales_Invoice extends Reusableclass {
 		totabkey();
 		Thread.sleep(1000);
 
-		tofill(i.InvoiceNo, "Invoice0532366767");
+		tofill(i.InvoiceNo, "Invoice57657");
 
 		Thread.sleep(1000);
 		tofill(i.ReferenceDateInvoice, "Sales");
@@ -115,12 +103,13 @@ public class Sales_Invoice extends Reusableclass {
 		toClick(i.ApproveBtn);
 		Thread.sleep(5000);
 		toenter();
+	}
 
-		Thread.sleep(5000);
-		Explicitwaitvisibility(i.SendBtn);
+	@Given("User needs to check send invoice scenario")
+	public void user_needs_to_check_send_invoice_scenario() throws InterruptedException {
+
+		Thread.sleep(2000);
 		clickjavascript(i.SendBtn);
-		Thread.sleep(1000);
-		Explicitwaitvisibility(i.Mailto);
 		Thread.sleep(1000);
 		tofill(i.Mailto, "testemailquotation@mailinator.com");
 		Thread.sleep(2000);
@@ -131,8 +120,20 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(4000);
 	}
 
-	@And("User need to Save a Invoice")
-	public void user_need_to_save_a_invoice() throws InterruptedException, AWTException {
+	@Given("User needs to give new invoice details- To,Date,Invoiceno,etc..")
+	public void user_needs_to_give_new_invoice_details_to_date_invoiceno_etc()
+			throws InterruptedException, AWTException {
+		
+		i = new Sales_Invoice_POJO();
+
+		Thread.sleep(1000);
+		Explicitwaitvisibility(i.Salesslide);
+		tomovethecursor(i.Salesslide);
+		toClick(i.Salesslide);
+		Explicitwaitvisibility(i.Invoiceslide);
+		tomovethecursor(i.Invoiceslide);
+		toClick(i.Invoiceslide);
+
 
 		i = new Sales_Invoice_POJO();
 
@@ -147,15 +148,15 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
-		tofill(i.InvoiceDate, "10/11/2022");
+		tofill(i.InvoiceDate, "10/12/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
 		Thread.sleep(2000);
-		tofill(i.DueDate, "30/11/2022");
+		tofill(i.DueDate, "30/12/2022");
 		totabkey();
 		Thread.sleep(1000);
-		tofill(i.InvoiceNo, "Invoice053236643111");
+		tofill(i.InvoiceNo, "Invoice90846325");
 		tofill(i.ReferenceDateInvoice, "Sales");
 		Thread.sleep(1000);
 		actionssendkeysdelete(i.CurrencyInvoiceDD);
@@ -178,6 +179,10 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(3000);
 		// ScrolldownElement(i.DeliveryInstructionstxt);
 		// tofill(i.DeliveryInstructionstxt, "Testdeliveryinstruction");
+	}
+
+	@Given("User needs to save the new invoice details")
+	public void user_needs_to_save_the_new_invoice_details() throws InterruptedException {
 
 		ScrolldownElement(i.savearrow);
 
@@ -189,6 +194,8 @@ public class Sales_Invoice extends Reusableclass {
 		toClick(i.saveasdraft);
 		Thread.sleep(1000);
 		toClick(i.ok);
+		
+		Thread.sleep(3000);
 
 	}
 
@@ -200,26 +207,35 @@ public class Sales_Invoice extends Reusableclass {
 
 		Explicitwaitvisibility(i.draft);
 		tomovethecursor(i.draft);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		toClick(i.draft);
-
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
 
+		Thread.sleep(2000);
+		
+		tomovethecursor(i.DueDate);
 		Thread.sleep(1000);
+		tofill(i.DueDate, "30/11/2022");
+		Thread.sleep(1000);
+		toenter();
 
 		/*
 		 * ScrolldownElement(i.Addnewlinesbtn); Thread.sleep(1000);
 		 * toClick(i.Addnewlinesbtn);
 		 */
 
-		Thread.sleep(3000);
+		/*Thread.sleep(3000);
 		Explicitwaitvisibility(i.items2table);
+		tomovethecursor(i.items2table);
 		clickjavascript(i.items2table);
+		Thread.sleep(1000);
+		
 		Thread.sleep(1000);
 
 		tofill(i.items1tabletxt, "Acc group");
 		toenter();
-		Thread.sleep(3000);
+		Thread.sleep(3000);*/
 
 		ScrolldownElement(i.savearrow);
 
@@ -240,41 +256,42 @@ public class Sales_Invoice extends Reusableclass {
 		i = new Sales_Invoice_POJO();
 		Explicitwaitvisibility(i.awaintingapproval);
 		toClick(i.awaintingapproval);
+		
+		Thread.sleep(1000);
 
-		Explicitwaitvisibility(i.firstinvoice);
-		clickjavascript(i.firstinvoice);
+		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
 
-		Thread.sleep(3000);
+		Thread.sleep(1000);
+
+		/*Thread.sleep(3000);
 		Explicitwaitvisibility(i.items2table);
 		clickjavascript(i.items2table);
 		Thread.sleep(1000);
 
 		tofill(i.items1tabletxt, "Acc group");
 		toenter();
-		Thread.sleep(3000);
-
-		Thread.sleep(1000);
+		Thread.sleep(3000);*/
 
 		ScrolldownElement(i.approve);
-
+		Thread.sleep(1000);
 		tomovethecursor(i.approve);
 		toClick(i.approve);
+		Thread.sleep(1000);
+		toClick(i.ok);
+		
 
 	}
 
-	@Then("User make a payment for invoice")
-	public void user_make_a_payment_for_invoice() throws InterruptedException, AWTException {
+	@Given("User needs to make a payment for invoice")
+	public void user_needs_to_make_a_payment_for_invoice() throws InterruptedException, AWTException {
 		i = new Sales_Invoice_POJO();
-		/*	browserLaunch();
-		launchUrl("https://staging.infotech-accounting.com/login");
-		toMaximize();
-		a = new AccountLoginpojo();
-
-		toClick(a.username);
-		tofill(a.username, "azarudeenn@info-tech.co.in");
-		toClick(a.password);
-		tofill(a.password, "Info@901");
-		toClick(a.submit);*/
+		/*
+		 * browserLaunch(); launchUrl("https://staging.infotech-accounting.com/login");
+		 * toMaximize(); a = new AccountLoginpojo();
+		 * 
+		 * toClick(a.username); tofill(a.username, "azarudeenn@info-tech.co.in");
+		 * toClick(a.password); tofill(a.password, "Info@901"); toClick(a.submit);
+		 */
 
 		i = new Sales_Invoice_POJO();
 
@@ -292,12 +309,17 @@ public class Sales_Invoice extends Reusableclass {
 		clickjavascript(i.awaitingpayment);
 		Thread.sleep(3000);
 
-		clickjavascript(i.firstinvoice);
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
+
+
 
 		Thread.sleep(2000);
 
-		/*Explicitwaitvisibility(i.skip);
-		clickjavascript(i.skip);*/
+		/*
+		 * Explicitwaitvisibility(i.skip); clickjavascript(i.skip);
+		 */
 
 		Explicitwaitvisibility(i.datepaid);
 
@@ -305,14 +327,18 @@ public class Sales_Invoice extends Reusableclass {
 
 		Thread.sleep(1000);
 		tomovethecursor(i.datepaid);
-		tofill(i.datepaid, "30/11/2022");
+		tofill(i.datepaid, "30/12/2022");
 		Thread.sleep(1000);
 
 		tomovethecursor(i.PaidTo);
 		tofill(i.PaidTo, "testacc");
 		Thread.sleep(1000);
 		toenter();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		
+		tomovethecursor(i.bankrate);
+		tofill(i.bankrate, "10");
+		Thread.sleep(2000);
 
 		tomovethecursor(i.cash);
 		Thread.sleep(1000);
@@ -329,8 +355,8 @@ public class Sales_Invoice extends Reusableclass {
 
 	}
 
-	@Then("User Edit to new invoice")
-	public void user_Edit_to_new_invoice() throws InterruptedException, AWTException {
+	@Given("User needs to Edit the approved invoice")
+	public void user_needs_to_edit_the_approved_invoice() throws InterruptedException, AWTException {
 
 		i = new Sales_Invoice_POJO();
 
@@ -365,8 +391,8 @@ public class Sales_Invoice extends Reusableclass {
 
 	}
 
-	@Given("User copy to new invoice")
-	public void user_copy_to_new_invoice() throws InterruptedException {
+	@Given("User needs to copy the approved invoice")
+	public void user_needs_to_copy_the_approved_invoice() throws InterruptedException {
 
 		i = new Sales_Invoice_POJO();
 
@@ -399,7 +425,7 @@ public class Sales_Invoice extends Reusableclass {
 		toClick(i.createdraft);
 
 		Explicitwaitvisibility(i.expirydate);
-		tofill(i.expirydate, "20/11/2022");
+		tofill(i.expirydate, "20/12/2022");
 
 		Scrolldownjavascript();
 		Thread.sleep(1000);
@@ -409,9 +435,9 @@ public class Sales_Invoice extends Reusableclass {
 		toClick(i.ok);
 
 	}
-
-	@Given("Tax inclusive scenario")
-	public void tax_inclusive_scenario() throws InterruptedException, AWTException {
+	
+	@Given("User needs to give new invoice details for tax inclusive")
+	public void user_needs_to_give_new_invoice_details_for_tax_inclusive() throws InterruptedException, AWTException {
 
 		i = new Sales_Invoice_POJO();
 
@@ -430,7 +456,7 @@ public class Sales_Invoice extends Reusableclass {
 		clickjavascript(i.Newinvoicebtn);
 
 		Explicitwaitvisibility(i.ChoosecustomerDD);
-		tofill(i.ChoosecustomerDD, "Automation");
+		tofill(i.ChoosecustomerDD, "ft104");
 		Thread.sleep(1000);
 		// tomovethecursor(i.savecontact);
 		// Thread.sleep(1000);
@@ -438,7 +464,7 @@ public class Sales_Invoice extends Reusableclass {
 		toenter();
 
 		Explicitwaitvisibility(i.InvoiceDate);
-		tofill(i.InvoiceDate, "19/09/2022");
+		tofill(i.InvoiceDate, "19/12/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
@@ -448,7 +474,7 @@ public class Sales_Invoice extends Reusableclass {
 		totabkey();
 		Thread.sleep(1000);
 
-		tofill(i.InvoiceNo, "Invoice053236623444");
+		tofill(i.InvoiceNo, "Invoice23456");
 
 		Thread.sleep(1000);
 		tofill(i.ReferenceDateInvoice, "Sales");
@@ -494,9 +520,33 @@ public class Sales_Invoice extends Reusableclass {
 		toClick(i.ok);
 
 	}
+	
+	@Given("user needs to void the approved invoice")
+	public void user_needs_to_void_the_approved_invoice() throws InterruptedException {
+		
+		i = new Sales_Invoice_POJO();
+	
+		Thread.sleep(2000);
+		Explicitwaitvisibility(i.options);
+		clickjavascript(i.options);
 
-	@Given("No Tax scenario")
-	public void no_tax_scenario() throws InterruptedException, AWTException {
+		Thread.sleep(2000);
+
+		Explicitwaitvisibility(i.delete);
+		tomovethecursor(i.delete);
+		Thread.sleep(1000);
+		clickjavascript(i.delete);
+		Thread.sleep(1000);
+		tomovethecursor(i.yes);
+		toClick(i.yes);
+		Thread.sleep(1000);
+		tomovethecursor(i.ok);
+		toClick(i.ok);
+		
+	}
+
+	@Given("User needs to give new invoice details for No Tax")
+	public void user_needs_to_give_new_invoice_details_for_no_tax() throws InterruptedException, AWTException {
 
 		i = new Sales_Invoice_POJO();
 
@@ -513,7 +563,7 @@ public class Sales_Invoice extends Reusableclass {
 		clickjavascript(i.Newinvoicebtn);
 
 		Explicitwaitvisibility(i.ChoosecustomerDD);
-		tofill(i.ChoosecustomerDD, "Automation");
+		tofill(i.ChoosecustomerDD, "ft104");
 		Thread.sleep(1000);
 		// tomovethecursor(i.savecontact);
 		// Thread.sleep(1000);
@@ -522,17 +572,17 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(2000);
 
 		Explicitwaitvisibility(i.InvoiceDate);
-		tofill(i.InvoiceDate, "19/09/2022");
+		tofill(i.InvoiceDate, "19/12/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
 		Thread.sleep(2000);
 
-		tofill(i.DueDate, "30/11/2022");
+		tofill(i.DueDate, "30/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 
-		tofill(i.InvoiceNo, "Invoice053231232112");
+		tofill(i.InvoiceNo, "Invoice34345");
 
 		Thread.sleep(1000);
 		tofill(i.ReferenceDateInvoice, "Sales");
@@ -577,6 +627,30 @@ public class Sales_Invoice extends Reusableclass {
 		Thread.sleep(2000);
 		toClick(i.ok);
 
+	}
+	
+	@Given("User needs to add credit note for invoice")
+	public void user_needs_to_add_credit_note_for_invoice() throws InterruptedException {
+		
+		i = new Sales_Invoice_POJO();
+		
+		Thread.sleep(2000);
+		Explicitwaitvisibility(i.options);
+		clickjavascript(i.options);
+
+		Thread.sleep(2000);
+		
+		Explicitwaitvisibility(i.addcreditnote);
+		tomovethecursor(i.addcreditnote);
+		Thread.sleep(1000);
+		clickjavascript(i.addcreditnote);
+		Thread.sleep(1000);
+		
+		Scrolldownjavascript();
+		
+		tomovethecursor(i.approve);
+		Thread.sleep(1000);
+		toClick(i.approve);
 	}
 
 }

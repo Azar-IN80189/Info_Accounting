@@ -1,7 +1,11 @@
-@Logon
-Feature: Info-Accouting Login Feature
+@LoginScreen
+Feature: Verify Info-Accouting Login Feature
 
-  Scenario: Get login infoaccounting App
-    Given user gives InfoAccounting App URL
-    When User gives Credentials for InfoAccounting login
-    And User submit the button
+ 
+  Scenario: Login using Support User Credentials
+    Given User need to enter Username and password and logged in as Support User
+    And User need to check whether it is logged in as support user
+
+  Scenario: Login using Normal User Credentails
+    Given User need to enter Username and password and logged in as Normal User
+    And User need to check whether it is logged in as Normal user

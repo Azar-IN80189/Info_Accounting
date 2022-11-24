@@ -1,4 +1,4 @@
-@CreditNotes
+@Purchase_CreditNotes
 Feature: Info-Accouting Purchase-CreditNotes scenario
 
   Scenario: Adding a credit note as draft-Tax Exclusive

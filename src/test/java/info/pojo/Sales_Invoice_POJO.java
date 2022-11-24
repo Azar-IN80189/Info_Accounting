@@ -83,9 +83,6 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "(//button[contains(.,'Save')])[3]")
 	public WebElement SaveBtn;
 	
-	@FindBy(xpath="//button[text()='OK']")
-	public WebElement ok;
-	
 	@FindBy(xpath = "//button[contains(.,' Add Payment ')]")
 	public WebElement Addrefundbtn;
 
@@ -173,9 +170,6 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath="(//input[@type='text'])[19]")
 	public WebElement PaidTo;
 	
-	@FindBy(xpath = "//input[@id='BankExRate']")
-	public WebElement bankrate;
-	
 	@FindBy(xpath="(//input[@aria-autocomplete='list'])[10]")
 	public WebElement cash;
 	
@@ -221,10 +215,20 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "(//a[@class='t-link edit'])[2]")
 	public WebElement Firstrowinvoice;
 	
+	@FindBy(xpath="//a[contains(text(),'Void')]")
+	public WebElement delete;
 	
+	@FindBy(xpath="//button[contains(text(),'Yes')]")
+	public WebElement yes;
 	
+	@FindBy(xpath="//button[contains(text(),'OK')]")
+	public WebElement ok;
 	
-	
+	@FindBy(xpath="(//button[contains(@type,'button')])[9]")
+	public WebElement addnewlines;
+
+	@FindBy(xpath = "//input[contains(@id,'BankExRate')]")
+	public WebElement bankrate;
 	
 	
 }

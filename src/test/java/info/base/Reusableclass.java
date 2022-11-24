@@ -1124,7 +1124,7 @@ public class Reusableclass
 	}
 	public static void Explicitwait(WebElement element) {
 
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
@@ -1573,6 +1573,12 @@ protected void acceptAlert() {
 			ex.printStackTrace();
 		}
 	}
+}
+
+public static void selectSearchDropdown(By element, String value){
+driver.findElement(element).click();
+driver.findElement(element).sendKeys(value);
+driver.findElement(element).sendKeys(Keys.ENTER);
 }
 
 

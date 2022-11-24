@@ -9,9 +9,7 @@ import info.base.Reusableclass;
 import info.pojo.Forgot_Password_POJO;
 import info.pojo.Purchase_order_POJO;
 import info.pojo.UserCreation_POJO;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
 public class Forgot_Password_scenario extends Reusableclass{
 	public static Purchase_order_POJO w;
@@ -62,10 +60,10 @@ public class Forgot_Password_scenario extends Reusableclass{
 		Thread.sleep(7000);
 		highLightElement(u.Newpasswordreset);
 		toClick(u.Newpasswordreset);
-		u.Newpasswordreset.sendKeys("Iteration@9875");
+		u.Newpasswordreset.sendKeys("Iteration@98799");
 		highLightElement(u.ReNewpasswordreset);
 		toClick(u.ReNewpasswordreset);
-		u.ReNewpasswordreset.sendKeys("Iteration@9875");
+		u.ReNewpasswordreset.sendKeys("Iteration@98799");
 		highLightElement(u.savepasswordreset);
 		toClick(u.savepasswordreset);
 		Thread.sleep(1000);
@@ -76,7 +74,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 
 
 
-	@Then("User need to login using resetted password")
+	@Given("User need to login using resetted password")
 	public void user_need_to_login_using_resetted_password() throws InterruptedException {
 		w = new Purchase_order_POJO();
 		driver.navigate().to("https://staging.infotech-accounting.com/login");
@@ -89,7 +87,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 		highLightElement(w.password);
 		toClick(w.password);
 		Thread.sleep(2000);
-		tofill(w.password, "Iteration@9875");
+		tofill(w.password, "Iteration@98799");
 
 		Thread.sleep(2000);
 		highLightElement(w.submit);
@@ -100,7 +98,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 	
 	}
 
-	@And("User need to login as existing user")
+	@Given("User need to login as existing user")
 	public void user_need_to_login_as_existing_user() throws InterruptedException {
 		w = new Purchase_order_POJO();
 		Thread.sleep(3000);
@@ -112,7 +110,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 		highLightElement(w.password);
 		toClick(w.password);
 		Thread.sleep(2000);
-		tofill(w.password, "Info@903");
+		tofill(w.password, "Info@907");
 
 
 		Thread.sleep(2000);

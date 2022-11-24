@@ -61,7 +61,7 @@ public class Purchase_CreditNotes_POJO extends Reusableclass {
 	@FindBy(xpath = "//button[contains(.,'add  Add New Lines')]")
 	public WebElement addnewlinesbtn;
 
-	@FindBy(xpath = "(//button[@type='button'])[39]")
+	@FindBy(xpath = "(//button[contains(.,'Save')])[3]")
 	public WebElement Savebtn;
 
 	@FindBy(xpath = "//button[contains(.,'Approve')]")
@@ -78,6 +78,12 @@ public class Purchase_CreditNotes_POJO extends Reusableclass {
 
 	@FindBy(xpath = "//button[contains(.,'OK')]")
 	public WebElement Okbtn;
+	
+	@FindBy(xpath = "(//li[@class='nav-item nav-dropdown'])[3]")
+	public WebElement Closepurchasetab;
+	
+	@FindBy(xpath = "//li[@class='nav-item nav-dropdown open']")
+	public WebElement Openpurchasetab;
 
 	@FindBy(xpath = "(//a[@role='tab'])[2]")
 	public WebElement draftstab;

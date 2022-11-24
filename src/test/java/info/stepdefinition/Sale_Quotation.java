@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.io.IOException;
 
 import info.base.Reusableclass;
+import info.pojo.Account_Login_POJO;
 import info.pojo.Purchase_CreditNotes_POJO;
 import info.pojo.Sale_Quotation_POJO;
 import info.pojo.UserCreation_POJO;
@@ -16,18 +17,21 @@ public class Sale_Quotation extends Reusableclass {
 	public static Sale_Quotation_POJO s;
 	public static Purchase_CreditNotes_POJO p;
 	public static UserCreation_POJO u;
+	public static Account_Login_POJO a;
 	@Given("User need to navigate to Quotation slide")
 	public void user_need_to_navigate_to_quotation_slide() {
 		s=new Sale_Quotation_POJO();
 		Explicitwaitvisibility(s.Salesslide);
-		toClick(s.Salesslide);
+		clickjavascript(s.Salesslide);
+		Explicitwaitvisibility(s.Quotationslide);
 		clickjavascript(s.Quotationslide);
 
 	}
 
 
-	@Then ("User need to Approve a Quotation")
-	public void user_need_to_approve_a_quotation() throws AWTException, InterruptedException, IOException {
+
+	@Given("User need to create and Approve a Quotation by entering details like Customer contact,Date,Expiry date..Etc")
+	public void user_need_to_create_and_approve_a_quotation_by_entering_details_like_customer_contact_date_expiry_date_etc() throws AWTException, InterruptedException, IOException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
@@ -44,7 +48,7 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
-		tofill(s.QuotationDate, "10/11/2022");
+		tofill(s.QuotationDate, "23/11/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
@@ -63,6 +67,7 @@ public class Sale_Quotation extends Reusableclass {
 		toenter();
 		Thread.sleep(4000);
 
+		Explicitwaitvisibility(s.Items1);
 		clickjavascript(s.Items1);
 		Thread.sleep(1000);
 		tofill(s.Items1text, "Testitem1");
@@ -79,96 +84,165 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(3000);
 		Explicitwaitvisibility(s.Okbtnn);
 		clickjavascript(s.Okbtnn);
+
+
+		u=new UserCreation_POJO();
+
+
+
+
+	}
+	@Then("User need to send the quotation to client")
+	public void user_need_to_send_the_quotation_to_client() throws InterruptedException, IOException {
+		s=new Sale_Quotation_POJO();
+		p=new Purchase_CreditNotes_POJO ();
+		u=new UserCreation_POJO();
 		Thread.sleep(1000);
 		Explicitwaitvisibility(s.SendBtn);
 		toClick(s.SendBtn);
 		Thread.sleep(4000);
-
-		/*	
-		if (s.Okbtnn.isDisplayed()) {
-			Explicitwaitvisibility(s.Okbtnn);
-			clickjavascript(s.Okbtnn);
-		} else {
-			System.out.println("Popup is not visible");
-		}
-		 */
-
-		Thread.sleep(1000);
 		Explicitwaitvisibility(s.Mailto);
 		tofill(s.Mailto, "testemailquotation@mailinator.com");
 		Thread.sleep(1000);
 		//toClick(s.Sendmeacopychkbox);
 		ScrolldownElement(s.Sendmailbtn);
 		clickjavascript(s.Sendmailbtn);
-		/*
-		u=new UserCreation_POJO();
 
+	}
+	@And("User need to check whether the quotation is recieved in client mail address")
+	public void user_need_to_check_whether_the_quotation_is_recieved_in_client_mail_address() throws IOException, InterruptedException, AWTException {
+		s=new Sale_Quotation_POJO();
+		p=new Purchase_CreditNotes_POJO ();
+		u=new UserCreation_POJO();
+		a = new Account_Login_POJO();
+
+		Thread.sleep(4000);
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
 		highLightElement(u.SearchMailinator);
 		tofill(u.SearchMailinator, "testemailquotation");
+		Thread.sleep(6000);
 		toenter();
 
 		Explicitwaitvisibility(u.Displayemail);
 		Thread.sleep(2000);
+		Explicitwaitvisibility(u.mailinatorvisiblemailquotation);
 		clickjavascript(u.mailinatorvisiblemailquotation);
 		Pageloadtimeout();
 		Scrolldownjavascript();
 		Pageloadtimeout();
 		Scrolldownjavascript();
-		//driver.switchTo().frame(u.frames);
+		driver.switchTo().frame(u.framestxtbody);
+		Explicitwaitvisibility(u.mailinatorresetpassquotation);
 		ScrolldownElement(u.mailinatorresetpassquotation);
-		toClick(u.mailinatorresetpassquotation);*/
+		clickjavascript(u.mailinatorresetpassquotation);
 
-		///Due to application error script stopped here- mail quotation
+	}
+	@And("User need to accept the quotation and navigate back to info accounting home screen")
+	public void user_need_to_accept_the_quotation_and_navigate_back_to_info_accounting_home_screen() throws InterruptedException {
+		s=new Sale_Quotation_POJO();
+
+		try {
+			Thread.sleep(3000);
+			tohandlewindows();
+			Explicitwaitvisibility(s.Accept);
+			clickjavascript(s.Accept);
+			Thread.sleep(2000);
+			Explicitwaitvisibility(s.Okbtnapprovetabs);
+			clickjavascript(s.Okbtnapprovetabs);
+		} catch (Exception e) {
+
+			System.out.println("Approve button not found");
+		}
+		driver.navigate().to("https://staging.infotech-accounting.com/login");
+		driver.switchTo().defaultContent();
+	}
 
 
+	@And("User need to mark the quotation invoice as invoiced")
+	public void user_need_to_mark_the_quotation_invoice_as_invoiced() throws InterruptedException {
+		s=new Sale_Quotation_POJO();
 
-		Explicitwaitvisibility(s.QuotationScreen);
-		clickjavascript(s.QuotationScreen);
+		Explicitwaitvisibility(s.Salesslide);
+		clickjavascript(s.Salesslide);
+		Explicitwaitvisibility(s.Quotationslide);
+		clickjavascript(s.Quotationslide);
+
+		Explicitwaitvisibility(s.Acceptedtab_Q);
+		clickjavascript(s.Acceptedtab_Q);
+		Thread.sleep(3000);
+
+		clickjavascript(s.Accepttabchkbox2);
+		System.out.println("check not done normal click implemented");
+
+
+		Explicitwaitvisibility(s.Markasinvoicedbtn);
+		clickjavascript(s.Markasinvoicedbtn);
+
+		Explicitwaitvisibility(s.Acceptedtab_Okbtn);
+		clickjavascript(s.Acceptedtab_Okbtn);
+
+		Thread.sleep(3000);
+
+		Explicitwaitvisibility(s.Invoicedtab);
+		clickjavascript(s.Invoicedtab);
 
 
 
 	}
 
-	@And("User need to Save a Quotation")
-	public void user_need_to_save_a_quotation() throws InterruptedException, AWTException, IOException {
+
+
+	@Given("User need to Save a Quotation as draft")
+	public void user_need_to_save_a_quotation_as_draft() throws InterruptedException, AWTException, IOException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
+
+		Explicitwaitvisibility(s.Salesslide);
+		toClick(s.Salesslide);
+		clickjavascript(s.Quotationslide);
 		Thread.sleep(4000);
-		Explicitwait(s.NewQuotationbtn);
+		Explicitwaitvisibility(s.NewQuotationbtn);
 		toClick(s.NewQuotationbtn);
 
 
-		Explicitwait(s.Customerselect);
+		Explicitwaitvisibility(s.Customerselect);
 		clickjavascript(s.Customerselect);
 		Thread.sleep(1000);
 		tofill(s.Customerselect, "Automation");
 		Explicitwaitvisibility(s.Option1select);
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
-		tofill(s.QuotationDate, "10/11/2022");
+		Toclear(s.QuotationDate);
+		tofill(s.QuotationDate, "23/11/2022");
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
+		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
 		tofill(s.ExpiryDate, "27/11/2022");
 		totabkey();
 		Thread.sleep(1000);
+		Toclear(s.Referencetxtbox);
 		tofill(s.Referencetxtbox, "Sales");
 		Thread.sleep(1000);
-		actionssendkeysdelete(s.CurrencyDD);
+		Toclear(s.CurrencyDD);
 		tofill(s.CurrencyDD, "SGD - Singapore Dollar");
+		Thread.sleep(2000);
 		toenter();
+		Toclear(s.Amountsare);
 		tofill(s.Amountsare, "Tax Exclusive");
+		Thread.sleep(2000);
 		toenter();
+		Toclear(s.ThemeDD);
 		tofill(s.ThemeDD, "Letter Head Template");
+		Thread.sleep(2000);
 		toenter();
 		Thread.sleep(4000);
+		Explicitwaitvisibility(s.Items1);
 		clickjavascript(s.Items1);
 		Thread.sleep(2000);
+		Explicitwaitvisibility(s.Items1);
+		clickjavascript(s.Items1);
+		Explicitwaitvisibility(s.Items1text);
 		tofill(s.Items1text, "Testitem1");
 		toenter();
 		Thread.sleep(3000);
@@ -191,26 +265,28 @@ public class Sale_Quotation extends Reusableclass {
 		toClick(s.Searchbtn);
 		Thread.sleep(1000);
 		clickjavascript(s.Checkallbox);
-		
+
 	}
-	
+
 	@Then("User need to navigate draft tab and click submit for approval-Quotation page")
-	public void user_need_to_navigate_draft_tab_and_click_submit_for_approval_quotation_page() throws IOException {
+	public void user_need_to_navigate_draft_tab_and_click_submit_for_approval_quotation_page() throws IOException, InterruptedException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
+
 		Explicitwaitvisibility(p.draftstab);
 		clickjavascript(p.draftstab);
-
+		Thread.sleep(3000);
 
 		Selectcheckbox(s.draftchkbox);
+
 
 		Explicitwaitvisibility(p.Submitforapprovalbtndraft);
 		clickjavascript(p.Submitforapprovalbtndraft);
 
 		Explicitwaitvisibility(p.okpopupdraft);
 		clickjavascript(p.okpopupdraft);
-	
+
 	}
 
 	@Then("User need to navigate awaiting approval and approve the credit notes-Quotation page")
@@ -221,8 +297,7 @@ public class Sale_Quotation extends Reusableclass {
 		Explicitwaitvisibility(s.Awaitingapprovaltab);
 		clickjavascript(s.Awaitingapprovaltab);
 
-		Thread.sleep(2000);
-
+		Thread.sleep(3000);
 		Selectcheckbox(s.Awaitingapprovalchkbox);
 
 		Thread.sleep(2000);
@@ -243,7 +318,7 @@ public class Sale_Quotation extends Reusableclass {
 		Explicitwaitvisibility(s.approvedtab);
 		clickjavascript(s.approvedtab);
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Selectcheckbox(s.approvedchkbox);
 
 		Explicitwaitvisibility(s.SendbtnApprovertab);
@@ -272,7 +347,7 @@ public class Sale_Quotation extends Reusableclass {
 		;
 
 		Thread.sleep(2000);
-	
+
 	}
 	@Given("User need to navigate to Quotation scenario")
 	public void user_need_to_navigate_to_quotation_scenario() throws IOException, InterruptedException {
@@ -299,26 +374,30 @@ public class Sale_Quotation extends Reusableclass {
 		Explicitwaitvisibility(s.Option1select);
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
-		tofill(s.QuotationDate, "10/11/2022");
+		Toclear(s.QuotationDate);
+		tofill(s.QuotationDate, "23/11/2022");
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
+		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
 		tofill(s.ExpiryDate, "27/11/2022");
 		totabkey();
 		Thread.sleep(1000);
+		Toclear(s.Referencetxtbox);
 		tofill(s.Referencetxtbox, "Sales");
 		Thread.sleep(1000);
-		actionssendkeysdelete(s.CurrencyDD);
+		Toclear(s.CurrencyDD);
 		tofill(s.CurrencyDD, "SGD - Singapore Dollar");
+		Thread.sleep(2000);
 		toenter();
+		Toclear(s.Amountsare);
 		tofill(s.Amountsare, "Tax Exclusive");
+		Thread.sleep(2000);
 		toenter();
 		tofill(s.ThemeDD, "Letter Head Template");
+		Thread.sleep(2000);
 		toenter();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		Explicitwaitvisibility(s.Items1);
 		clickjavascript(s.Items1);
 		Thread.sleep(2000);
 		tofill(s.Items1text, "Testitem1");
@@ -338,7 +417,7 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(1000);
 
 	}
-	
+
 	@And("User need to copy as quote")
 	public void user_need_to_copy_as_quote() throws IOException {
 		s=new Sale_Quotation_POJO();
@@ -356,15 +435,16 @@ public class Sale_Quotation extends Reusableclass {
 		Explicitwaitvisibility(s.createdraftbtnapprovedtab);
 		clickjavascript(s.createdraftbtnapprovedtab);
 
-		
+
 	}
-	
+
 	@And("User need to copy as invoice")
 	public void user_need_to_copy_as_invoice() throws IOException, InterruptedException {
-		
+
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
+
 		Thread.sleep(2000);
 
 		Selectcheckbox(s.draftcheckbox);
@@ -375,9 +455,9 @@ public class Sale_Quotation extends Reusableclass {
 		Selectcheckbox(s.copytoinvoicechkbox);
 		Explicitwaitvisibility(s.createdraftbtnapprovedtab);
 		clickjavascript(s.createdraftbtnapprovedtab);
-	
+
 	}
-	
+
 	@And("User need to copy as Deliveryorder")
 	public void user_need_to_copy_as_deliveryorder() throws IOException, InterruptedException {
 		s=new Sale_Quotation_POJO();
@@ -399,8 +479,8 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(2000);
 	}
 
-	@Given("User need to navigate to Quotation scenario2")
-	public void user_need_to_navigate_to_quotation_scenario2() throws IOException, InterruptedException {
+	@Given("User need to navigate to Quotation screen")
+	public void user_need_to_navigate_to_quotation_screen() throws IOException, InterruptedException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
@@ -414,8 +494,8 @@ public class Sale_Quotation extends Reusableclass {
 	}
 
 
-	@Then("User need to Decline a Quotation scenario")
-	public void user_need_to_decline_a_quotation_scenario() throws InterruptedException, AWTException, IOException {
+	@Then("User need to create a approved quotation")
+	public void user_need_to_create_a_approved_quotation() throws InterruptedException, AWTException, IOException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
@@ -426,26 +506,31 @@ public class Sale_Quotation extends Reusableclass {
 		Explicitwaitvisibility(s.Option1select);
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
-		tofill(s.QuotationDate, "10/11/2022");
+		Toclear(s.QuotationDate);
+		tofill(s.QuotationDate, "23/11/2022");
 		Thread.sleep(1000);
-		totabkey();
-		Delete();
+		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
 		tofill(s.ExpiryDate, "27/11/2022");
 		totabkey();
 		Thread.sleep(1000);
+		Toclear(s.Referencetxtbox);
 		tofill(s.Referencetxtbox, "Sales");
 		Thread.sleep(1000);
-		actionssendkeysdelete(s.CurrencyDD);
+		Toclear(s.CurrencyDD);
 		tofill(s.CurrencyDD, "SGD - Singapore Dollar");
+		Thread.sleep(2000);
 		toenter();
+		Toclear(s.Amountsare);
 		tofill(s.Amountsare, "Tax Exclusive");
+		Thread.sleep(2000);
 		toenter();
+		Toclear(s.ThemeDD);
 		tofill(s.ThemeDD, "Letter Head Template");
+		Thread.sleep(2000);
 		toenter();
 		Thread.sleep(4000);
+		Explicitwaitvisibility(s.Items1);
 		clickjavascript(s.Items1);
 		Thread.sleep(2000);
 		tofill(s.Items1text, "Testitem1");
@@ -465,8 +550,8 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(1000);
 
 	}
-	@And("User need to Decline manually")
-	public void user_need_to_decline_manually() throws IOException, InterruptedException {
+	@And("User need to Decline the quotation manually")
+	public void user_need_to_decline_the_quotation_manually() throws IOException, InterruptedException {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
@@ -475,27 +560,121 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.approvedtab);
 		clickjavascript(s.approvedtab);
+
+		Thread.sleep(2000);
 		Selectcheckbox(s.approvedchkbox);
+
 		Explicitwaitvisibility(s.declineapprovedtab);
 		clickjavascript(s.declineapprovedtab);
 		Explicitwaitvisibility(s.okdeclineapprovedtab);
 		clickjavascript(s.okdeclineapprovedtab);
 		Explicitwaitvisibility(s.declinetab);
 		clickjavascript(s.declinetab);
-		//verify whether the quotation is declined
-	/*	Thread.sleep(2000);
-		Explicitwaitvisibility(s.drafttab);
-		clickjavascript(s.drafttab);
-		Thread.sleep(2000);
-		Explicitwaitvisibility(s.draftcheckbox);
-		Selectcheckbox(s.draftcheckbox);
-		Explicitwaitvisibility(s.deletebtnapprovedtab);
-		clickjavascript(s.deletebtnapprovedtab);
-		Explicitwaitvisibility(s.okdeletebtnapprovedtab);
-		clickjavascript(s.okdeletebtnapprovedtab);
-		Thread.sleep(2000);*/
-		
+
+
 	}
+
+	@Given("User need to navigate to Quotation screen\\/Accept_Scenario")
+	public void user_need_to_navigate_to_quotation_screen_accept_scenario() throws InterruptedException, IOException {
+		s=new Sale_Quotation_POJO();
+		p=new Purchase_CreditNotes_POJO ();
+		u=new UserCreation_POJO();
+		/*Explicitwaitvisibility(s.QuotationScreen);
+		clickjavascript(s.QuotationScreen);
+		torefresh();*/
+		Explicitwait(s.NewQuotationbtn);
+		toClick(s.NewQuotationbtn);
+
+	}
+
+	@Then("User need to create a approved quotation\\/Accept_Scenario")
+	public void user_need_to_create_a_approved_quotation_accept_scenario() throws InterruptedException, AWTException, IOException {
+		s=new Sale_Quotation_POJO();
+		p=new Purchase_CreditNotes_POJO ();
+		u=new UserCreation_POJO();
+		Explicitwait(s.Customerselect);
+		clickjavascript(s.Customerselect);
+		Thread.sleep(1000);
+		tofill(s.Customerselect, "Automation");
+		Explicitwaitvisibility(s.Option1select);
+		clickjavascript(s.Option1select);
+		Thread.sleep(1000);
+		Toclear(s.QuotationDate);
+		tofill(s.QuotationDate, "23/11/2022");
+		Thread.sleep(1000);
+		Toclear(s.ExpiryDate);
+		Thread.sleep(2000);
+		tofill(s.ExpiryDate, "27/11/2022");
+		totabkey();
+		Thread.sleep(1000);
+		Toclear(s.Referencetxtbox);
+		tofill(s.Referencetxtbox, "Sales");
+		Thread.sleep(1000);
+		Toclear(s.CurrencyDD);
+		tofill(s.CurrencyDD, "SGD - Singapore Dollar");
+		Thread.sleep(2000);
+		toenter();
+		Toclear(s.Amountsare);
+		tofill(s.Amountsare, "Tax Exclusive");
+		Thread.sleep(2000);
+		toenter();
+		Toclear(s.ThemeDD);
+		tofill(s.ThemeDD, "Letter Head Template");
+		Thread.sleep(2000);
+		toenter();
+		Thread.sleep(4000);
+		Explicitwaitvisibility(s.Items1);
+		clickjavascript(s.Items1);
+		Thread.sleep(2000);
+		tofill(s.Items1text, "Testitem1");
+		toenter();
+		Thread.sleep(3000);
+		ScrolldownElement(s.Attentiontotxt);
+		tofill(s.Attentiontotxt, "testattention");
+		Thread.sleep(1000);
+		tofill(s.contactNumbertxt, "1234567890");
+		Thread.sleep(1000);
+		ScrolldownElement(s.DeliveryInstructions);
+		tofill(s.DeliveryInstructions, "Testdeliveryinstruction");
+		ScrolldownElement(s.ApproveBtn);
+		toClick(s.ApproveBtn);
+		Thread.sleep(4000);
+		toenter();
+		Thread.sleep(1000);
+
+	}
+
+	@Then("User need to approve the quotation manually\\/Accept_Scenario")
+	public void user_need_to_approve_the_quotation_manually_accept_scenario() throws IOException, InterruptedException {
+
+		s=new Sale_Quotation_POJO();
+		p=new Purchase_CreditNotes_POJO ();
+		u=new UserCreation_POJO();
+		Explicitwaitvisibility(s.QuotationScreen);
+		clickjavascript(s.QuotationScreen);
+		Thread.sleep(2000);
+		Explicitwaitvisibility(s.approvedtab);
+		clickjavascript(s.approvedtab);
+		
+		
+		Thread.sleep(3000);
+		Selectcheckbox(s.approvedtaballchkbox);
+		System.out.println("check not done normal click implemented");
+
+		Thread.sleep(2000);
+
+		Explicitwaitvisibility(s.approveapprovedtab);
+		clickjavascript(s.approveapprovedtab);
+
+		Explicitwaitvisibility(s.okdeclineapprovedtab);
+		clickjavascript(s.okdeclineapprovedtab);
+		Thread.sleep(3000);
+		Explicitwaitvisibility(s.Acceptedtab_Q);
+		clickjavascript(s.Acceptedtab_Q);
+		//verify whether the quotation is declined
+
+	}
+
 
 
 

@@ -14,19 +14,19 @@ public class Org_Currencies extends Reusableclass {
 	public static Tax_Rate_POJO t;
 	public static Purchase_order_POJO w;
 	public static Currencies_POJO c;
-	@Given("User need to navigate to Currencie section")
-	public void user_need_to_navigate_to_currencie_section() throws InterruptedException {
+	@Given("User need to navigate to Organization>Currencie page")
+	public void user_need_to_navigate_to_organization_currencie_page()  throws InterruptedException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		c=new Currencies_POJO();
-try {
-	Explicitwaitvisibility(c.Currenciesslide);
-	highLightElement(c.Currenciesslide);
-	toClick(c.Currenciesslide);
-} catch (Exception e) {
-	
-	System.out.println("Failed due to slide uninformed exceptions");
-}
+		try {
+			Explicitwaitvisibility(c.Currenciesslide);
+			highLightElement(c.Currenciesslide);
+			toClick(c.Currenciesslide);
+		} catch (Exception e) {
+
+			System.out.println("Failed due to slide uninformed exceptions");
+		}
 		Explicitwaitvisibility(c.Currenciesslide);
 		highLightElement(c.Currenciesslide);
 		toClick(c.Currenciesslide);
@@ -45,8 +45,8 @@ try {
 
 
 
-	@And("User need to Add a currency")
-	public void user_need_to_add_a_currency() throws AWTException, InterruptedException {
+	@And("User need to Add a currency by selecting a currency")
+	public void user_need_to_add_a_currency_by_selecting_a_currency() throws AWTException, InterruptedException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		c=new Currencies_POJO();
@@ -57,7 +57,7 @@ try {
 			highLightElement(c.CurrenciesDD);
 			clickjavascript(c.CurrenciesDD);
 			Thread.sleep(1000);
-			tofill(c.CurrenciesDD, "BZD - Belize Dollar");
+			tofill(c.CurrenciesDD, "GBP - British Pound Sterling");
 
 			Explicitwaitvisibility(c.MouseclickDDCurrencies);
 			mouseclick(c.MouseclickDDCurrencies);
@@ -68,8 +68,8 @@ try {
 
 	}
 
-	@Then("User need to edit the currencies")
-	public void user_need_to_edit_the_currencies() throws InterruptedException {
+	@Given("User need to edit the currencies and set the parameter date and currency value")
+	public void user_need_to_edit_the_currencies_and_set_the_parameter_date_and_currency_value() throws InterruptedException, AWTException {
 		t=new Tax_Rate_POJO();
 		w = new Purchase_order_POJO();
 		c=new Currencies_POJO();
@@ -77,7 +77,7 @@ try {
 			driver.switchTo().window(winHandle);
 
 			highLightElement(c.Searchboxbtn);
-			tofill(c.Searchboxbtn, "BZD - Belize Dollar");
+			tofill(c.Searchboxbtn, "GBP - British Pound Sterling");
 
 
 			Explicitwait(c.Editicon);
@@ -86,19 +86,19 @@ try {
 			toClick(c.Editicon);
 
 			Explicitwait(c.Startdate);
-
-			actionssendkeysdelete(c.Startdate);
-
 			highLightElement(c.Startdate);
-			tofill(c.Startdate, "10/11/2022");
+			Toclear(c.Startdate);
+			tofill(c.Startdate, "18/11/2022");
+			toenter();
 
 
-			c.Enddate.clear();
-
+			Explicitwaitvisibility(c.Enddate);
 			highLightElement(c.Enddate);
-			tofill(c.Enddate, "15/11/2022");
+			Toclear(c.Enddate);
+			tofill(c.Enddate, "27/11/2022");
+			toenter();
 
-
+			Explicitwaitvisibility(c.CurrencyRadiobtn);
 			clickjavascript(c.CurrencyRadiobtn);
 
 			highLightElement(c.Customratetxt);

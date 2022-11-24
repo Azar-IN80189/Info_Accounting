@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import info.base.Reusableclass;
-import info.pojo.AccountLoginpojo;
+import info.pojo.Account_Login_POJO;
 import info.pojo.Purchase_CreditNotes_POJO;
 import info.pojo.Sales_CreditNote_POJO;
 import io.cucumber.java.en.And;
@@ -16,7 +16,7 @@ public class Sale_CreditNote extends Reusableclass {
 	
 	public static Sales_CreditNote_POJO c;
 	public static Purchase_CreditNotes_POJO p;
-	public static AccountLoginpojo a;
+	public static Account_Login_POJO a;
 	
 	@Given("User need to navigate to Credit Note slide")
 	public void user_need_to_navigate_to_credit_note_slide() {

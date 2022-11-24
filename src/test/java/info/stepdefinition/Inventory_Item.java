@@ -353,7 +353,7 @@ public class Inventory_Item extends Reusableclass {
 			clickjavascript(i.ManageCategorybtn);
 			Thread.sleep(2000);
 			highLightElement(i.Categorynametxtbox);
-			tofill(i.Categorynametxtbox, "test9333");
+			tofill(i.Categorynametxtbox, "test9888");
 			highLightElement(i.AddcategoryBtn);
 			clickjavascript(i.AddcategoryBtn);
 			highLightElement(i.Cancelbtn);
@@ -372,7 +372,7 @@ public class Inventory_Item extends Reusableclass {
 		clickjavascript(i.manageUnitTypebtn);
 		Thread.sleep(2000);
 		highLightElement(i.manageUnitTypename);
-		tofill(i.manageUnitTypename, "test944");
+		tofill(i.manageUnitTypename, "test9555");
 		
 	
 		Selectcheckbox(i.Activechkbox);
