@@ -16,9 +16,9 @@ public class Journalentries extends Reusableclass {
 
 	@Given("User needs to Create new journal entry")
 	public void user_needs_to_create_new_journal_entry() throws InterruptedException, AWTException {
-		
-		j = new Journalentriespojo();
 
+		j = new Journalentriespojo();
+		ScrolldownElement(j.Accounting);
 		Explicitwaitvisibility(j.Accounting);
 		tomovethecursor(j.Accounting);
 		Thread.sleep(1000);
@@ -42,12 +42,12 @@ public class Journalentries extends Reusableclass {
 
 		Thread.sleep(2000);
 		tomovethecursor(j.Date);
-		tofill(j.Date, "16/11/2022");
+		tofill(j.Date, "15/12/2022");
 		Thread.sleep(1000);
 
 		tomovethecursor(j.journalno);
 		Thread.sleep(1000);
-		tofill(j.journalno, "01020301");
+		tofill(j.journalno, "6578657867");
 		Thread.sleep(1000);
 
 		tomovethecursor(j.Narration);
@@ -123,7 +123,7 @@ public class Journalentries extends Reusableclass {
 	@When("User needs to verify journalentry is in draft")
 	public void user_needs_to_verify_journalentry_is_in_draft() throws InterruptedException {
 
-		
+
 		j = new Journalentriespojo();
 
 		Scrollupjavascript();
@@ -141,7 +141,7 @@ public class Journalentries extends Reusableclass {
 	public void user_needs_to_move_journal_entries_to_post_from_draft() throws InterruptedException {
 
 		j = new Journalentriespojo();
-		
+
 		Thread.sleep(2000);
 		Scrolldownjavascript();
 		Thread.sleep(2000);
@@ -202,7 +202,7 @@ public class Journalentries extends Reusableclass {
 	public void user_needs_to_copy_the_journal_entry() throws InterruptedException, AWTException {
 
 		j = new Journalentriespojo();
-		
+
 		Thread.sleep(2000);
 		tomovethecursor(j.narrationlink);
 		toClick(j.narrationlink);
@@ -222,12 +222,12 @@ public class Journalentries extends Reusableclass {
 
 		Thread.sleep(2000);
 		tomovethecursor(j.Date);
-		tofill(j.Date, "17/11/2022");
+		tofill(j.Date, "15/12/2022");
 		Thread.sleep(1000);
 
 		tomovethecursor(j.journalno);
 		Thread.sleep(1000);
-		tofill(j.journalno, "0203040501");
+		tofill(j.journalno, "02046760501");
 		Thread.sleep(1000);
 
 	}
@@ -246,7 +246,7 @@ public class Journalentries extends Reusableclass {
 		ScrolldownElement(j.post);
 		Thread.sleep(1000);
 		toClick(j.post);
-		
+
 		Explicitwaitvisibility(j.Okbtn_JE);
 		toClick(j.Okbtn_JE);
 

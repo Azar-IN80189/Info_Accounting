@@ -1,6 +1,6 @@
 @Purchase_CreditNotes
 Feature: Info-Accouting Purchase-CreditNotes scenario
-
+ 
   Scenario: Adding a credit note as draft-Tax Exclusive
     Given User need to navigate to Purchase-CreditNotes slide
     Then User need to Add a credit note

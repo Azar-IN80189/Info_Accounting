@@ -7,7 +7,6 @@ import info.pojo.Purchase_order_POJO;
 import info.pojo.Tax_Rate_POJO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
 public class Org_Tax_Rate extends Reusableclass {
 	public static Tax_Rate_POJO t;

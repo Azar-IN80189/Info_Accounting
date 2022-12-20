@@ -1,6 +1,7 @@
 @Bills
 Feature: Create new Bill Approve,Edit,Delete and update the bill
 
+
   Scenario: Add new Purchase Bill for Tax Exclusive
     Given User needs to give new Bill details- Contact,Date,Currency etc
     When User needs to check the Bill is in draft and move to waiting for approval

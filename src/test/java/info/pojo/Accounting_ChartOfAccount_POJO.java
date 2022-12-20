@@ -102,7 +102,7 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 		
 		//verify created account shows in Revenue tab
 		
-		@FindBy(xpath = "(//li[@class='nav-item'])[28]")
+		@FindBy(xpath = "(//a[contains(.,'Revenue')])[1]")
 		public WebElement RevenueTab_COA;
 		
 		@FindBy(xpath = "//input[@id='search-box']")
@@ -197,10 +197,98 @@ public class Accounting_ChartOfAccount_POJO extends Reusableclass {
 		
 		
 		
+		//Send Statements
 		
+		@FindBy(xpath = "//button[contains(.,'send Send Statements')]")
+		public WebElement SendStatementbtn_COA;
 		
+		@FindBy(xpath = "(//input[@type='text'])[3]")
+		public WebElement StatementTypeDD_COA;
 		
+		@FindBy(xpath = "//input[@formcontrolname='fromDate']")
+		public WebElement FromDate_COA;
 		
+		@FindBy(xpath = "//input[@formcontrolname='toDate']")
+		public WebElement toDate_COA;
 		
+		@FindBy(xpath = "//button[contains(.,'Search')]")
+		public WebElement SearchBtn_COA;
 		
+		@FindBy(xpath = "//input[@id='search-box']")
+		public WebElement Searchboxlist_COA;
+		
+		@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+		public WebElement CheckAllSendStatement__COA;
+		
+		@FindBy(xpath = "//button[contains(.,'Close')]")
+		public WebElement Closebtn__COA;
+		
+		@FindBy(xpath = "//a[@href='/contacts/contacts']")
+		public WebElement ContactMenu_COA;
+		
+		@FindBy(xpath = "(//span[contains(.,'email')])[1]")
+		public WebElement Email_COA;
+		
+		@FindBy(xpath = "(//form[contains(@novalidate,'novalidate')])[5]")
+		public WebElement EmailTouchframe_COA;
+		
+		@FindBy(xpath = "//input[@formcontrolname='mail']")
+		public WebElement EmailEnter_COA;
+		
+		@FindBy(xpath = "//button[contains(.,'send Send')]")
+		public WebElement Sendbtn_COA;
+		
+		@FindBy(xpath = "//button[contains(.,'printPrint')]")
+		public WebElement PrintBtn__COA;
+		
+		@FindBy(xpath = "(//input[@type='text'])[12]")
+		public WebElement ThemeDD__COA;
+		
+		@FindBy(xpath = "//button[contains(.,'Ok')]")
+		public WebElement OkBtn_ThemeDD__COA;
+		
+		@FindBy(xpath = "(//button[contains(.,'Print')])[2]")
+		public WebElement OpenPrintBtn__COA;
+		
+		@FindBy(xpath = "//button[@class='btn btn-primary btn-normal']")
+		public WebElement CancelBtn_PrintPage__COA;
+		
+		//download buttons scenarios
+		
+		@FindBy(xpath = "//span[contains(.,'download')]")
+		public WebElement Download_COA;
+		
+		@FindBy(xpath = "(//input[@type='text'])[12]")
+		public WebElement ThemeDDa_COA;
+		
+		@FindBy(xpath = "//button[contains(.,'Ok')]")
+		public WebElement Okbtn_COA;
+		
+		//Import Contact Functionality
+		
+		@FindBy(xpath = "//button[contains(.,'south_west Import')]")
+		public WebElement ImportBtn_COA;
+		
+		@FindBy(xpath = "//a[contains(.,'Download Template (.xlsx).')]")
+		public WebElement ChooseDownloadxlsx_COA;
+		
+		@FindBy(xpath = "//a[contains(.,'Download Template (.csv).')]")
+		public WebElement ChooseDownloadcsv_COA;
+		
+		@FindBy(xpath = "//input[@id='file']")
+		public WebElement Choosefiletoupload_COA;
+		
+		@FindBy(xpath = "(//button[contains(.,'Next')])[1]")
+		public WebElement NextBtn_COA;
+		
+		@FindBy(xpath = "(//button[contains(.,'Next')])[2]")
+		public WebElement MatchFieldNextBtn_COA;
+		
+		@FindBy(xpath = "(//a[contains(.,'Contact')])[2]")
+		public WebElement ContactNavigatelinkbtn_COA;
+		
+		@FindBy(xpath = "//button[contains(.,'Back to import')]")
+		public WebElement BacktoImportBtn_COA;
+		
+	
 }

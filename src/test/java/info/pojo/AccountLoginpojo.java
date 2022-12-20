@@ -130,7 +130,7 @@ public class AccountLoginpojo extends Reusableclass{
 	@FindBy(xpath="//a[contains(.,'Logout')]")
 	public WebElement profilelogout;
 	
-	@FindBy(xpath = "(//span[contains(@class,'material-icons-outlined')])[9]")
+	@FindBy(xpath = "//span[contains(.,'logout')]")
 	public WebElement headerlogout;
 	
 	

@@ -1,9 +1,7 @@
 package info.stepdefinition;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-
 import info.base.Reusableclass;
 import info.pojo.Account_Login_POJO;
 import info.pojo.Billspojo;
@@ -28,15 +26,15 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(p.purchase);
 		tomovethecursor(p.purchase);
-		toClick(p.purchase);
+		clickjavascript(p.purchase);
 		Thread.sleep(2000);
 		Explicitwaitvisibility(b.bills);
 		tomovethecursor(b.bills);
-		toClick(b.bills);
+		clickjavascript(b.bills);
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.newbill);
 		tomovethecursor(b.newbill);
-		toClick(b.newbill);
+		clickjavascript(b.newbill);
 		tomovethecursor(b.from);
 		Thread.sleep(1000);
 		tofill(b.from, "ft102");
@@ -48,13 +46,25 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 
 		tomovethecursor(b.duedate);
-		tofill(b.duedate, "27/11/2022");
+		tofill(b.duedate, "27/12/2022");
 		toenter();
 		Thread.sleep(1000);
-		tomovethecursor(b.permitno);
-		tofill(b.permitno, "876567");
+		
+		if(b.recurrence.isDisplayed())
+
+		{
+			b.close.click();
+			
+		} else {
+			
+			Thread.sleep(1000);
+			tomovethecursor(b.permitno);
+			tofill(b.permitno, "8799878878");
+			
+		}
+		
 		tomovethecursor(b.refno);
-		tofill(b.refno, "5678");
+		tofill(b.refno, "56781");
 		Thread.sleep(1000);
 		tomovethecursor(b.currency);
 		tofill(b.currency, "SGD - Singapore Dollar");
@@ -124,6 +134,13 @@ public class Purchase_Bills extends Reusableclass {
 		toClick(b.billdraft);
 		Thread.sleep(2000);
 		toClick(b.draftsitem);
+		
+		tomovethecursor(b.duedate);
+		Toclear(b.duedate);
+		tofill(b.duedate, "27/12/2022");
+		Thread.sleep(2000);
+		toenter();
+		Thread.sleep(2000);
 
 		Explicitwaitvisibility(b.Listitem3);
 		tomovethecursor(b.Listitem3);
@@ -153,6 +170,9 @@ public class Purchase_Bills extends Reusableclass {
 	@When("User needs to verify the Bill is in Awaiting approval")
 	public void user_needs_to_verify_the_bill_is_in_awaiting_approval() throws InterruptedException {
 
+		p = new Purchaseflowpojo();
+		b = new Billspojo();
+
 		Explicitwaitvisibility(b.awaitingapproval);
 		tomovethecursor(b.awaitingapproval);
 		Thread.sleep(1000);
@@ -175,6 +195,9 @@ public class Purchase_Bills extends Reusableclass {
 	@When("User needs to Approve the bill")
 	public void user_needs_to_approve_the_bill() throws InterruptedException {
 
+		p = new Purchaseflowpojo();
+		b = new Billspojo();
+		
 		Explicitwaitvisibility(b.approve);
 		tomovethecursor(b.approve);
 		Thread.sleep(1000);
@@ -183,18 +206,25 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
 		toClick(b.ok);
+		Thread.sleep(2000);
+		
+		if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(b.payamount);
+		}
 
 	}
 
 	@When("User needs to Make the payment for bills")
 	public void user_needs_to_make_the_payment_for_bills() throws InterruptedException, AWTException {
-
+		
+		p = new Purchaseflowpojo();
+		b = new Billspojo();
+		
 		Scrolldownjavascript();
-
-		Thread.sleep(1000);
-
-		Explicitwaitvisibility(b.payamount);
-		tomovethecursor(b.payamount);
 		b.payamount.clear();
 		tofill(b.payamount, "256.50");
 
@@ -202,18 +232,23 @@ public class Purchase_Bills extends Reusableclass {
 		Explicitwaitvisibility(b.datepaid);
 		b.datepaid.clear();
 		Thread.sleep(1000);
-		tofill(b.datepaid, "30/10/2022");
+		tofill(b.datepaid, "15/12/2022");
 		toenter();
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.paidfrom);
 		b.paidfrom.clear();
-		Thread.sleep(1000);
-		tofill(b.paidfrom, "testacc");
+		Thread.sleep(1000);		
+		tofill(b.paidfrom, "testaccount");
 		toenter();
-
+										
+		tomovethecursor(b.Exchangerate);
+		Explicitwaitvisibility(b.Exchangerate);
+		b.Exchangerate.clear();
+		tofill(b.Exchangerate, "10");
+		
 		Thread.sleep(1000);
-		Explicitwaitvisibility(b.paymentmode);
+		Explicitwaitvisibility(b.paymentmode);	
 		b.paymentmode.clear();
 		Thread.sleep(1000);
 		tofill(b.paymentmode, "cash");
@@ -223,17 +258,17 @@ public class Purchase_Bills extends Reusableclass {
 		Explicitwaitvisibility(b.addpayment);
 		tomovethecursor(b.addpayment);
 		Thread.sleep(1000);
-		toClick(b.addpayment);
+		clickjavascript(b.addpayment);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.paid);
 		tomovethecursor(b.paid);
 		Thread.sleep(1000);
-		toClick(b.paid);
+		clickjavascript(b.paid);
 		System.out.println("Amount is paid for bill");
 
 	}
@@ -243,7 +278,20 @@ public class Purchase_Bills extends Reusableclass {
 
 		p = new Purchaseflowpojo();
 		b = new Billspojo();
-		Explicitwaitvisibility(p.purchase);
+		
+		
+		Explicitwaitvisibility(b.awaitingapproval);
+		tomovethecursor(b.awaitingapproval);
+		Thread.sleep(1000);
+		clickjavascript(b.awaitingapproval);
+
+		Thread.sleep(1000);
+		Explicitwaitvisibility(b.awaitingitem);
+		tomovethecursor(b.awaitingitem);
+		Thread.sleep(1000);
+		clickjavascript(b.awaitingitem);
+		
+	/*	Explicitwaitvisibility(p.purchase);
 		tomovethecursor(p.purchase);
 		toClick(p.purchase);
 		Thread.sleep(2000);
@@ -257,9 +305,9 @@ public class Purchase_Bills extends Reusableclass {
 		tomovethecursor(b.from);
 		Thread.sleep(1000);
 		tofill(b.from, "ft102");
-		/*
+		
 		 * tomovethecursor(b.savenew); Thread.sleep(1000); toClick(b.savenew);
-		 */
+		 
 		Thread.sleep(2000);
 		toenter();
 		Thread.sleep(1000);
@@ -287,13 +335,13 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 
-		/*
+		
 		 * tomovethecursor(b.test); tofill(b.test, "Testing");
 		 * 
 		 * tomovethecursor(b.test2); tofill(b.test2, "Testingone");
 		 * 
 		 * tomovethecursor(b.costcenter); tofill(b.costcenter, "CA East"); toenter();
-		 */
+		 
 
 		Explicitwaitvisibility(b.Listitem1);
 		tomovethecursor(b.Listitem1);
@@ -303,41 +351,68 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		toenter();
 		Thread.sleep(1000);
-		/*
+		
 		 * tomovethecursor(b.addnewlines); toClick(b.addnewlines); Thread.sleep(2000);
-		 */
-		/*
+		 
+		
 		 * tomovethecursor(b.Listitem2); toClick(b.Listitem2); Thread.sleep(3000);
 		 * tofill(b.Listitemname2, "Testitem2"); Thread.sleep(1000); toenter();
 		 * Thread.sleep(1000);
 		 */
 		Scrolldownjavascript();
-		Thread.sleep(1000);
+		/*Thread.sleep(1000);
 		Explicitwaitvisibility(b.savearrow);
 		toClick(b.savearrow);
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 
-		Explicitwaitvisibility(b.saveasdraft);
-		tomovethecursor(b.saveasdraft);
+		Explicitwaitvisibility(b.update);
+		tomovethecursor(b.update);
 		Thread.sleep(1000);
-		toClick(b.saveasdraft);
+		toClick(b.update);
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(b.ok);
 		toClick(b.ok);
+		Thread.sleep(2000);
+
+	/*	if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(p.purchase);
+		}
+*/
 
 	}
 
 	@Given("User needs to create new bill order for Tax inclusive")
 	public void user_needs_to_create_new_bill_order_for_tax_inclusive() throws InterruptedException, AWTException {
 
+	/*	browserLaunch();
+		launchUrl("https://staging.infotech-accounting.com/login");
+		toMaximize();
+		a = new Account_Login_POJO();
+
+		toClick(a.username);
+		tofill(a.username, "azarudeenn@info-tech.co.in");
+		toClick(a.password);
+		tofill(a.password, "Info@912");
+		toClick(a.submit);*/
+		
 		p = new Purchaseflowpojo();
 		b = new Billspojo();
 		implicitwait();
 
-		/*
-		 * tomovethecursor(p.purchase); toClick(p.purchase);
-		 */
+		Thread.sleep(2000);
+		tomovethecursor(p.purchase);
+		clickjavascript(p.purchase);
+		Thread.sleep(2000);
+		Explicitwaitvisibility(b.bills);
+		tomovethecursor(b.bills);
+		clickjavascript(b.bills);
+		Thread.sleep(1000);
+		
 		Explicitwaitvisibility(b.newbill);
 		tomovethecursor(b.newbill);
 		toClick(b.newbill);
@@ -353,15 +428,26 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.duedate);
 		tomovethecursor(b.duedate);
-		tofill(b.duedate, "27/11/2022");
+		tofill(b.duedate, "27/12/2022");
 		toenter();
 		Thread.sleep(1000);
-		Explicitwaitvisibility(b.permitno);
-		tomovethecursor(b.permitno);
-		tofill(b.permitno, "1234");
+		
+		if(b.recurrence.isDisplayed())
+
+		{
+			b.close.click();
+			
+		} else {
+			
+			Thread.sleep(1000);
+			tomovethecursor(b.permitno);
+			tofill(b.permitno, "87572");
+			
+		}
+		
 		Explicitwaitvisibility(b.refno);
 		tomovethecursor(b.refno);
-		tofill(b.refno, "5678");
+		tofill(b.refno, "56782");
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.currency);
 		tomovethecursor(b.currency);
@@ -370,10 +456,11 @@ public class Purchase_Bills extends Reusableclass {
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		tomovethecursor(b.amountsare);
-		toClick(b.amountsare);
+		clickjavascript(b.amountsare);
 		Thread.sleep(2000);
 		b.amountsare.clear();
 		tofill(b.amountsare, "Tax Inclusive");
+		Thread.sleep(2000);
 		toenter();
 		Thread.sleep(1000);
 		totabkey();
@@ -388,7 +475,7 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.Listitem1);
 		tomovethecursor(b.Listitem1);
-		toClick(b.Listitem1);
+		clickjavascript(b.Listitem1);
 		Thread.sleep(3000);
 		tofill(b.Listitemname1, "Testitem1");
 		Thread.sleep(1000);
@@ -400,7 +487,7 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.Listitem2);
 		tomovethecursor(b.Listitem2);
-		toClick(b.Listitem2);
+		clickjavascript(b.Listitem2);
 		Thread.sleep(3000);
 		tofill(b.Listitemname2, "Testitem2");
 		Thread.sleep(1000);
@@ -416,32 +503,49 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.approvearrow);
 		tomovethecursor(b.approvearrow);
-		toClick(b.approvearrow);
+		clickjavascript(b.approvearrow);
 		Thread.sleep(2000);
 
 		Explicitwaitvisibility(b.approve);
 		tomovethecursor(b.approve);
 		Thread.sleep(1000);
-		toClick(b.approve);
+		clickjavascript(b.approve);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
+		
+		if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(p.purchase);
+		}
+
 	}
 
 	@Given("User needs to create new bill order for No Tax")
 	public void user_needs_to_create_new_bill_order_for_no_tax() throws InterruptedException, AWTException {
 
+		
 		p = new Purchaseflowpojo();
 		b = new Billspojo();
 		implicitwait();
+		
+		tomovethecursor(p.purchase); 
+		clickjavascript(p.purchase);
+		Explicitwaitvisibility(b.bills);
+		tomovethecursor(b.bills);
+		clickjavascript(b.bills);
+		Thread.sleep(1000);
 
 		/*
 		 * tomovethecursor(p.purchase); toClick(p.purchase);
 		 */
 		Thread.sleep(1000);
 		tomovethecursor(b.newbill);
-		toClick(b.newbill);
+		clickjavascript(b.newbill);
 		tomovethecursor(b.from);
 		Thread.sleep(1000);
 		tofill(b.from, "ft102");
@@ -454,15 +558,26 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.duedate);
 		tomovethecursor(b.duedate);
-		tofill(b.duedate, "27/11/2022");
+		tofill(b.duedate, "27/12/2022");
 		toenter();
 		Thread.sleep(1000);
-		Explicitwaitvisibility(b.permitno);
-		tomovethecursor(b.permitno);
-		tofill(b.permitno, "1234");
+		
+		if(b.recurrence.isDisplayed())
+
+		{
+			b.close.click();
+			
+		} else {
+			
+			Thread.sleep(1000);
+			tomovethecursor(b.permitno);
+			tofill(b.permitno, "87656773388");
+			
+		}
+		
 		Explicitwaitvisibility(b.refno);
 		tomovethecursor(b.refno);
-		tofill(b.refno, "5678");
+		tofill(b.refno, "56783");
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.currency);
 		tomovethecursor(b.currency);
@@ -472,7 +587,7 @@ public class Purchase_Bills extends Reusableclass {
 		r.keyRelease(KeyEvent.VK_ENTER);
 		Explicitwaitvisibility(b.amountsare);
 		tomovethecursor(b.amountsare);
-		toClick(b.amountsare);
+		clickjavascript(b.amountsare);
 		Thread.sleep(2000);
 		b.amountsare.clear();
 		tofill(b.amountsare, "No Tax");
@@ -490,8 +605,8 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.Listitem1);
 		tomovethecursor(b.Listitem1);
-		toClick(b.Listitem1);
-		Thread.sleep(3000);
+		clickjavascript(b.Listitem1);
+		Thread.sleep(1000);
 		tofill(b.Listitemname1, "Testitem1");
 		Thread.sleep(1000);
 		toenter();
@@ -502,7 +617,7 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.Listitem2);
 		tomovethecursor(b.Listitem2);
-		toClick(b.Listitem2);
+		clickjavascript(b.Listitem2);
 		Thread.sleep(3000);
 		tofill(b.Listitemname2, "Testitem2");
 		Thread.sleep(1000);
@@ -518,17 +633,27 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.approvearrow);
 		tomovethecursor(b.approvearrow);
-		toClick(b.approvearrow);
+		clickjavascript(b.approvearrow);
 		Thread.sleep(2000);
 
 		Explicitwaitvisibility(b.approve);
 		tomovethecursor(b.approve);
 		Thread.sleep(1000);
-		toClick(b.approve);
+		clickjavascript(b.approve);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
+		
+
+		if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(b.payamount);
+		}
+
 	}
 
 	@Given("User needs to Create new Bill and approve it")
@@ -543,7 +668,7 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(2000);
 		Explicitwaitvisibility(b.bills);
 		tomovethecursor(b.bills);
-		toClick(b.bills);
+		clickjavascript(b.bills);
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(b.newbill);
@@ -556,12 +681,23 @@ public class Purchase_Bills extends Reusableclass {
 		toenter();
 		Thread.sleep(3000);
 
-		tofill(b.duedate, "27/11/2022");
+		tofill(b.duedate, "27/12/2022");
 		toenter();
 		Thread.sleep(2000);
+		
+		if(b.recurrence.isDisplayed())
 
-		tomovethecursor(b.permitno);
-		tofill(b.permitno, "876567");
+		{
+			b.close.click();
+			
+		} else {
+			
+			Thread.sleep(1000);
+			tomovethecursor(b.permitno);
+			tofill(b.permitno, "876567788");
+			
+		}
+
 		tomovethecursor(b.refno);
 		tofill(b.refno, "5678");
 		Thread.sleep(1000);
@@ -581,7 +717,7 @@ public class Purchase_Bills extends Reusableclass {
 
 		Explicitwaitvisibility(b.Listitem1);
 		tomovethecursor(b.Listitem1);
-		toClick(b.Listitem1);
+		clickjavascript(b.Listitem1);
 		Thread.sleep(3000);
 		tofill(b.Listitemname1, "Testitem1");
 		Thread.sleep(1000);
@@ -601,18 +737,28 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.approvearrow);
 		tomovethecursor(b.approvearrow);
-		toClick(b.approvearrow);
+		clickjavascript(b.approvearrow);
 		Thread.sleep(2000);
 
 		Explicitwaitvisibility(b.approve);
 		tomovethecursor(b.approve);
 		Thread.sleep(1000);
-		toClick(b.approve);
+		clickjavascript(b.approve);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
 		tomovethecursor(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
+		
+
+		if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(b.payamount);
+		}
+
 
 	}
 
@@ -632,11 +778,11 @@ public class Purchase_Bills extends Reusableclass {
 
 		tomovethecursor(b.options);
 		Thread.sleep(1000);
-		toClick(b.options);
+		clickjavascript(b.options);
 
 		tomovethecursor(b.edit);
 		Thread.sleep(1000);
-		toClick(b.edit);
+		clickjavascript(b.edit);
 
 		Thread.sleep(2000);
 
@@ -659,11 +805,11 @@ public class Purchase_Bills extends Reusableclass {
 
 		tomovethecursor(b.options);
 		Thread.sleep(1000);
-		toClick(b.options);
+		clickjavascript(b.options);
 
 		tomovethecursor(b.voiddelete);
 		Thread.sleep(1000);
-		toClick(b.voiddelete);
+		clickjavascript(b.voiddelete);
 
 		Thread.sleep(2000);
 
@@ -671,11 +817,11 @@ public class Purchase_Bills extends Reusableclass {
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.yes);
-		toClick(b.yes);
+		clickjavascript(b.yes);
 
 		Thread.sleep(1000);
 		Explicitwaitvisibility(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
 
 	}
 
@@ -691,25 +837,25 @@ public class Purchase_Bills extends Reusableclass {
 		Thread.sleep(2000);
 		Explicitwaitvisibility(b.bills);
 		tomovethecursor(b.bills);
-		toClick(b.bills);
+		clickjavascript(b.bills);
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(b.awaitingpayment);
 		tomovethecursor(b.awaitingpayment);
 		Thread.sleep(1000);
-		toClick(b.awaitingpayment);
+		clickjavascript(b.awaitingpayment);
 
 		Thread.sleep(1000);
 		tomovethecursor(b.draftsitem);
 		Thread.sleep(1000);
-		toClick(b.draftsitem);
+		clickjavascript(b.draftsitem);
 
 		tomovethecursor(b.options);
-		toClick(b.options);
+		clickjavascript(b.options);
 		Thread.sleep(1000);
 
 		tomovethecursor(b.copy);
-		toClick(b.copy);
+		clickjavascript(b.copy);
 
 	}
 
@@ -724,30 +870,50 @@ public class Purchase_Bills extends Reusableclass {
 		toClick(b.approve);
 		Thread.sleep(2000);
 		tomovethecursor(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
+
+		Thread.sleep(1000);
+
+		if(b.outstandingcredit.isDisplayed())
+
+		{
+			b.skip.click();
+		}else {
+			tomovethecursor(b.options);
+		}
 
 	}
 
 	@Then("User needs to add credit note for approved bill")
-	public void user_needs_to_add_credit_note_for_approved_bill() throws InterruptedException {
+	public void user_needs_to_add_credit_note_for_approved_bill() throws InterruptedException, AWTException {
 
 		b = new Billspojo();
 
 		tomovethecursor(b.options);
-		toClick(b.options);
+		clickjavascript(b.options);
 		Thread.sleep(1000);
 
 		tomovethecursor(b.Addcreditnote);
 		Thread.sleep(1000);
-		toClick(b.Addcreditnote);
-
+		clickjavascript(b.Addcreditnote);
+		
+		Explicitwaitvisibility(b.creditnotesgridout);
+		tomovethecursor(b.creditnotesgridout);
+		clickjavascript(b.creditnotesgridout);
+		Thread.sleep(1000);
+		tomovethecursor(b.creditnotestext);
+		tofill(b.creditnotestext, "Testitem1");
+		Thread.sleep(1000);
+		toenter();
+		Thread.sleep(1000);
+		
 		Scrolldownjavascript();
 		Thread.sleep(1000);
 		tomovethecursor(b.approve);
 		clickjavascript(b.approve);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		tomovethecursor(b.ok);
-		toClick(b.ok);
+		clickjavascript(b.ok);
 
 	}
 

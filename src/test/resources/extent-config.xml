@@ -5,7 +5,7 @@
 
 		<!-- standard, dark -->
 
-		<theme>light</theme>
+		<theme>standard</theme>
 		<!-- document encoding -->
 
 		<!-- defaults to UTF-8 -->
@@ -17,10 +17,10 @@
 
 		<protocol>http</protocol>
 		<!-- title of the document -->
-		<documentTitle>Main project phase2</documentTitle>
+		<documentTitle>Info-Accounting Software</documentTitle>
 		<!-- report name - displayed at top-nav -->
 
-		<reportName>Main project phase2 - Automation Test Report</reportName>
+		<reportName>Info-Accounting : Automation Test Report</reportName>
 		<!-- location of charts in the test view -->
 
 		<!-- top, bottom -->

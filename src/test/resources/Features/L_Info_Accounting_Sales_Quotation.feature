@@ -1,8 +1,7 @@
 @Quotation
 Feature: Info-Accouting Sales-Quotation scenario
 
-  @LoginCredentials
- 
+
  Scenario: Creating a new quotation and approving the quotation
     Given User need to navigate to Quotation slide
     And User need to create and Approve a Quotation by entering details like Customer contact,Date,Expiry date..Etc

@@ -22,7 +22,7 @@ public class Sale_Quotation_POJO extends Reusableclass
 	@FindBy(xpath = "//a[contains(.,'shopping_cart Sales')]")
 	public WebElement Salesslide;
 
-	@FindBy(xpath = "//a[contains(.,'arrow_rightQuotation')]")
+	@FindBy(xpath = "//a[@href='/sales/quotation/quotesview']")
 	public WebElement Quotationslide;
 
 	@FindBy(xpath = "(//button[contains(@type,'button')])[4]")

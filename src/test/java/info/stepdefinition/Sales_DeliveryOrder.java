@@ -40,7 +40,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		//Thread.sleep(1000);
 		//totabkey();
 		//Delete();
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -87,23 +87,28 @@ public class Sales_DeliveryOrder extends Reusableclass{
 	}
 
 	@Then("User need to copy as quote in delivery order page")
-	public void user_need_to_copy_as_quote_in_delivery_order_page() {
+	public void user_need_to_copy_as_quote_in_delivery_order_page() throws InterruptedException {
 
 		s=new Sales_DeliveryOrder_POJO();
 
 		ScrollupElement(s.DeliveryOrderScreen);
 		Explicitwaitvisibility(s.DeliveryOrderScreen);
 		clickjavascript(s.DeliveryOrderScreen);
-
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.Approvedtab);
 		clickjavascript(s.Approvedtab);
+		Thread.sleep(1000);
 		Selectcheckbox(s.Approvedtabchkboxall);
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.copytobtnapprovedtab);
 		clickjavascript(s.copytobtnapprovedtab);
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.quoteradiobtnapprovedtab);
 		clickjavascript(s.quoteradiobtnapprovedtab);
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.quotechkboxrdbtnapprovedtab);
 		Selectcheckbox(s.quotechkboxrdbtnapprovedtab);
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.createdraftbtnapprovedtab);
 		Selectcheckbox(s.createdraftbtnapprovedtab);
 
@@ -116,6 +121,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Selectcheckbox(s.Approvedtabchkboxall);
 		Explicitwaitvisibility(s.Markaspackedbtnapprovedtab);
 		clickjavascript(s.Markaspackedbtnapprovedtab);
+		Thread.sleep(1000);
 		Explicitwaitvisibility(s.OkbtnMarkaspackedbtnapprovedtab);
 		clickjavascript(s.OkbtnMarkaspackedbtnapprovedtab);
 	}
@@ -174,7 +180,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -326,7 +332,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -359,7 +365,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -554,7 +560,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -588,7 +594,7 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(s.Date);
-		tofill(s.Date, "17/11/2022");
+		tofill(s.Date, "16/12/2022");
 		Thread.sleep(2000);
 		Explicitwaitvisibility(s.ReferenceName);
 		tofill(s.ReferenceName, "Sales");
@@ -627,7 +633,6 @@ public class Sales_DeliveryOrder extends Reusableclass{
 		Explicitwaitvisibility(s.yesdeleteitdraft);
 		clickjavascript(s.yesdeleteitdraft);
 		
-		//driver.quit();
 		
 	}
 

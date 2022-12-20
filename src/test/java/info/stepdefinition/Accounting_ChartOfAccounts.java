@@ -8,7 +8,10 @@ import info.base.Reusableclass;
 import info.pojo.Accounting_ChartOfAccount_POJO;
 import info.pojo.Sales_Invoice_POJO;
 import info.pojo.Sales_Quotation_POJO;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class Accounting_ChartOfAccounts extends Reusableclass {
 	public static Accounting_ChartOfAccount_POJO coa;
@@ -18,6 +21,7 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 	public void user_need_to_navigate_to_add_account_in_chart_of_accounts_page_and_enter_details_like_account_code_account_name_tax_id_etc() throws InterruptedException, AWTException {
 
 		coa = new Accounting_ChartOfAccount_POJO();
+
 
 		Explicitwaitvisibility(coa.Accountingslide);
 		clickjavascript(coa.Accountingslide);
@@ -117,7 +121,7 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		clickjavascript(coa.Searchbox_COA);
 		tofill(coa.Searchbox_COA, "887553333");
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 		Selectcheckbox(coa.RevenueChkbox_COA);
 
@@ -878,17 +882,18 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 	public void user_need_to_verify_added_account_through_making_a_complete_payment_in_invoice() throws InterruptedException, AWTException {
 		coa = new Accounting_ChartOfAccount_POJO();
 		i=new Sales_Invoice_POJO();
-
+		ScrollupElement(i.Salesslide);
 		Explicitwaitvisibility(i.Salesslide);
 		clickjavascript(i.Salesslide);
 		Explicitwaitvisibility(i.Invoiceslide);
 		clickjavascript(i.Invoiceslide);
 		Explicitwaitvisibility(i.awaitingpayment);
 		clickjavascript(i.awaitingpayment);
+		Thread.sleep(3000);
 		Explicitwaitvisibility(i.Firstrowinvoice);
 		clickjavascript(i.Firstrowinvoice);
 
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
 		/*Explicitwaitvisibility(i.skip);
 		clickjavascript(i.skip);*/
@@ -899,9 +904,10 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 
 		Thread.sleep(1000);
 		tomovethecursor(i.datepaid);
-		tofill(i.datepaid, "24/11/2022");
+		tofill(i.datepaid, "12/12/2022");
 		Thread.sleep(1000);
 
+		Explicitwaitvisibility(i.PaidTo);
 		clickjavascript(i.PaidTo);
 		tofill(i.PaidTo, "asxsad");
 		Thread.sleep(2000);
@@ -913,6 +919,7 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		tofill(i.bankrate, "2");
 
 		Thread.sleep(2000);
+		Explicitwaitvisibility(i.cash);
 		tomovethecursor(i.cash);
 		Thread.sleep(1000);
 		tofill(i.cash, "Cash");
@@ -920,7 +927,6 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		toenter();
 
 
-		Thread.sleep(2000);
 		Explicitwaitvisibility(i.Addrefundbtn);
 		clickjavascript(i.Addrefundbtn);
 
@@ -950,7 +956,7 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(coa.Accountcodetxt_COA);
-		tofill(coa.Accountcodetxt_COA, "8873733212");
+		tofill(coa.Accountcodetxt_COA, "887377868680");
 
 		Thread.sleep(1000);
 
@@ -962,7 +968,7 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(coa.AccountNametxt_COA);
-		tofill(coa.AccountNametxt_COA, "AutoAccounttestsc2");
+		tofill(coa.AccountNametxt_COA, "AutoAccounttests6666666");
 
 		Thread.sleep(1000);
 
@@ -974,13 +980,14 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 		Thread.sleep(1000);
 
 		Explicitwaitvisibility(coa.AccountDescription_COA);
-		tofill(coa.AccountDescription_COA, "TestDescription");
+		tofill(coa.AccountDescription_COA, "Test-Description");
 
 		unSelectcheckbox(coa.Ispaymentchkbox_COA);
 
 		Thread.sleep(3000);
 		Explicitwaitvisibility(coa.Savebtn_COA);
 		clickjavascript(coa.Savebtn_COA);
+
 
 	}
 
@@ -1033,6 +1040,126 @@ public class Accounting_ChartOfAccounts extends Reusableclass {
 	}
 
 	 */
+
+	@Given("User need to navigate to send statement page")
+	public void user_need_to_navigate_to_send_statement_page() throws InterruptedException {
+		coa = new Accounting_ChartOfAccount_POJO();
+		Explicitwaitvisibility(coa.ContactMenu_COA);
+		clickjavascript(coa.ContactMenu_COA);
+		Thread.sleep(2000);
+		Explicitwaitvisibility(coa.SendStatementbtn_COA);
+		clickjavascript(coa.SendStatementbtn_COA);
+
+
+	}
+
+	@When("User need to select statement type and search for required statement")
+	public void user_need_to_select_statement_type_and_search_for_required_statement() throws InterruptedException {
+		coa = new Accounting_ChartOfAccount_POJO();
+		Thread.sleep(2000);
+		Explicitwaitvisibility(coa.StatementTypeDD_COA);
+		Toclear(coa.StatementTypeDD_COA);
+		tofill(coa.StatementTypeDD_COA, "Activity");
+
+		Explicitwaitvisibility(coa.FromDate_COA);
+		Toclear(coa.FromDate_COA);
+		tofill(coa.FromDate_COA, "12/12/2022");
+
+		Explicitwaitvisibility(coa.toDate_COA);
+		Toclear(coa.toDate_COA);
+		tofill(coa.toDate_COA, "16/12/2022");
+
+		Explicitwaitvisibility(coa.SearchBtn_COA);
+		clickjavascript(coa.SearchBtn_COA);
+	}
+	@Then("User need to select a record and print the record")
+	public void user_need_to_select_a_record_and_print_the_record() throws InterruptedException, AWTException {
+		coa = new Accounting_ChartOfAccount_POJO();
+
+
+		Explicitwaitvisibility(coa.Searchboxlist_COA);
+		Toclear(coa.Searchboxlist_COA);
+		tofill(coa.Searchboxlist_COA, "Automation");
+		Thread.sleep(2000);
+		toenter();
+
+		Thread.sleep(3000);
+		Selectcheckbox(coa.CheckAllSendStatement__COA);
+
+		Explicitwaitvisibility(coa.PrintBtn__COA);
+		clickjavascript(coa.PrintBtn__COA);
+
+		Explicitwaitvisibility(coa.ThemeDD__COA);
+		Toclear(coa.ThemeDD__COA);
+		tofill(coa.ThemeDD__COA, "Standard Template");
+		Thread.sleep(2000);
+		clickjavascript(coa.OkBtn_ThemeDD__COA);
+		/*
+		Thread.sleep(5000);
+		Explicitwaitvisibility(coa.OpenPrintBtn__COA);
+		clickjavascript(coa.OpenPrintBtn__COA);
+
+		Thread.sleep(5000);
+		Explicitwaitvisibility(coa.CancelBtn_PrintPage__COA);
+		clickjavascript(coa.CancelBtn_PrintPage__COA);*/
+
+		Thread.sleep(5000);
+		Explicitwaitvisibility(coa.Closebtn__COA);
+		clickjavascript(coa.Closebtn__COA);
+
+	}
+
+	@Given("User need to navigate to send statement page for email verification")
+	public void user_need_to_navigate_to_send_statement_page_for_email_verification() throws InterruptedException {
+		coa = new Accounting_ChartOfAccount_POJO();
+		Explicitwaitvisibility(coa.Email_COA);
+		clickjavascript(coa.Email_COA);
+
+
+	}
+
+	@When("User need to select statement type and search for required statement to verify a email")
+	public void user_need_to_select_statement_type_and_search_for_required_statement_to_verify_a_email() throws InterruptedException, AWTException {
+		coa = new Accounting_ChartOfAccount_POJO();
+		Thread.sleep(2000);
+		Explicitwaitvisibility(coa.EmailTouchframe_COA);
+		clickjavascript(coa.EmailTouchframe_COA);
+		Thread.sleep(1000);
+		Explicitwaitvisibility(coa.EmailEnter_COA);
+		clickjavascript(coa.EmailEnter_COA);
+		Toclear(coa.EmailEnter_COA);
+		tofill(coa.EmailEnter_COA, "emailverification@mailinator.com");
+		totabkey();
+
+	}
+
+	@Then("User need to select a record and send the record to the particular email")
+	public void user_need_to_select_a_record_and_send_the_record_to_the_particular_email() throws InterruptedException {
+		coa = new Accounting_ChartOfAccount_POJO();
+
+		Thread.sleep(2000);
+		ScrolldownElement(coa.Sendbtn_COA);
+		Explicitwaitvisibility(coa.Sendbtn_COA);
+		clickjavascript(coa.Sendbtn_COA);
+	}
+
+	@Given("User need to navigate to send statement page for Dowmload verification")
+	public void user_need_to_navigate_to_send_statement_page_for_dowmload_verification() throws InterruptedException {
+		coa = new Accounting_ChartOfAccount_POJO();
+
+		Explicitwaitvisibility(coa.Download_COA);
+		clickjavascript(coa.Download_COA);
+		Thread.sleep(2000);
+		Explicitwaitvisibility(coa.ThemeDD__COA);
+		Toclear(coa.ThemeDD__COA);
+		tofill(coa.ThemeDD__COA, "Standard Template");
+		Thread.sleep(2000);
+		clickjavascript(coa.OkBtn_ThemeDD__COA);
+	}
+
+	//import scenario
+	//Export scenario
+
 
 
 

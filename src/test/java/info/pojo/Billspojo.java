@@ -11,6 +11,8 @@ public class Billspojo extends Reusableclass{
 		
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(xpath="//input[@id='BankExRate']")
+	public WebElement Exchangerate;
 	
 	@FindBy(xpath = "//a[@href='/purchase/bills/billsview']")
 	public WebElement bills;
@@ -21,16 +23,16 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath = "(//input[@aria-autocomplete='list'])[2]")
 	public WebElement from;
 	
-	@FindBy(xpath = "//input[contains(@formcontrolname,'BillDate')]")
+	@FindBy(xpath = "//input[@id='dpBillDate']")//id changed
 	public WebElement billdate;
 	
-	@FindBy(xpath = "(//input[@placeholder='dd/mm/yyyy'])[2]")
+	@FindBy(xpath = "//input[@id='dpDueDate']")//idchanged
 	public WebElement duedate;
 	
 	@FindBy(xpath = "//input[contains(@id,'PermitNo')]")
 	public WebElement permitno;
 	
-	@FindBy(xpath = "//input[contains(@maxlength,'50')]")
+	@FindBy(xpath = "//input[@id='txtReference']")//id changed
 	public WebElement refno;
 	
 	@FindBy(xpath = "(//input[@type='text'])[8]")
@@ -42,22 +44,22 @@ public class Billspojo extends Reusableclass{
 	@FindBy(xpath = "(//input[contains(@aria-autocomplete,'list')])[5]")
 	public WebElement theme;
 
-	@FindBy(xpath = "(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[1]")
+	@FindBy(xpath = "//td[@id='td-p0-c1']")//id changed
 	public WebElement Listitem1;
 	
 	@FindBy(xpath = "(//input[contains(@type,'text')])[11]")
 	public WebElement Listitemname1;
 
-	@FindBy(xpath="//button[contains(.,'add  Add New Lines')]")
+	@FindBy(xpath="//button[@id='btnAddNewLine']")
 	public WebElement addnewlines;
 	
-	@FindBy(xpath="(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[3]")
+	@FindBy(xpath="//td[@id='td-p1-c1']")//id changed
 	public WebElement Listitem2;
 	
 	@FindBy(xpath = "(//input[@type='text'])[11]")
 	public WebElement Listitemname2;
 	
-	@FindBy(xpath="(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[5]")
+	@FindBy(xpath="//td[@id='td-p2-c1']")//id changed
 	public WebElement Listitem3;
 	
 	@FindBy(xpath="(//input[@type='text'])[11]")
@@ -146,5 +148,29 @@ public class Billspojo extends Reusableclass{
 	
 	@FindBy(xpath="//a[contains(text(),'Add Credit Note')]")
 	public WebElement Addcreditnote;
+	
+	@FindBy(xpath="//h4[contains(text(),'New Recurring Bill Setting')]")
+	public WebElement billsettings;
+	
+	@FindBy(xpath="//label[contains(text(),'Enable Recurring Setting')]")
+	public WebElement recurrence;
+	
+	@FindBy(xpath="(//button[@class='close'])[9]")
+	public WebElement close;
+	
+	@FindBy(xpath="//input[@formcontrolname='searchtext']")
+	public WebElement searchtext;
+	
+	@FindBy(xpath="//h2[contains(text(),'Allocate Outstanding Credit?')]")
+	public WebElement outstandingcredit;
+	
+	@FindBy(xpath="//button[contains(text(),'Skip')]")
+	public WebElement skip;
+	
+	@FindBy(xpath="(//input[@type='text'])[9]")
+	public WebElement creditnotestext;
+	
+	@FindBy(xpath="//td[@id='td-p2-c1']")
+	public WebElement creditnotesgridout;
 
 }

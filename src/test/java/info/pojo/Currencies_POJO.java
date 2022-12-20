@@ -42,10 +42,10 @@ public class Currencies_POJO extends Reusableclass
 	@FindBy(xpath = "(//i[@class='fa fa-pencil t-link edit'])[1]")
 	public WebElement Editicon;
 
-	@FindBy(xpath = "//input[@name='ds']")
+	@FindBy(xpath = "(//input[@placeholder='dd/mm/yyyy'])[1]")
 	public WebElement Startdate;
 
-	@FindBy(xpath = "//input[@name='de']")
+	@FindBy(xpath = "(//input[@placeholder='dd/mm/yyyy'])[2]")
 	public WebElement Enddate;
 
 	@FindBy(xpath = "//button[contains(.,'Save')]")

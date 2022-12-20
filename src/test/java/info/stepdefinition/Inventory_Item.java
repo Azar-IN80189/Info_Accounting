@@ -33,8 +33,8 @@ public class Inventory_Item extends Reusableclass {
 
 	}
 
-	@And("User need to Add an item")
-	public void user_need_to_add_an_item() throws AWTException, InterruptedException {
+	@And("User need to Add an item by entering fields like item code,item name,product category...Etc")
+	public void user_need_to_add_an_item_by_entering_fields_like_item_code_item_name_product_category_etc() throws AWTException, InterruptedException {
 		i=new Inventory_Item_POJO();
 
 		Explicitwaitvisibility(i.Additembtn);
@@ -131,8 +131,8 @@ public class Inventory_Item extends Reusableclass {
 	
 	}
 
-	@Then("User need to add an service item")
-	public void user_need_to_add_an_service_item() throws AWTException, InterruptedException {
+	@Then("User need to add an service item by entering fields like item code,item name,product category...Etc")
+	public void user_need_to_add_an_service_item_by_entering_fields_like_item_code_item_name_product_category_etc() throws AWTException, InterruptedException {
 		i=new Inventory_Item_POJO();
 	
 			Thread.sleep(2000);
@@ -238,8 +238,8 @@ public class Inventory_Item extends Reusableclass {
 		actionssendkeysdelete(i.Searchitems);
 	}
 
-	@And("User need to add an product group")
-	public void user_need_to_add_an_product_group() throws InterruptedException, AWTException {
+	@And("User need to add an product group item by entering fields like item code, item name ,DescriptionProductGroup...Etc")
+	public void user_need_to_add_an_product_group_item_by_entering_fields_like_item_code_item_name_description_product_group_etc() throws InterruptedException, AWTException {
 		
 		i=new Inventory_Item_POJO();
 
@@ -344,8 +344,8 @@ public class Inventory_Item extends Reusableclass {
 
 	
 
-	@And("User need to Manage an item")
-	public void user_need_to_manage_an_item() throws InterruptedException {
+	@And("User need to Manage an item by entering fields like category name..Etc")
+	public void user_need_to_manage_an_item_by_entering_fields_like_category_name_etc() throws InterruptedException {
 		i=new Inventory_Item_POJO();
 		
 			Explicitwait(i.ManageCategorybtn);
@@ -353,7 +353,7 @@ public class Inventory_Item extends Reusableclass {
 			clickjavascript(i.ManageCategorybtn);
 			Thread.sleep(2000);
 			highLightElement(i.Categorynametxtbox);
-			tofill(i.Categorynametxtbox, "test9888");
+			tofill(i.Categorynametxtbox, "testcategory7766578");
 			highLightElement(i.AddcategoryBtn);
 			clickjavascript(i.AddcategoryBtn);
 			highLightElement(i.Cancelbtn);
@@ -372,7 +372,7 @@ public class Inventory_Item extends Reusableclass {
 		clickjavascript(i.manageUnitTypebtn);
 		Thread.sleep(2000);
 		highLightElement(i.manageUnitTypename);
-		tofill(i.manageUnitTypename, "test9555");
+		tofill(i.manageUnitTypename, "testunittype63801");
 		
 	
 		Selectcheckbox(i.Activechkbox);
@@ -396,8 +396,8 @@ public class Inventory_Item extends Reusableclass {
 
 
 
-	@Then("User need to verify the All Headers on the Items page")
-	public void user_need_to_verify_the_all_headers_on_the_items_page() throws InterruptedException {
+	@Then("User need to verify the All Headers on the Items page\\/AllTabheader,SalesTab,PurchasesTab,Inactivetab")
+	public void user_need_to_verify_the_all_headers_on_the_items_page_all_tabheader_sales_tab_purchases_tab_inactivetab() throws InterruptedException {
 		i=new Inventory_Item_POJO();
 	
 			ScrollupElement(i.AllTabheader);

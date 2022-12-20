@@ -25,7 +25,7 @@ public class Detail extends Reusableclass {
 		toMaximize();
 
 		a = new Account_Login_POJO();
-		Thread.sleep(3000);
+	Thread.sleep(3000);
 		tomovethecursor(a.username);
 		Thread.sleep(1000);
 		toClick(a.username);
@@ -34,7 +34,7 @@ public class Detail extends Reusableclass {
 		Thread.sleep(1000);
 		toClick(a.password);
 		Thread.sleep(1000);
-		tofill(a.password, "Info@906");
+		tofill(a.password, "Info@923");
 		Thread.sleep(1000);
 		toClick(a.submit);
 

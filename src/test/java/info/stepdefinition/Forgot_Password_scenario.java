@@ -18,6 +18,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 	@Given("User need to trigger the forgot password link")
 	public void user_need_to_trigger_the_forgot_password_link() throws InterruptedException {
 		f=new Forgot_Password_POJO();
+	
 		highLightElement(f.forgotpasswordlink);
 		toClick(f.forgotpasswordlink);
 
@@ -32,26 +33,33 @@ public class Forgot_Password_scenario extends Reusableclass{
 
 
 		highLightElement(f.Emailenterforgot);
+		Toclear(f.Emailenterforgot);
 		tofill(f.Emailenterforgot, "testautomation@mailinator.com");
 
 		highLightElement(f.Sendresetlink);
 		toClick(f.Sendresetlink);
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
 		highLightElement(u.SearchMailinator);
+		Toclear(u.SearchMailinator);
 		tofill(u.SearchMailinator, "testautomation");
 		toenter();
 
 		Explicitwaitvisibility(u.Displayemail);
 
 		highLightElement(u.mailinatorvisiblemail);
+		Explicitwaitvisibility(u.mailinatorvisiblemail);
 		clickjavascript(u.mailinatorvisiblemail);
+		Thread.sleep(4000);
 		Pageloadtimeout();
 		Scrolldownjavascript();
 		Pageloadtimeout();
 		Scrolldownjavascript();
 		driver.switchTo().frame(u.frames);
-		highLightElement(u.mailinatorresetpass);
-		toClick(u.mailinatorresetpass);
+		
+		//highLightElement(u.mailinatorresetpass);
+		Explicitwaitvisibility(u.mailinatorresetpass);
+		clickjavascript(u.mailinatorresetpass);
+		
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
 		}
@@ -60,10 +68,10 @@ public class Forgot_Password_scenario extends Reusableclass{
 		Thread.sleep(7000);
 		highLightElement(u.Newpasswordreset);
 		toClick(u.Newpasswordreset);
-		u.Newpasswordreset.sendKeys("Iteration@98799");
+		u.Newpasswordreset.sendKeys("Iteration@9018");
 		highLightElement(u.ReNewpasswordreset);
 		toClick(u.ReNewpasswordreset);
-		u.ReNewpasswordreset.sendKeys("Iteration@98799");
+		u.ReNewpasswordreset.sendKeys("Iteration@9018");
 		highLightElement(u.savepasswordreset);
 		toClick(u.savepasswordreset);
 		Thread.sleep(1000);
@@ -82,12 +90,14 @@ public class Forgot_Password_scenario extends Reusableclass{
 		Thread.sleep(3000);
 		highLightElement(w.username);
 		toClick(w.username);
+		Toclear(w.username);
 		tofill(w.username, "testautomation@mailinator.com");
 
 		highLightElement(w.password);
 		toClick(w.password);
+		Toclear(w.password);
 		Thread.sleep(2000);
-		tofill(w.password, "Iteration@98799");
+		tofill(w.password, "Iteration@9018");
 
 		Thread.sleep(2000);
 		highLightElement(w.submit);
@@ -95,7 +105,7 @@ public class Forgot_Password_scenario extends Reusableclass{
 		Thread.sleep(3000);
 		highLightElement(f.logoutbtn);
 		toClick(f.logoutbtn);
-	
+
 	}
 
 	@Given("User need to login as existing user")
@@ -105,12 +115,14 @@ public class Forgot_Password_scenario extends Reusableclass{
 		Explicitwaitvisibility(w.username);
 		highLightElement(w.username);
 		toClick(w.username);
+		Toclear(w.username);
 		tofill(w.username, "azarudeenn@info-tech.co.in");
 
 		highLightElement(w.password);
 		toClick(w.password);
+		Toclear(w.password);
 		Thread.sleep(2000);
-		tofill(w.password, "Info@907");
+		tofill(w.password, "Info@924");
 
 
 		Thread.sleep(2000);

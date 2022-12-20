@@ -1,4 +1,3 @@
-#Author: Azar
 @Deliveryorder
 Feature: Info-Accouting Sales-Delivery order scenario
 

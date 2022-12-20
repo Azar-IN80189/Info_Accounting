@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 24, 2022 11:14:19 AM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 2, 2022 11:51:50 AM</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 24, 2022 11:14:19 AM</h3>
+<h3>Dec 2, 2022 11:51:50 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 24, 2022 11:18:50 AM</h3>
+<h3>Dec 2, 2022 11:52:14 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>20</b> scenarios passed</small></div>
+<div><small data-tooltip='50%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='50%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>23</b> steps passed</small></div>
+<div><small data-tooltip='71%'><b>5</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='14%'><b>1</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Info-Accounting Chart of Account order scenario":269.832
+"Verify Info-Accouting Login Feature":23.122
 };
 </script>
 <div class="row">
@@ -172,20 +177,12 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@Chartofaccount</td>
-<td>21</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@LoginCredentials</td>
+<td>@Loginscenario</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>50%</td>
 </tr>
 </tbody>
 </table></div>
@@ -199,7 +196,7 @@ var timeline = {
 <tbody>
 <tr>
 <td>build</td>
-<td>1.0</td>
+<td>2.0</td>
 </tr>
 <tr>
 <td>user</td>
@@ -211,7 +208,7 @@ var timeline = {
 </tr>
 <tr>
 <td>os</td>
-<td>Windows 11</td>
+<td>Windows-11</td>
 </tr>
 </tbody>
 </table></div>
@@ -222,21 +219,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 20,
-failChild: 0,
+passChild: 1,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 23,
-failGrandChild: 0,
+passGrandChild: 5,
+failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 1,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -250,7 +247,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -258,34 +255,33 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Chartofaccount</a><a class="dropdown-item" href="#">@LoginCredentials</a>
+<a class="dropdown-item" href="#">@Loginscenario</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
-          tag="@Chartofaccount"
+          tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Info-Accounting Chart of Account order scenario</p>
+            <p class="name">Verify Info-Accouting Login Feature</p>
             <p class="text-sm">
-              <span>11:14:20 AM</span> / <span>00:04:29:832</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>11:51:51 AM</span> / <span>30:23:122</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Info-Accounting Chart of Account order scenario</h5>
-<span class='badge badge-success'>11.24.2022 11:14:20</span>
-<span class='badge badge-danger'>11.24.2022 11:18:50</span>
-<span class='badge badge-default'>00:04:29:832</span>
+<h5 class="test-status text-fail">Verify Info-Accouting Login Feature</h5>
+<span class='badge badge-success'>12.02.2022 11:51:51</span>
+<span class='badge badge-danger'>12.02.2022 11:52:14</span>
+<span class='badge badge-default'>30:23:122</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">@Chartofaccount</span></div>
 <div class="m-t-10 m-l-5"></div>
 </div>
 </div>
@@ -293,14 +289,44 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Chart of account add an account with is payment scenario/Revenue</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Login using Support User Credentials</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_in_chart_of_accounts_page_and_enter_details_like_account_code_account_name_tax_id_etc()">
-                <span>Given User need to navigate to add account in chart of accounts page and enter details like account code,account name ,Tax Id..Etc</span>
+              <div class="step fail-bg" title="info.stepdefinition.Supportlogin.user_need_to_enter_username_and_password_and_logged_in_as_support_user()">
+                <span>Given User need to enter Username and password and logged in as Support User</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INFO-IN-LTP-007', ip: '192.168.0.182', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_311'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.setSelectedByIndex(Select.java:297)
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:172)
+	at info.stepdefinition.Supportlogin.user_need_to_enter_username_and_password_and_logged_in_as_support_user(Supportlogin.java:53)
+	at ✽.User need to enter Username and password and logged in as Support User(file:///C:/Users/Azarudeen/eclipse-workspace/Info_Accouting_Flow/src/test/resources/Features/A_login.feature:5)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>info.stepdefinition.Supportlogin.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="info.stepdefinition.Supportlogin.user_need_to_check_whether_it_is_logged_in_as_support_user()">
+                <span>And User need to check whether it is logged in as support user</span>
+      <div>Step skipped
       </div>
               </div>
           </div>
@@ -309,316 +335,43 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>Edit an added account  with is payment scenario/Revenue</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_added_account_in_revenue_tab_and_edit_the_account_name_and_save_the_edited_account()">
-                <span>Given User need to edit an added account in revenue tab and edit the account name and save the edited account</span>
-      <div>
-      </div>
-              </div>
+        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Login using Normal User Credentails</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
           </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Verify whether the added account shows in Revenue page</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_revenue_page_account_and_delete_the_revenue_account()">
-                <span>Given User need to verify Revenue page account and delete the revenue account</span>
+              <div class="step pass-bg" title="info.stepdefinition.Login.user_need_to_enter_username_and_password_and_logged_in_as_normal_user()">
+                <span>Given User need to enter Username and password and logged in as Normal User</span>
       <div>
       </div>
               </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Chart of account add account  with is payment scenario/Expenses</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_in_chart_of_accounts_page_expenses()">
-                <span>Given User need to navigate to add account in chart of accounts page/Expenses</span>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>info.stepdefinition.Supportlogin.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Edit an added account  with is payment scenario/Expenses</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_added_account_in_expenses_tab()">
-                <span>Given User need to edit an added account in expenses tab</span>
+              <div class="step pass-bg" title="info.stepdefinition.Login.user_need_to_check_whether_it_is_logged_in_as_normal_user()">
+                <span>And User need to check whether it is logged in as Normal user</span>
       <div>
       </div>
               </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="13"><span class="badge log pass-bg mr-2">Pass</span>Verify whether the added account shows in Expenses page</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_expenses_page_account_and_delete_the_expenses_account()">
-                <span>Given User need to verify Expenses page account and delete the expenses account</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Chart of account add account  with is payment scenario/Assets</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_in_chart_of_accounts_page_assets()">
-                <span>Given User need to navigate to add account in chart of accounts page/Assets</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Edit an added account  with is payment scenario/Assets</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_added_account_in_assets_tab()">
-                <span>Given User need to edit an added account in Assets tab</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>Verify whether the added account shows in Assets page</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_assets_page_account_and_delete_the_asset_account()">
-                <span>Given User need to verify Assets page account and delete the asset account</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Chart of account add account  with is payment scenario/Liability</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_in_chart_of_accounts_page_liability()">
-                <span>Given User need to navigate to add account in chart of accounts page/Liability</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Edit an added account  with is payment scenario/Liability</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_added_account_in_liability_tab()">
-                <span>Given User need to edit an added account in Liability tab</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="25"><span class="badge log pass-bg mr-2">Pass</span>Verify whether the added account shows in Liability page</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_liability_page_account_and_delete_the_liability_account()">
-                <span>Given User need to verify Liability page account and delete the liability account</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Chart of account add account  with is payment scenario/Equity</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_in_chart_of_accounts_page_equity()">
-                <span>Given User need to navigate to add account in chart of accounts page/Equity</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Edit an added account  with is payment scenario/Equity</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_added_account_in_equity_tab()">
-                <span>Given User need to edit an added account in Equity tab</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Edit a tax and Move a record to archieve/Equity</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_edit_an_tax_in_equity_tab()">
-                <span>Given User need to edit an tax in Equity tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_move_a_record_to_archieve_in_equity_tab()">
-                <span>Given User need to move a record to archieve in Equity tab</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Verify whether the added account shows in Equity page</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_equity_page_account_and_delete_the_equity_account()">
-                <span>Given User need to verify Equity page account and delete the equity account</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>Verify whether user can able to make payment using created account</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_verify_added_account_through_making_a_complete_payment_in_invoice()">
-                <span>Given User need to Verify added account through making a complete payment in invoice</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>Create a account in chart of accounts without payment checkbox</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Accounting_ChartOfAccounts.user_need_to_navigate_to_add_account_scenario2()">
-                <span>Given User need to navigate to add account scenario2</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>Add Bank Account</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Add_Bank_Account.user_needs_to_navigate_to_chart_of_account_and_click_add_bank_account()">
-                <span>Given User needs to navigate to Chart of account and click add bank account</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Add_Bank_Account.user_needs_to_click_add_bank_account_and_navigate_to_banking_page_and_verify_whether_the_page_navigated_correctly()">
-                <span>Then User needs to click add bank account and navigate to banking page and verify whether the page navigated correctly</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="43"><span class="badge log pass-bg mr-2">Pass</span>Add Cash account</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="info.stepdefinition.Add_Cash_Account.user_needs_to_navigate_to_chart_of_accounts_screen_and_click_add_cash_account()">
-                <span>Given User needs to navigate to chart of accounts screen and click add cash account</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="info.stepdefinition.Add_Cash_Account.user_needs_to_click_add_cash_account_and_navigate_to_banking_page_and_verify_whether_the_page_navigated_correctly()">
-                <span>Then User needs to click Add Cash account and navigate to banking page and verify whether the page navigated correctly</span>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>info.stepdefinition.Supportlogin.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded3.png' src="../embedded3.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -641,22 +394,24 @@ eventsCount: 5,
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>21</span>
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@Chartofaccount</p>
-<p class="duration text-sm">21 tests</p>
+<p class="name">@Loginscenario</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Chartofaccount</h4>
-<span status="pass" class='badge log pass-bg'>21 passed</span>
+<h4>@Loginscenario</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -667,210 +422,23 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:14:20 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>11:51:51 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>Info-Accounting Chart of Account order scenario</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:14:20 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Chart of account add an account with is payment scenario/Revenue</a>
+<a href="#" class="linked" test-id='1' id='2'>Login using Support User Credentials</a>
 <div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add an account with is payment scenario/Revenue</span>
+<span class="badge badge-default">Verify Info-Accouting Login Feature.Login using Support User Credentials</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:03 AM</td>
+<td>11:52:03 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='5'>Edit an added account with is payment scenario/Revenue</a>
+<a href="#" class="linked" test-id='1' id='7'>Login using Normal User Credentails</a>
 <div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit an added account with is payment scenario/Revenue</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:09 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='7'>Verify whether the added account shows in Revenue page</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether the added account shows in Revenue page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:14 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='9'>Chart of account add account with is payment scenario/Expenses</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add account with is payment scenario/Expenses</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:29 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='11'>Edit an added account with is payment scenario/Expenses</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit an added account with is payment scenario/Expenses</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:35 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='13'>Verify whether the added account shows in Expenses page</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether the added account shows in Expenses page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:38 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='15'>Chart of account add account with is payment scenario/Assets</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add account with is payment scenario/Assets</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:53 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='17'>Edit an added account with is payment scenario/Assets</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit an added account with is payment scenario/Assets</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:15:59 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='19'>Verify whether the added account shows in Assets page</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether the added account shows in Assets page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:02 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='21'>Chart of account add account with is payment scenario/Liability</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add account with is payment scenario/Liability</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:16 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='23'>Edit an added account with is payment scenario/Liability</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit an added account with is payment scenario/Liability</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:23 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='25'>Verify whether the added account shows in Liability page</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether the added account shows in Liability page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:26 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='27'>Chart of account add account with is payment scenario/Equity</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add account with is payment scenario/Equity</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:41 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='29'>Edit an added account with is payment scenario/Equity</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit an added account with is payment scenario/Equity</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:48 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='31'>Edit a tax and Move a record to archieve/Equity</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Edit a tax and Move a record to archieve/Equity</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:58 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='34'>Verify whether the added account shows in Equity page</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether the added account shows in Equity page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:17:02 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='36'>Verify whether user can able to make payment using created account</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Verify whether user can able to make payment using created account</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:17:23 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='38'>Create a account in chart of accounts without payment checkbox</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Create a account in chart of accounts without payment checkbox</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:17:40 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='40'>Add Bank Account</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Add Bank Account</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:18:25 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='43'>Add Cash account</a>
-<div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Add Cash account</span>
+<span class="badge badge-default">Verify Info-Accouting Login Feature.Login using Normal User Credentails</span>
 </div>
 </td>
 </tr>
@@ -878,18 +446,34 @@ eventsCount: 5,
 </table>
 </div>
 </li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@LoginCredentials</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@LoginCredentials</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -900,13 +484,13 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>11:14:20 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>11:51:51 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Chart of account add an account with is payment scenario/Revenue</a>
+<a href="#" class="linked" test-id='1' id='3'>Given User need to enter Username and password and logged in as Support User</a>
 <div class="">
-<span class="badge badge-default">Info-Accounting Chart of Account order scenario.Chart of account add an account with is payment scenario/Revenue</span>
+<span class="badge badge-default">Verify Info-Accouting Login Feature.Login using Support User Credentials.Given User need to enter Username and password and logged in as Support User</span>
 </div>
 </td>
 </tr>

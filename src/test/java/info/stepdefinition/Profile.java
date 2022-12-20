@@ -109,17 +109,17 @@ public class Profile extends Reusableclass {
 		toClick(p.chngpwd);
 
 		highLightElement(p.crntpwd);
-		tofill(p.crntpwd, "Info@906");
+		tofill(p.crntpwd, "Info@923");
 
 		Thread.sleep(1000);
 
 		highLightElement(p.Newpwd);
-		tofill(p.Newpwd, "Info@907");
+		tofill(p.Newpwd, "Info@924");
 
 		Thread.sleep(1000);
 
 		highLightElement(p.cnfrmpwd);
-		tofill(p.cnfrmpwd, "Info@907");
+		tofill(p.cnfrmpwd, "Info@924");
 
 	}
 
@@ -144,7 +144,7 @@ public class Profile extends Reusableclass {
 		toClick(a.password);
 		Thread.sleep(1000);
 		highLightElement(a.password);
-		tofill(a.password, "Info@907");
+		tofill(a.password, "Info@924");
 		Thread.sleep(1000);
 		highLightElement(a.submit);
 		toClick(a.submit);

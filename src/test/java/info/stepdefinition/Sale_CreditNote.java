@@ -1,9 +1,6 @@
 package info.stepdefinition;
 import java.awt.AWTException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import info.base.Reusableclass;
 import info.pojo.Account_Login_POJO;
 import info.pojo.Purchase_CreditNotes_POJO;
@@ -20,22 +17,10 @@ public class Sale_CreditNote extends Reusableclass {
 	
 	@Given("User need to navigate to Credit Note slide")
 	public void user_need_to_navigate_to_credit_note_slide() {
-		/*
-		browserLaunch();
-		launchUrl("https://staging.infotech-accounting.com/login");
-		toMaximize();
-		
-		a = new AccountLoginpojo();
-
-		toClick(a.username);
-		tofill(a.username, "azarudeenn@info-tech.co.in");
-		toClick(a.password);
-		tofill(a.password, "Info@900");
-		toClick(a.submit);
-	*/
 		c=new Sales_CreditNote_POJO();
 		Explicitwaitvisibility(c.Salesslide);
 		clickjavascript(c.Salesslide);
+		Explicitwaitvisibility(c.CreditNoteslide);
 		clickjavascript(c.CreditNoteslide);
 		
 	}
@@ -54,7 +39,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
-		tofill(c.Date, "27/10/2022");
+		tofill(c.Date, "16/12/2022");
 		Thread.sleep(2000);
 		tofill(c.ReferenceName, "Sales");
 		Thread.sleep(1000);
@@ -114,7 +99,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
-		tofill(c.Date, "27/10/2022");
+		tofill(c.Date, "16/12/2022");
 		Thread.sleep(2000);
 		tofill(c.ReferenceName, "Sales");
 		Thread.sleep(1000);
@@ -182,7 +167,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Thread.sleep(2000);
 
 		Toclear(p.CreditnoteDatebox);
-		tofill(p.CreditnoteDatebox, "27/10/2022");
+		tofill(p.CreditnoteDatebox, "16/12/2022");
 
 		Thread.sleep(2000);
 
@@ -251,7 +236,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Explicitwaitvisibility(p.Dateawaitingpayment);
 		ScrolldownElement(p.Dateawaitingpayment);
 		Toclear(p.Dateawaitingpayment);
-		tofill(p.Dateawaitingpayment, "27/10/2022");
+		tofill(p.Dateawaitingpayment, "16/12/2022");
 
 		Thread.sleep(2000);
 		Explicitwaitvisibility(p.Paidtoawaitingpayment);
@@ -310,7 +295,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Thread.sleep(2000);
 
 		Toclear(p.CreditnoteDatebox);
-		tofill(p.CreditnoteDatebox, "27/10/2022");
+		tofill(p.CreditnoteDatebox, "16/12/2022");
 
 		Thread.sleep(2000);
 
@@ -379,7 +364,7 @@ public class Sale_CreditNote extends Reusableclass {
 		Explicitwaitvisibility(p.Dateawaitingpayment);
 		ScrolldownElement(p.Dateawaitingpayment);
 		Toclear(p.Dateawaitingpayment);
-		tofill(p.Dateawaitingpayment, "27/10/2022");
+		tofill(p.Dateawaitingpayment, "16/12/2022");
 
 
 		Thread.sleep(2000);

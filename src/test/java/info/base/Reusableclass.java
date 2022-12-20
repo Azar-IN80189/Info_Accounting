@@ -10,8 +10,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.DriverManager;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -41,6 +43,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,6 +54,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -69,17 +73,33 @@ public class Reusableclass
 	public static JavascriptExecutor js;
 	public static Select s;
 	public static Sheet sheet;
-
+	public static Scenario scenario;
 	private WebDriverWait wait;
 
 
 	//1.Browser launch 
 
+	public static Scenario getScenario() {
+		return scenario;
+	}
+
+	public static void setScenario(Scenario scenario) {
+		Reusableclass.scenario = scenario;
+	}
+
 	public static void browserLaunch() {
 
-		WebDriverManager.chromedriver().setup();
-
+		WebDriverManager.chromedriver().setup();	
 		driver = new ChromeDriver();
+		
+		
+		/*ChromeOptions options = new ChromeOptions();                        
+		 options.addArguments("--headless");
+		 options.addArguments("--disable-gpu");
+		 options.addArguments("--window-size=1280,800");
+		 options.addArguments("--allow-insecure-localhost");
+		driver = new ChromeDriver(options);*/
+	
 		JsDriver = (JavascriptExecutor) driver;
 		ngWebDriver= new NgWebDriver(JsDriver);
 	}
@@ -1047,6 +1067,8 @@ public class Reusableclass
 
 		//wdwait.until(ExpectedConditions.attributeContains(element, attribute, value));	
 	}
+	
+	
 
 	public void explicitWDWaitvisibility(By element)
 	{
@@ -1070,6 +1092,27 @@ public class Reusableclass
 		WebElement welement = wait.until(ExpectedConditions.elementToBeClickable(Selector));
 		welement.click();//old
 	}
+	
+	 public static void waitUntilFileToDownload(String folderLocation) throws InterruptedException {
+	        File directory = new File(folderLocation);
+	        boolean downloadinFilePresence = false;
+	        File[] filesList =null;
+	        LOOP:   
+	            while(true) {
+	                filesList =  directory.listFiles();
+	                for (File file : filesList) {
+	                    downloadinFilePresence = file.getName().contains(".crdownload");
+	                }
+	                if(downloadinFilePresence) {
+	                    for(;downloadinFilePresence;) {
+	                        sleep(5);
+	                        continue LOOP;
+	                    }
+	                }else {
+	                    break;
+	                }
+	            }
+	    }
 
 	public void byClickByMouse(By Selector) 
 	{
@@ -1619,8 +1662,35 @@ private String getLogicalName(WebElement element) {
 	
 	return name;
 }
+public static String captureScreen(WebDriver driver,String screenshotname)throws IOException {
+    String date = new SimpleDateFormat("MM-dd-yy,hh:mm:ss").format(new Date());
+    TakesScreenshot ts = (TakesScreenshot)driver;
+    File src= ts.getScreenshotAs(OutputType.FILE);
+    String path = System.getProperty(("user.dir")+"/ScreenShots/"+screenshotname+date+".png");
+    File destination = new File(path);
+    FileUtils.copyFile(src, destination);
+    return path;
+   
+}
 
-protected void sleep(int seconds) {
+//Creating a method getScreenshot and passing two parameters
+//driver and screenshotName
+public static String getScreenshot(WebDriver driver, String screenshotName) throws Exception {
+                //below line is just to append the date format with the screenshot name to avoid duplicate names
+                String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+TakesScreenshot ts = (TakesScreenshot) driver;
+File source = ts.getScreenshotAs(OutputType.FILE);
+                //after execution, you could see a folder "FailedTestsScreenshots" under src folder
+String destination = System.getProperty("user.dir") + "/Screenshots/"+screenshotName+dateName+".png";
+File finalDestination = new File(destination);
+FileUtils.copyFile(source, finalDestination);
+                //Returns the captured file path
+
+return destination;
+
+}
+
+protected static void sleep(int seconds) {
 
 	try {
 		Thread.sleep(seconds * 1000);

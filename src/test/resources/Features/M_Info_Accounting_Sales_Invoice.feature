@@ -1,3 +1,4 @@
+@Sales_Invoice
 Feature: Info-Accouting Sales-Invoice scenario
 
   Scenario: Sales-Invoice scenario

@@ -24,7 +24,7 @@ public class Login extends Reusableclass {
 	highLightElement(a.password);
 	toClick(a.password);
 	actionssendkeysdelete(a.password);
-	tofill(a.password, "Info@906");
+	tofill(a.password, "Info@923");
 
 	}
 
@@ -37,5 +37,22 @@ public class Login extends Reusableclass {
 		highLightElement(a.submit);
 		toClick(a.submit);
 	}
+/*	@AfterStep
+	public void addScreenshot(Scenario scenario) throws IOException {
+		  File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		  byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
+		  scenario.attach(fileContent, "image/png", "/Info_Accouting_Flow/Screenshots");
+		
+	} */
+	/*@AfterStep
+	public void addScreenshot(Scenario scenario){
+
+		//validate if scenario has failed
+		if(scenario.isFailed()) {
+			final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", "image"); 
+		}*/
+		
+	
 
 }

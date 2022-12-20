@@ -1,29 +1,31 @@
 package info.stepdefinition;
 
 import java.awt.AWTException;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import info.base.Reusableclass;
 import info.pojo.Account_Login_POJO;
+import info.pojo.Billspojo;
 import info.pojo.Purchaseflowpojo;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.bytebuddy.implementation.bind.annotation.TargetMethodAnnotationDrivenBinder;
 
 public class Purchase_Order_Flow extends Reusableclass {
 
 	public static Purchaseflowpojo p;
 	public static Account_Login_POJO a;
+	public static Billspojo b;
 
-	@Before("@Login")
+	@Before("@LoginCredentials")
 	private void login() throws InterruptedException {
 
 		browserLaunch();
@@ -34,7 +36,7 @@ public class Purchase_Order_Flow extends Reusableclass {
 		toClick(a.username);
 		tofill(a.username, "azarudeenn@info-tech.co.in");
 		toClick(a.password);
-		tofill(a.password, "Info@906");
+		tofill(a.password, "Info@920");
 		toClick(a.submit);
 
 		/*
@@ -66,10 +68,11 @@ public class Purchase_Order_Flow extends Reusableclass {
 	}
 
 	@Given("User needs to give new purchase order details-Contactname,Date,Orderno,etc")
-	public void user_needs_to_give_new_purchase_order_details_contactname_date_orderno_etc() throws InterruptedException, AWTException {
+	public void user_needs_to_give_new_purchase_order_details_contactname_date_orderno_etc()
+			throws InterruptedException, AWTException {
 
-		
 		p = new Purchaseflowpojo();
+
 		implicitwait();
 		Thread.sleep(1000);
 		Explicitwaitvisibility(p.purchase);
@@ -89,26 +92,26 @@ public class Purchase_Order_Flow extends Reusableclass {
 		tomovethecursor(p.addneworder);
 		Thread.sleep(1000);
 		implicitwait();
-		toClick(p.addneworder);
+		clickjavascript(p.addneworder);
 
-		toClick(p.supliername);
+		tomovethecursor(p.supliername);
 		tofill(p.supliername, "Neweleven");
 		Thread.sleep(1500);
 		toenter();
 		/*
 		 * tomovethecursor(p.savenewcontact); toClick(p.savenewcontact);
 		 */
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		tofill(p.Date, "03/11/2022");
 		Thread.sleep(1500);
 		toenter();
 		Thread.sleep(1000);
 
-		tofill(p.Deliverydate, "27/11/2022");
+		tofill(p.Deliverydate, "27/12/2022");
 		Thread.sleep(1000);
 
-		tofill(p.currency, "USD");
+		tofill(p.currency, "AED - United Arab Emirates Dirham");
 		Thread.sleep(1000);
 		toenter();
 		Thread.sleep(1000);
@@ -141,7 +144,7 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Thread.sleep(3000);
 
 		tomovethecursor(p.listitem2);
-		toClick(p.listitem2);
+		clickjavascript(p.Listitem1);
 		Thread.sleep(3000);
 		tofill(p.Listitemname2, "Testitem2");
 		Thread.sleep(2000);
@@ -150,7 +153,7 @@ public class Purchase_Order_Flow extends Reusableclass {
 
 		Scrolldownjavascript();
 		mouseclick(p.savearrow);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		tomovethecursor(p.saveasdraft);
 		toClick(p.saveasdraft);
@@ -179,7 +182,8 @@ public class Purchase_Order_Flow extends Reusableclass {
 	}
 
 	@When("User needs to approve the purchase order and edit and moved to Awaiting approval")
-	public void user_needs_to_approve_the_purchase_order_and_edit_and_moved_to_awaiting_approval() throws InterruptedException {
+	public void user_needs_to_approve_the_purchase_order_and_edit_and_moved_to_awaiting_approval()
+			throws InterruptedException {
 
 		p = new Purchaseflowpojo();
 		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
@@ -238,7 +242,7 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Thread.sleep(1000);
 		Actions a = new Actions(driver);
 		a.moveToElement(p.edit);
-		p.edit.click();
+		clickjavascript(p.edit);
 		Thread.sleep(2000);
 		p.addnewlines.click();
 		Thread.sleep(1000);
@@ -278,9 +282,8 @@ public class Purchase_Order_Flow extends Reusableclass {
 	}
 
 	@Given("User needs to give new purchase order details in purchase order with tax inclusive")
-	public void user_needs_to_give_new_purchase_order_details_in_purchase_order_with_tax_inclusive() throws InterruptedException, AWTException {
-		
-		
+	public void user_needs_to_give_new_purchase_order_details_in_purchase_order_with_tax_inclusive()
+			throws InterruptedException, AWTException {
 
 		p = new Purchaseflowpojo();
 		implicitwait();
@@ -314,10 +317,10 @@ public class Purchase_Order_Flow extends Reusableclass {
 		toenter();
 		Thread.sleep(1000);
 
-		tofill(p.Deliverydate, "27/11/2022");
+		tofill(p.Deliverydate, "27/12/2022");
 		Thread.sleep(1000);
 
-		tofill(p.currency, "USD");
+		tofill(p.currency, "AED - United Arab Emirates Dirham");
 		Thread.sleep(1000);
 		toenter();
 		Thread.sleep(1000);
@@ -367,7 +370,8 @@ public class Purchase_Order_Flow extends Reusableclass {
 	}
 
 	@Given("User needs to give new purchase order details in purchase order with No tax")
-	public void user_needs_to_give_new_purchase_order_details_in_purchase_order_with_no_tax() throws InterruptedException, AWTException {
+	public void user_needs_to_give_new_purchase_order_details_in_purchase_order_with_no_tax()
+			throws InterruptedException, AWTException {
 
 		a = new Account_Login_POJO();
 
@@ -403,15 +407,15 @@ public class Purchase_Order_Flow extends Reusableclass {
 		toenter();
 		Thread.sleep(1000);
 
-		tofill(p.Deliverydate, "27/11/2022");
+		tofill(p.Deliverydate, "27/12/2022");
 		Thread.sleep(1000);
 
-		tofill(p.currency, "USD");
+		tofill(p.currency, "AED - United Arab Emirates Dirham");
 		Thread.sleep(1000);
 		toenter();
 		Thread.sleep(1000);
 
-		toClick(p.amount);
+		clickjavascript(p.amount);
 		Thread.sleep(1000);
 		actionssendkeysdelete(p.amount);
 		Thread.sleep(1000);
@@ -454,9 +458,9 @@ public class Purchase_Order_Flow extends Reusableclass {
 	}
 
 	@Given("User needs to create new purchase order and approve the order")
-	public void user_needs_to_create_new_purchase_order_and_approve_the_order()  throws InterruptedException, AWTException {
-	
-		
+	public void user_needs_to_create_new_purchase_order_and_approve_the_order()
+			throws InterruptedException, AWTException {
+
 		p = new Purchaseflowpojo();
 		implicitwait();
 
@@ -468,7 +472,6 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Explicitwaitvisibility(p.purchaseorder);
 		tomovethecursor(p.purchaseorder);
 		toClick(p.purchaseorder);
-		
 
 		/*
 		 * tomovethecursor(p.purchase); toClick(p.purchase); Thread.sleep(1000);
@@ -496,10 +499,10 @@ public class Purchase_Order_Flow extends Reusableclass {
 		toenter();
 		Thread.sleep(1000);
 
-		tofill(p.Deliverydate, "27/11/2022");
+		tofill(p.Deliverydate, "27/12/2022");
 		Thread.sleep(1000);
 
-		tofill(p.currency, "USD");
+		tofill(p.currency, "AED - United Arab Emirates Dirham");
 		Thread.sleep(1000);
 		toenter();
 		Thread.sleep(1000);
@@ -523,7 +526,7 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Thread.sleep(3000);
 
 		tomovethecursor(p.listitem2);
-		toClick(p.listitem2);
+		clickjavascript(p.listitem2);
 		Thread.sleep(3000);
 		tofill(p.Listitemname2, "Testitem2");
 		Thread.sleep(2000);
@@ -540,18 +543,32 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Thread.sleep(1000);
 
 		toClick(p.ok);
-		
+
 	}
+
 	@When("User needs to update the purchase order")
-	public void user_needs_to_update_the_purchase_order()  throws InterruptedException, AWTException {
+	public void user_needs_to_update_the_purchase_order() throws InterruptedException, AWTException {
 
 		p = new Purchaseflowpojo();
+
+		implicitwait();
+
+		Explicitwaitvisibility(p.purchase);
+		Thread.sleep(1000);
+		tomovethecursor(p.purchase);
+		toClick(p.purchase);
+		clickjavascript(p.purchase);
+		Thread.sleep(1000);
+		Explicitwaitvisibility(p.purchaseorder);
+		tomovethecursor(p.purchaseorder);
+		toClick(p.purchaseorder);
+
 		Thread.sleep(2000);
 		tomovethecursor(p.awaitingapproval);
 		toClick(p.awaitingapproval);
 		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
 		Thread.sleep(1000);
-		
+
 		tomovethecursor(p.listitem3);
 		toClick(p.listitem3);
 		Thread.sleep(3000);
@@ -559,22 +576,20 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Thread.sleep(2000);
 		toenter();
 		Thread.sleep(3000);
-		
+
 		Scrolldownjavascript();
 		Thread.sleep(1500);
-		
+
 		toClick(p.update);
 		Thread.sleep(2000);
-		
+
 		toClick(p.ok);
-		
+
 	}
-	
+
 	@Given("User needs to mark purchase order as bill")
 	public void user_needs_to_mark_purchase_order_as_bill() throws InterruptedException {
-		
-	
-		
+
 		p = new Purchaseflowpojo();
 		implicitwait();
 
@@ -586,53 +601,71 @@ public class Purchase_Order_Flow extends Reusableclass {
 		Explicitwaitvisibility(p.purchaseorder);
 		tomovethecursor(p.purchaseorder);
 		toClick(p.purchaseorder);
-		
+
 		Thread.sleep(2000);
-		tomovethecursor(p.awaitingapproval);
-		clickjavascript(p.awaitingapproval);
+		tomovethecursor(p.approval);
+		Explicitwaitvisibility(p.approval);
+		clickjavascript(p.approval);
 		driver.findElement(By.xpath("(//div[@row-index='0'])[2]")).click();
 		Thread.sleep(1000);
-		Scrolldownjavascript();
-		Thread.sleep(1500);
-		toClick(p.approvearrow);
-		Thread.sleep(2000);
-		tomovethecursor(p.approve);
-		Thread.sleep(1000);
-		toClick(p.approve);
-		Thread.sleep(1000);
-		toClick(p.ok);
-		System.out.println("Item is approved");
+		tomovethecursor(p.option);
+		toClick(p.option);
+
+		Explicitwaitvisibility(p.markasbilled);
 		
+		tomovethecursor(p.markasbilled);
+		toClick(p.markasbilled);
+
+		Thread.sleep(1000);
+
+		Explicitwaitvisibility(p.billchkbox);
+
+		tomovethecursor(p.billchkbox);
+		clickjavascript(p.billchkbox);
+
+		tomovethecursor(p.ok);
+		toClick(p.ok);
+
+		System.out.println("Item is approved");
+
 	}
 
 	@When("User needs to approve bill purchase order")
 	public void user_needs_to_approve_bill_purchase_order() throws InterruptedException, AWTException {
+
+		b = new Billspojo();
 		
-		p = new Purchaseflowpojo();
-		tomovethecursor(p.option);
-		Thread.sleep(2000);
-		toClick(p.option);
 		Thread.sleep(1000);
-		Actions a = new Actions(driver);
-		a.moveToElement(p.markasbilled).perform();
+		Toclear(b.duedate);
 		Thread.sleep(1000);
-		toClick(p.markasbilled);
-		Thread.sleep(1000);
-		toClick(p.billchkbox);
-		Thread.sleep(1000);
-		toClick(p.ok );
-		Thread.sleep(1000);
-		Toclear(p.duedate);
-		Thread.sleep(1000);
-		tofill(p.duedate, "27/11/2022");
+		tofill(b.duedate, "30/12/2022");
 		toenter();
-		Thread.sleep(1000);
-		Scrolldownjavascript();	
-		Thread.sleep(1000);
-		tomovethecursor(p.approve);
-		Thread.sleep(1000);
-		toClick(p.approve);
 		
-	}	
+
+		if(b.recurrence.isDisplayed())
+
+		{
+			b.close.click();
+			
+		} else {
+			
+			Thread.sleep(1000);
+			tomovethecursor(b.permitno);
+			tofill(b.permitno, "876567788");
+			
+		}
+		
+		Thread.sleep(1000);
+		Scrolldownjavascript();
+		Explicitwaitvisibility(b.approve);
+		tomovethecursor(b.approve);
+		Thread.sleep(1000);
+		clickjavascript(b.approve);
+		Thread.sleep(1000);
+		toClick(b.ok);
+
+		System.out.println("order is marked as bills");
+
+	}
 
 }

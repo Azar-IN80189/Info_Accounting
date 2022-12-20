@@ -1,7 +1,7 @@
 @Chartofaccount
 Feature: Info-Accounting Chart of Account order scenario
 
-  @LoginCredentials
+
   Scenario: Chart of account add an account with is payment scenario/Revenue
     Given User need to navigate to add account in chart of accounts page and enter details like account code,account name ,Tax Id..Etc
 
@@ -57,10 +57,32 @@ Feature: Info-Accounting Chart of Account order scenario
   Scenario: Create a account in chart of accounts without payment checkbox
     Given User need to navigate to add account scenario2
 
+  Scenario: Send statements Print scenario
+    Given User need to navigate to send statement page
+    When User need to select statement type and search for required statement
+    Then User need to select a record and print the record
+
+  Scenario: Send statements Email scenario
+    Given User need to navigate to send statement page for email verification
+    When User need to select statement type and search for required statement to verify a email
+    Then User need to select a record and send the record to the particular email
+
+  Scenario: Send statements Download scenario
+    Given User need to navigate to send statement page for Dowmload verification
+
+  #Scenario: Import scenario
+  #  Given User need to navigate to Import page
+  # And User need download the template and verify whether it is downloaded
+  #  And User need to upload the xlsx document
+  #Scenario: Export scenario
+  #  Given User need to click export button
+  # And User need download the template and verify whether it is downloaded
+
+
   Scenario: Add Bank Account
-    Given User needs to navigate to Chart of account and click add bank account 
+    Given User needs to navigate to Chart of account and click add bank account
     Then User needs to click add bank account and navigate to banking page and verify whether the page navigated correctly
 
   Scenario: Add Cash account
-    Given User needs to navigate to chart of accounts screen and click add cash account 
+    Given User needs to navigate to chart of accounts screen and click add cash account
     Then User needs to click Add Cash account and navigate to banking page and verify whether the page navigated correctly

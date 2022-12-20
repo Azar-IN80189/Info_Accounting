@@ -124,13 +124,13 @@ public class Purchaseflowpojo extends Reusableclass{
 	@FindBy(xpath="(//button[text()=' Save '])[3]")
 	public WebElement savebutton;
 	
-	@FindBy(xpath="//a[text()='Save as draft']")
+	@FindBy(xpath="//a[@id='btnDraft-2']")
 	public WebElement saveasdraft;
 
-	@FindBy(xpath = "//a[text()='save & submit for approval']")
+	@FindBy(xpath = "//a[@id='btnDraftSubmitForApproval']")
 	public WebElement saveforapproval;
 	
-	@FindBy(xpath="//*[@id=\"target-element\"]/div/div/div/div/div/div/div[2]/div[8]/div[2]/button[2]")
+	@FindBy(xpath="//button[@id='btnDraftOptions']")
 	public WebElement savearrow;
 	
 	@FindBy(xpath="//button[text()='OK']")
@@ -157,10 +157,10 @@ public class Purchaseflowpojo extends Reusableclass{
 	@FindBy(xpath = "//a[@href='#org-details_draft']")
 	public WebElement draft;
 	
-	@FindBy(xpath = "//button[text()=' Option ']")
+	@FindBy(xpath = "//button[contains(.,'Option')]")
 	public WebElement option;
 	
-	@FindBy(xpath = "//a[text()='Edit']")
+	@FindBy(xpath = "(//a[contains(.,'Edit')])[1]")
 	public WebElement edit;
 	
 	@FindBy(xpath = "//button[@type='button'][contains(.,'Update')]")
@@ -202,6 +202,8 @@ public class Purchaseflowpojo extends Reusableclass{
 	@FindBy(xpath="//a[text()='Unmarked ']")
 	public WebElement unmarkedbill;
 	
+	@FindBy(xpath="//a[contains(text(),'Approved ')]")
+	public WebElement approval;
 	
 	
 	

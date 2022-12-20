@@ -44,7 +44,7 @@ public class Add_Bank_Account extends Reusableclass {
 		clickjavascript(c.Addbankaccount);
 		Thread.sleep(2000);
 		Explicitwaitvisibility(c.selectbankone);
-		tofill(c.selectbankone, "Indian Bank (Foreign");
+		tofill(c.selectbankone, "Indian Bank (Foreig");
 		Thread.sleep(1000);
 		Explicitwaitvisibility(c.bankname);
 		tomovethecursor(c.bankname);

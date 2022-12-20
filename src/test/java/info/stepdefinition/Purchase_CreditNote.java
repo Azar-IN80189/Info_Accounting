@@ -48,7 +48,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Thread.sleep(2000);
 
 		Toclear(p.CreditnoteDatebox);
-		tofill(p.CreditnoteDatebox, "21/11/2022");
+		tofill(p.CreditnoteDatebox, "16/12/2022");
 
 		Thread.sleep(2000);
 
@@ -151,7 +151,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Explicitwaitvisibility(p.Dateawaitingpayment);
 		ScrolldownElement(p.Dateawaitingpayment);
 		Toclear(p.Dateawaitingpayment);
-		tofill(p.Dateawaitingpayment, "21/11/2022");
+		tofill(p.Dateawaitingpayment, "16/12/2022");
 
 
 
@@ -211,7 +211,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Thread.sleep(2000);
 
 		Toclear(p.CreditnoteDatebox);
-		tofill(p.CreditnoteDatebox, "21/11/2022");
+		tofill(p.CreditnoteDatebox, "16/12/2022");
 
 		Thread.sleep(2000);
 
@@ -285,7 +285,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Explicitwaitvisibility(p.Dateawaitingpayment);
 		ScrolldownElement(p.Dateawaitingpayment);
 		Toclear(p.Dateawaitingpayment);
-		tofill(p.Dateawaitingpayment, "21/11/2022");
+		tofill(p.Dateawaitingpayment, "16/12/2022");
 
 
 
@@ -345,7 +345,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Thread.sleep(2000);
 
 		Toclear(p.CreditnoteDatebox);
-		tofill(p.CreditnoteDatebox, "21/11/2022");
+		tofill(p.CreditnoteDatebox, "16/12/2022");
 
 		Thread.sleep(2000);
 
@@ -420,7 +420,7 @@ public class Purchase_CreditNote extends Reusableclass {
 		Explicitwaitvisibility(p.Dateawaitingpayment);
 		ScrolldownElement(p.Dateawaitingpayment);
 		Toclear(p.Dateawaitingpayment);
-		tofill(p.Dateawaitingpayment, "21/11/2022");
+		tofill(p.Dateawaitingpayment, "16/12/2022");
 
 
 		Thread.sleep(2000);

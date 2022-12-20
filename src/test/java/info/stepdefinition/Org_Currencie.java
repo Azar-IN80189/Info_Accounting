@@ -8,9 +8,8 @@ import info.pojo.Purchase_order_POJO;
 import info.pojo.Tax_Rate_POJO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
-public class Org_Currencies extends Reusableclass {
+public class Org_Currencie extends Reusableclass {
 	public static Tax_Rate_POJO t;
 	public static Purchase_order_POJO w;
 	public static Currencies_POJO c;
@@ -57,7 +56,7 @@ public class Org_Currencies extends Reusableclass {
 			highLightElement(c.CurrenciesDD);
 			clickjavascript(c.CurrenciesDD);
 			Thread.sleep(1000);
-			tofill(c.CurrenciesDD, "GBP - British Pound Sterling");
+			tofill(c.CurrenciesDD, "IDR - Indonesian Rupiah");
 
 			Explicitwaitvisibility(c.MouseclickDDCurrencies);
 			mouseclick(c.MouseclickDDCurrencies);
@@ -77,7 +76,7 @@ public class Org_Currencies extends Reusableclass {
 			driver.switchTo().window(winHandle);
 
 			highLightElement(c.Searchboxbtn);
-			tofill(c.Searchboxbtn, "GBP - British Pound Sterling");
+			tofill(c.Searchboxbtn, "IDR - Indonesian Rupiah");
 
 
 			Explicitwait(c.Editicon);
@@ -85,10 +84,10 @@ public class Org_Currencies extends Reusableclass {
 			highLightElement(c.Editicon);
 			toClick(c.Editicon);
 
-			Explicitwait(c.Startdate);
+			/*	Explicitwait(c.Startdate);
 			highLightElement(c.Startdate);
 			Toclear(c.Startdate);
-			tofill(c.Startdate, "18/11/2022");
+			tofill(c.Startdate, "24/11/2022");
 			toenter();
 
 
@@ -98,20 +97,19 @@ public class Org_Currencies extends Reusableclass {
 			tofill(c.Enddate, "27/11/2022");
 			toenter();
 
+			Thread.sleep(2000);
 			Explicitwaitvisibility(c.CurrencyRadiobtn);
 			clickjavascript(c.CurrencyRadiobtn);
 
 			highLightElement(c.Customratetxt);
-			tofill(c.Customratetxt, "2");
+			tofill(c.Customratetxt, "2");*/
 
 
 			Thread.sleep(3000);
-
-			highLightElement(c.Savebtn);
+			Explicitwaitvisibility(c.Savebtn);
 			clickjavascript(c.Savebtn);
 
 			Explicitwaitvisibility(c.logoutbtn);
-			highLightElement(c.logoutbtn);
 			clickjavascript(c.logoutbtn);
 
 		}

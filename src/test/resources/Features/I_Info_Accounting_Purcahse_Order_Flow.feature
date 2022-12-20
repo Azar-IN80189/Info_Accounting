@@ -1,6 +1,7 @@
 @PurchaseOrder
 Feature: create Purchase order
 
+
   Scenario: Add new purchase order for Tax Exclusive
     Given User needs to give new purchase order details-Contactname,Date,Orderno,etc
     When User needs to save the details and verify its available in draft or not

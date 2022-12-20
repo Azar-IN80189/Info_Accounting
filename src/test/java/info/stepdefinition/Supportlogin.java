@@ -1,15 +1,19 @@
 package info.stepdefinition;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import info.base.Reusableclass;
 import info.pojo.AccountLoginpojo;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
-public class Supportlogin extends Reusableclass {
+public class Supportlogin extends Reusableclass  {
 
 	public static AccountLoginpojo a;
 
@@ -50,9 +54,10 @@ public class Supportlogin extends Reusableclass {
 	}
 	}
 		@And("User need to check whether it is logged in as support user")
-		public void user_need_to_check_whether_it_is_logged_in_as_support_user() throws InterruptedException {
+		public void user_need_to_check_whether_it_is_logged_in_as_support_user() throws Exception {
 
 		a = new AccountLoginpojo();
+		getScreenshot(driver, "Login as support user");
 
 		System.out.println("The user is in support login");
 		Explicitwaitvisibility(a.headerlogout);
@@ -62,5 +67,16 @@ public class Supportlogin extends Reusableclass {
 		System.out.println("logged out ");
 
 	}
+		@AfterStep
+		public void takeScreenShotOnFailedScenario(Scenario scenario) {
 
-}
+			System.out.println("Taking screenshot from Cucumber After hook with order=2 if the scenario fails");
+			if ((scenario.isFailed())) {
+				final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+				scenario.attach(screenshot, "image/png", scenario.getName());
+			}
+		}
+
+			}
+
+

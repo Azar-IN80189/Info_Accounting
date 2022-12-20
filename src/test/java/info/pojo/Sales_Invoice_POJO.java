@@ -29,10 +29,10 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath="//a[contains(.,'+Save New Contact')]")
 	public WebElement savecontact;
 	
-	@FindBy(xpath = "//input[@formcontrolname='InvoiceDate']")
+	@FindBy(xpath = "//input[@id='dpInvoiceDate']")//id changed
 	public WebElement InvoiceDate;
 	
-	@FindBy(xpath = "//input[@formcontrolname='InvoiceDueDate']")
+	@FindBy(xpath = "//input[@id='dpInvoiceDueDate']")//id changed
 	public WebElement DueDate;
 	
 	@FindBy(xpath = "//input[@id='reference']")
@@ -47,43 +47,43 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "(//input[@type='text'])[10]")
 	public WebElement ThemeDD;
 	
-	@FindBy(xpath = "(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[1]")
+	@FindBy(xpath = "//td[@id='td-p0-c1']")
 	public WebElement items1table;
 	
 	@FindBy(xpath = "(//input[contains(@type,'text')])[11]")
 	public WebElement items1tabletxt;
 	
-	@FindBy(xpath = "(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[3]")
+	@FindBy(xpath = "//td[@id='td-p1-c1']")
 	public WebElement items2table;
 	
 	@FindBy(xpath = "(//input[contains(@type,'text')])[11]")
 	public WebElement items2tabletxt;
 	
-	@FindBy(xpath = "(//td[@style='width: 150px; max-width: 150px; text-align: left;'])[5]")
+	@FindBy(xpath = "//td[@id='td-p2-c1']")
 	public WebElement items3table;
 	
 	@FindBy(xpath = "(//input[contains(@type,'text')])[11]")
 	public WebElement items3tabletxt;
 	
-	@FindBy(xpath = "//button[contains(text(),' Add New Lines ')]")
+	@FindBy(xpath = "//button[@id='btnAddNewLine']")
 	public WebElement Addnewlinesbtn;
 	
 	@FindBy(xpath = "//textarea[@id='deliveryInstruction']")
 	public WebElement DeliveryInstructionstxt;
 	
-	@FindBy(xpath = "//button[contains(.,'Approve')]")
+	@FindBy(xpath = "//button[@id='btnApprove-1']")//id changed
 	public WebElement ApproveBtn;
 	
 	@FindBy(xpath="(//span[contains(text(),'Split button!')])[4]")
 	public WebElement savearrow;
 	
-	@FindBy(xpath="//a[text()='Save as draft']")
+	@FindBy(xpath="//a[@id='btnDraft-2']")//id changed
 	public WebElement saveasdraft;
 	
-	@FindBy(xpath = "(//button[contains(.,'Save')])[3]")
+	@FindBy(xpath = "//button[@id='btnDraft-1']")//id changed
 	public WebElement SaveBtn;
 	
-	@FindBy(xpath = "//button[contains(.,' Add Payment ')]")
+	@FindBy(xpath = "//button[@type='button'][contains(.,'Add Payment')]")
 	public WebElement Addrefundbtn;
 
 	@FindBy(xpath = "//a[@href='#org-details_draft']")
@@ -92,10 +92,10 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "(//button[contains(.,'Split button!')])[2]")
 	public WebElement Approvesplitarrow;
 	
-	@FindBy(xpath = "//a[contains(.,'Approve & Add Another')]")
+	@FindBy(xpath = "//a[@id='btnApproveAndAddAnother']")//id changed
 	public WebElement Approveandaddanother;
 	
-	@FindBy(xpath = "//a[contains(.,'Approve & print')]")
+	@FindBy(xpath = "//a[@id='btnApproveAndPrint']")//id changed
 	public WebElement Approveandprint;
 	
 	@FindBy(xpath = "(//button[contains(.,'Split button!')])[3]")
@@ -104,7 +104,7 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "//a[contains(.,'Save continue editing')]")
 	public WebElement Saveandcontinueediting;
 	
-	@FindBy(xpath = "//a[contains(.,'Save & submit for approval')]")
+	@FindBy(xpath = "//a[@id='btnSubmitForApproval']")//id changed
 	public WebElement Saveandsubmitforapproval;
 	
 	@FindBy(xpath = "//a[contains(.,'Save & add another')]")
@@ -161,7 +161,7 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath="//button[text()=' Approve ']")
 	public WebElement approve;
 	
-	@FindBy(xpath="//input[@maxlength='20']")
+	@FindBy(xpath="//input[@id='PayAmount']")
 	public WebElement amountpaid;
 	
 	@FindBy(xpath="(//input[contains(@name,'d2')])[1]")
@@ -230,5 +230,9 @@ public class Sales_Invoice_POJO extends Reusableclass {
 	@FindBy(xpath = "//input[contains(@id,'BankExRate')]")
 	public WebElement bankrate;
 	
+	@FindBy(xpath="//button[@id='btnApprove-1']")
+	public WebElement approvecredit;
 	
+	@FindBy(xpath="//input[@id='dpExpiryDate']")
+	public WebElement duedatecredit;
 }

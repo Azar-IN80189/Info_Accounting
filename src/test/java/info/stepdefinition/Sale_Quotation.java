@@ -19,14 +19,18 @@ public class Sale_Quotation extends Reusableclass {
 	public static UserCreation_POJO u;
 	public static Account_Login_POJO a;
 	@Given("User need to navigate to Quotation slide")
-	public void user_need_to_navigate_to_quotation_slide() {
+	public void user_need_to_navigate_to_quotation_slide() throws InterruptedException {
 		s=new Sale_Quotation_POJO();
-		Explicitwaitvisibility(s.Salesslide);
-		clickjavascript(s.Salesslide);
-		Explicitwaitvisibility(s.Quotationslide);
-		clickjavascript(s.Quotationslide);
+		
 
-	}
+			Explicitwaitvisibility(s.Salesslide);
+			clickjavascript(s.Salesslide);
+			Explicitwaitvisibility(s.Quotationslide);
+			clickjavascript(s.Quotationslide);
+		}
+	
+
+	
 
 
 
@@ -48,12 +52,12 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
-		tofill(s.QuotationDate, "23/11/2022");
+		tofill(s.QuotationDate, "16/12/2022");
 		Thread.sleep(1000);
 		totabkey();
 		Delete();
 		Thread.sleep(2000);
-		tofill(s.ExpiryDate, "27/11/2022");
+		tofill(s.ExpiryDate, "27/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 		tofill(s.Referencetxtbox, "Sales");
@@ -119,6 +123,7 @@ public class Sale_Quotation extends Reusableclass {
 		Thread.sleep(4000);
 		driver.navigate().to("https://www.mailinator.com/v4/public/inboxes.jsp");
 		highLightElement(u.SearchMailinator);
+		Toclear(u.SearchMailinator);
 		tofill(u.SearchMailinator, "testemailquotation");
 		Thread.sleep(6000);
 		toenter();
@@ -162,10 +167,16 @@ public class Sale_Quotation extends Reusableclass {
 	public void user_need_to_mark_the_quotation_invoice_as_invoiced() throws InterruptedException {
 		s=new Sale_Quotation_POJO();
 
-		Explicitwaitvisibility(s.Salesslide);
-		clickjavascript(s.Salesslide);
-		Explicitwaitvisibility(s.Quotationslide);
-		clickjavascript(s.Quotationslide);
+		if (s.Quotationslide.isDisplayed()) {
+			Thread.sleep(1000);
+			Explicitwaitvisibility(s.Quotationslide);
+			clickjavascript(s.Quotationslide);
+		} else {
+			Explicitwaitvisibility(s.Salesslide);
+			clickjavascript(s.Salesslide);
+			Explicitwaitvisibility(s.Quotationslide);
+			clickjavascript(s.Quotationslide);
+		}
 
 		Explicitwaitvisibility(s.Acceptedtab_Q);
 		clickjavascript(s.Acceptedtab_Q);
@@ -198,9 +209,16 @@ public class Sale_Quotation extends Reusableclass {
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
 
-		Explicitwaitvisibility(s.Salesslide);
-		toClick(s.Salesslide);
-		clickjavascript(s.Quotationslide);
+		if (s.Quotationslide.isDisplayed()) {
+			Thread.sleep(1000);
+			Explicitwaitvisibility(s.Quotationslide);
+			clickjavascript(s.Quotationslide);
+		} else {
+			Explicitwaitvisibility(s.Salesslide);
+			clickjavascript(s.Salesslide);
+			Explicitwaitvisibility(s.Quotationslide);
+			clickjavascript(s.Quotationslide);
+		}
 		Thread.sleep(4000);
 		Explicitwaitvisibility(s.NewQuotationbtn);
 		toClick(s.NewQuotationbtn);
@@ -214,11 +232,11 @@ public class Sale_Quotation extends Reusableclass {
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
 		Toclear(s.QuotationDate);
-		tofill(s.QuotationDate, "23/11/2022");
+		tofill(s.QuotationDate, "16/12/2022");
 		Thread.sleep(1000);
 		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
-		tofill(s.ExpiryDate, "27/11/2022");
+		tofill(s.ExpiryDate, "27/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 		Toclear(s.Referencetxtbox);
@@ -375,11 +393,11 @@ public class Sale_Quotation extends Reusableclass {
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
 		Toclear(s.QuotationDate);
-		tofill(s.QuotationDate, "23/11/2022");
+		tofill(s.QuotationDate, "16/12/2022");
 		Thread.sleep(1000);
 		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
-		tofill(s.ExpiryDate, "27/11/2022");
+		tofill(s.ExpiryDate, "27/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 		Toclear(s.Referencetxtbox);
@@ -445,9 +463,12 @@ public class Sale_Quotation extends Reusableclass {
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+		Explicitwaitvisibility(s.drafttab);
+		clickjavascript(s.drafttab);
 
 		Selectcheckbox(s.draftcheckbox);
+		
 		Explicitwaitvisibility(s.draftcopytobtn);
 		clickjavascript(s.draftcopytobtn);
 		Explicitwaitvisibility(s.copytoinvoiceradiobtn);
@@ -463,8 +484,10 @@ public class Sale_Quotation extends Reusableclass {
 		s=new Sale_Quotation_POJO();
 		p=new Purchase_CreditNotes_POJO ();
 		u=new UserCreation_POJO();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
+		Explicitwaitvisibility(s.drafttab);
+		clickjavascript(s.drafttab);
 
 		Selectcheckbox(s.draftcheckbox);
 		Explicitwaitvisibility(s.draftcopytobtn);
@@ -507,11 +530,11 @@ public class Sale_Quotation extends Reusableclass {
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
 		Toclear(s.QuotationDate);
-		tofill(s.QuotationDate, "23/11/2022");
+		tofill(s.QuotationDate, "16/12/2022");
 		Thread.sleep(1000);
 		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
-		tofill(s.ExpiryDate, "27/11/2022");
+		tofill(s.ExpiryDate, "27/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 		Toclear(s.Referencetxtbox);
@@ -600,11 +623,11 @@ public class Sale_Quotation extends Reusableclass {
 		clickjavascript(s.Option1select);
 		Thread.sleep(1000);
 		Toclear(s.QuotationDate);
-		tofill(s.QuotationDate, "23/11/2022");
+		tofill(s.QuotationDate, "16/12/2022");
 		Thread.sleep(1000);
 		Toclear(s.ExpiryDate);
 		Thread.sleep(2000);
-		tofill(s.ExpiryDate, "27/11/2022");
+		tofill(s.ExpiryDate, "27/12/2022");
 		totabkey();
 		Thread.sleep(1000);
 		Toclear(s.Referencetxtbox);
